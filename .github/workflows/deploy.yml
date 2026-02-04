@@ -1,0 +1,16 @@
+name: Deploy NBA Oracle to Azure
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Upload to Azure Storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob upload-batch --account-name mystudentwebsitee --auth-mode key -d '$web' -s . --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}" --overwrite
