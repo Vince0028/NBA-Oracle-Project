@@ -1,0 +1,7 @@
+[
+  { "team": "Boston Celtics", "probability": "99%", "status": "Clinched" },
+  { "team": "Oklahoma City Thunder", "probability": "95%", "status": "High" },
+  { "team": "Denver Nuggets", "probability": "92%", "status": "High" },
+  { "team": "Los Angeles Lakers", "probability": "68%", "status": "In-Hunt" },
+  { "team": "Golden State Warriors", "probability": "45%", "status": "Bubble" }
+]
