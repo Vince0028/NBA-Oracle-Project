@@ -1,0 +1,18 @@
+{
+    "model_accuracy": 1.00,
+    "top_predictor": "Defense (opp_pts)",
+    "predictions": [
+        {
+            "team": "Celtics",
+            "probability": "98%"
+        },
+        {
+            "team": "Lakers",
+            "probability": "65%"
+        },
+        {
+            "team": "Pistons",
+            "probability": "5%"
+        }
+    ]
+}

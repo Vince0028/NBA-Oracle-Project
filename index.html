@@ -5195,6 +5195,20 @@
             </div>
           </div>
         </div>
+        <!-- ORACLE PREDICTIONS -->
+        <div id="oracle-ui"
+          style="background: #1C62EB; color: white; padding: 15px; text-align: center; font-weight: bold; font-family: 'Roboto', sans-serif; font-size: 1.2rem;">
+          Loading Oracle Data...
+        </div>
+        <script>
+          fetch('oracle-data.json')
+            .then(response => response.json())
+            .then(data => {
+              document.getElementById('oracle-ui').innerHTML = `Oracle Accuracy: ${data.model_accuracy}`;
+            })
+            .catch(err => console.error('Error fetching Oracle data:', err));
+        </script>
+        <!-- END ORACLE PREDICTIONS -->
         <div class="ScoreStripContainer_container__xIz72">
           <div class="ScoreStrip_content__XXz2g">
             <div class="ScoreStrip_inner__Vywpe">
