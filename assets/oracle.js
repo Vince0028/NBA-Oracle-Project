@@ -1,64 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Create widget container
-    const widget = document.createElement('div');
-    widget.id = 'oracle-widget';
-    widget.innerHTML = `
-        <div id="oracle-header">
-            <span class="oracle-icon">🔮</span>
-            PLAYOFF ORACLE
-        </div>
-        <div id="oracle-content">
-            <div id="oracle-loading" style="text-align: center; padding: 20px; color: #aaa;">Loading data...</div>
-        </div>
-    `;
-    document.body.appendChild(widget);
+    // Ensure container exists
+    let container = document.getElementById('oracle-widget');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'oracle-widget';
+        document.body.appendChild(container);
+    }
 
-    const DATA_URL = './oracle-data.json'; // Replace with your cloud-hosted JSON URL
+    const DATA_URL = './oracle-data.json'; // Azure will host this at the same root
 
-    // Fetch data
-    fetch(DATA_URL)
-        .then(response => response.json())
-        .then(data => {
-            const contentDiv = document.getElementById('oracle-content');
-            contentDiv.innerHTML = ''; // Clear loading
+    async function loadOracle() {
+        try {
+            const response = await fetch(DATA_URL);
+            const data = await response.json();
 
-            if (data && data.predictions) {
-                data.predictions.forEach(prediction => {
-                    const probability = parseFloat(prediction.probability.replace('%', ''));
-                    let status = 'Unknown';
-                    let statusClass = 'status-eliminated';
+            let html = `
+                <div class="nba-oracle-container">
+                    <div class="nba-oracle-header">
+                        <h2>Playoff Predictor</h2>
+                        <span style="font-size:10px;">Acc: ${data.oracle_metadata.global_accuracy}</span>
+                    </div>
+                    <table class="nba-oracle-table">
+            `;
 
-                    // Derive status if not present (logic based on probability)
-                    if (probability >= 90) {
-                        status = 'Lock';
-                        statusClass = 'status-lock';
-                    } else if (probability >= 50) {
-                        status = 'Contender';
-                        statusClass = 'status-contender';
-                    } else {
-                        status = 'Eliminated';
-                        statusClass = 'status-eliminated';
-                    }
+            data.teams.forEach(team => {
+                const percentage = (team.win_prob * 100).toFixed(0) + '%';
+                let statusClass = 'status-contend';
+                if (team.win_prob >= 0.90) statusClass = 'status-lock';
+                if (team.win_prob < 0.45) statusClass = 'status-out';
 
-                    const item = document.createElement('div');
-                    item.className = 'oracle-item';
-                    item.innerHTML = `
-                        <div class="team-info">
-                            <span class="team-name">${prediction.team}</span>
-                            <span class="team-status ${statusClass}">Status: ${status}</span>
-                        </div>
-                        <div class="probability-container">
-                            <span class="probability-value">${prediction.probability}</span>
-                        </div>
-                    `;
-                    contentDiv.appendChild(item);
-                });
-            } else {
-                contentDiv.innerHTML = '<div style="padding:10px;">No predictions data found.</div>';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching Oracle data:', error);
-            document.getElementById('oracle-content').innerHTML = '<div style="padding:10px; color: #ff6b6b;">Failed to load data.</div>';
-        });
+                html += `
+                    <tr class="nba-oracle-row">
+                        <td class="nba-oracle-cell"><strong>${team.id}</strong> ${team.name}</td>
+                        <td class="nba-oracle-cell" style="text-align:right;">
+                            <span class="prob-badge ${statusClass}">${percentage}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += `</table></div>`;
+            container.innerHTML = html;
+        } catch (err) {
+            console.error("Oracle failed to load from cloud storage", err);
+            container.innerHTML = `<div style="padding:10px; color:red; background:white; border:1px solid #ddd;">Error loading Oracle data</div>`;
+        }
+    }
+
+    loadOracle();
 });
