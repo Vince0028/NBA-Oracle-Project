@@ -5196,19 +5196,7 @@
             </div>
           </div>
         </div>
-        <!-- ORACLE PREDICTIONS -->
-        <div id="oracle-ui"
-          style="background: #1C62EB; color: white; padding: 15px; text-align: center; font-weight: bold; font-family: 'Roboto', sans-serif; font-size: 1.2rem;">
-          Loading Oracle Data...
-        </div>
-        <script>
-          fetch('oracle-data.json')
-            .then(response => response.json())
-            .then(data => {
-              document.getElementById('oracle-ui').innerHTML = `Oracle Accuracy: ${data.model_accuracy}`;
-            })
-            .catch(err => console.error('Error fetching Oracle data:', err));
-        </script>
+        <!-- ORACLE PREDICTIONS (handled by sidebar widget + modal) -->
         <!-- END ORACLE PREDICTIONS -->
         <div class="ScoreStripContainer_container__xIz72">
           <div class="ScoreStrip_content__XXz2g">
@@ -11113,6 +11101,25 @@
                   </ul>
                 </div>
               </section>
+              <!-- NBA ORACLE PREDICTIONS WIDGET -->
+              <div class="MaxWidthContainer_mwc__ID5AG" data-padding="false" data-ad-slot="false" data-max-width="xl" style="margin-top:16px;">
+                <section class="Block_block__62M07 oracle-predictor-widget" data-has-container="true">
+                  <div class="Block_blockContent__6iJ_n">
+                    <div class="oracle-widget-header">
+                      <h3 class="oracle-widget-title">NBA ORACLE AI</h3>
+                      <span class="oracle-widget-badge">LIVE</span>
+                    </div>
+                    <p class="oracle-widget-desc">AI-powered match predictions and analytics by division.</p>
+                    <button id="oracle-open-btn" class="oracle-open-button" onclick="openOracleModal()">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                      </svg>
+                      View Division Predictions
+                    </button>
+                  </div>
+                </section>
+              </div>
+              <!-- END ORACLE WIDGET -->
               <div class="MaxWidthContainer_mwc__ID5AG" data-padding="false" data-ad-slot="true" data-max-width="xl">
                 <div class="DisplayAd_adTransitioner__mnGK7" style="">
                   <div class="GoogleDisplayAd_ad__gNdkB mb-6" id="home_ad_r_1" data-ad-type="noMinHeight"
@@ -12755,6 +12762,29 @@
     style="display: none; position: fixed; left: -999px; top: -999px; width: 0px; height: 0px;"
     src="./assets/saved_resource(7).html"></iframe>
   <script src="./assets/oracle.js"></script>
+
+  <!-- ORACLE FULL-SCREEN MODAL -->
+  <div id="oracle-modal" class="oracle-modal" style="display:none;">
+    <div class="oracle-modal-content">
+      <div class="oracle-modal-header">
+        <div class="oracle-modal-header-left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-right:10px;">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h2>NBA Oracle AI Predictions</h2>
+        </div>
+        <button class="oracle-modal-close" onclick="closeOracleModal()">&times;</button>
+      </div>
+
+      <!-- DIVISION TABS -->
+      <div class="oracle-division-tabs" id="oracle-division-tabs"></div>
+
+      <!-- DIVISION CONTENT -->
+      <div class="oracle-division-content" id="oracle-division-content">
+        <div class="oracle-loading">Loading predictions data...</div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

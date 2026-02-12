@@ -1,0 +1,51 @@
+Season,Team,Win_Pct,Off_Rating,Def_Rating,ThreeP_Pct (eFG),MadePlayoffs
+2025-26,Oklahoma City Thunder,0.755,117.7,105.9,56.3,1
+2025-26,Denver Nuggets,0.642,121,116.8,57.5,1
+2025-26,Minnesota Timberwolves,0.593,116.6,112.8,56.1,1
+2025-26,Portland Trail Blazers,0.472,113.2,115.4,52.9,0
+2025-26,Utah Jazz,0.302,113.6,121.7,54,0
+2024-25,Oklahoma City Thunder,0.829,119.2,106.6,56,1
+2024-25,Denver Nuggets,0.61,118.9,115.1,57.3,1
+2024-25,Minnesota Timberwolves,0.598,115.7,110.8,55.4,1
+2024-25,Portland Trail Blazers,0.439,111,113.7,52.1,0
+2024-25,Utah Jazz,0.207,110.2,119.4,53.3,0
+2023-24,Denver Nuggets,0.695,117.8,112.3,56.2,1
+2023-24,Oklahoma City Thunder,0.695,118.3,111,57.3,1
+2023-24,Minnesota Timberwolves,0.683,114.6,108.4,55.9,1
+2023-24,Utah Jazz,0.378,114.5,119.6,53.9,0
+2023-24,Portland Trail Blazers,0.256,107.6,116.6,50.3,0
+2022-23,Denver Nuggets,0.646,116.8,113.5,57.3,1
+2022-23,Minnesota Timberwolves,0.512,113.3,113.1,56,1
+2022-23,Oklahoma City Thunder,0.488,114.2,113.2,53.1,0
+2022-23,Utah Jazz,0.451,115.3,116,54.7,0
+2022-23,Portland Trail Blazers,0.402,114,118,54.9,0
+2021-22,Utah Jazz,0.598,116.2,110,55.5,1
+2021-22,Denver Nuggets,0.585,113.8,111.5,55.6,1
+2021-22,Minnesota Timberwolves,0.561,113.8,111,53.9,1
+2021-22,Portland Trail Blazers,0.329,107.3,116.3,51.5,0
+2021-22,Oklahoma City Thunder,0.293,103.8,111.7,49.7,0
+2020-21,Utah Jazz,0.722,116.5,107.5,56.3,1
+2020-21,Denver Nuggets,0.653,116.3,111.5,55.7,1
+2020-21,Portland Trail Blazers,0.583,117.1,115.3,54,1
+2020-21,Minnesota Timberwolves,0.319,109.3,114.5,52,0
+2020-21,Oklahoma City Thunder,0.306,102.8,113.4,50.9,0
+2019-20,Denver Nuggets,0.63,112.6,110.4,53.5,1
+2019-20,Oklahoma City Thunder,0.611,110.1,108.1,53,1
+2019-20,Utah Jazz,0.611,111.8,109.3,54.9,1
+2019-20,Portland Trail Blazers,0.473,113.2,114.3,53.3,1
+2019-20,Minnesota Timberwolves,0.297,107.6,111.6,51.4,0
+2018-19,Denver Nuggets,0.659,112.1,108.1,52.7,1
+2018-19,Portland Trail Blazers,0.646,113.7,109.5,52.8,1
+2018-19,Utah Jazz,0.61,110.3,105.3,53.8,1
+2018-19,Oklahoma City Thunder,0.598,109.8,106.5,51.4,1
+2018-19,Minnesota Timberwolves,0.439,110.6,112.2,51.1,0
+2017-18,Portland Trail Blazers,0.598,108.4,105.7,51.1,1
+2017-18,Oklahoma City Thunder,0.585,110.1,106.4,51.4,1
+2017-18,Utah Jazz,0.585,107.4,103,52.7,1
+2017-18,Minnesota Timberwolves,0.573,112.5,110.2,52.3,1
+2017-18,Denver Nuggets,0.561,111.4,110,53.6,0
+2016-17,Utah Jazz,0.622,109,104.7,52.6,1
+2016-17,Oklahoma City Thunder,0.573,107.9,107.1,50,1
+2016-17,Portland Trail Blazers,0.5,109.4,110,52,1
+2016-17,Denver Nuggets,0.488,112.2,111.7,53,0
+2016-17,Minnesota Timberwolves,0.378,110,110.9,51.1,0

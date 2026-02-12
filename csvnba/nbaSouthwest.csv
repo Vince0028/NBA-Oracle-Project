@@ -1,0 +1,51 @@
+Season,Team,Win_Pct,Off_Rating,Def_Rating,TS%,MadePlayoffs
+2025-26,San Antonio Spurs,0.692,116.5,111.1,58.6,1
+2025-26,Houston Rockets,0.627,117.3,112.2,56.8,1
+2025-26,Memphis Grizzlies,0.392,113.2,115.4,56.9,0
+2025-26,Dallas Mavericks,0.365,110.3,113.2,56.6,0
+2025-26,New Orleans Pelicans,0.259,112.3,118.4,56.2,0
+2024-25,Houston Rockets,0.634,114.9,110.3,55.3,1
+2024-25,Memphis Grizzlies,0.585,117.2,112.6,58.8,1
+2024-25,Dallas Mavericks,0.476,113.7,115,58.3,0
+2024-25,San Antonio Spurs,0.415,113.5,116.3,57.5,0
+2024-25,New Orleans Pelicans,0.256,109.7,119.1,55.2,0
+2023-24,Dallas Mavericks,0.61,117,114.9,59.2,1
+2023-24,New Orleans Pelicans,0.598,116.5,111.9,59.1,1
+2023-24,Houston Rockets,0.5,113.7,112.8,56.5,0
+2023-24,Memphis Grizzlies,0.329,106.8,113.7,54.3,0
+2023-24,San Antonio Spurs,0.268,109.3,115.6,56.3,0
+2022-23,Memphis Grizzlies,0.622,114.7,110.7,57,1
+2022-23,New Orleans Pelicans,0.512,113.8,112,58.2,1
+2022-23,Dallas Mavericks,0.463,115.9,116.1,59.9,0
+2022-23,Houston Rockets,0.268,110.5,118.6,55.4,0
+2022-23,San Antonio Spurs,0.268,109.7,119.6,55.4,0
+2021-22,Memphis Grizzlies,0.683,114.3,108.9,55.3,1
+2021-22,Dallas Mavericks,0.634,112.5,109.1,57.2,1
+2021-22,New Orleans Pelicans,0.439,111.2,112,55.7,1
+2021-22,San Antonio Spurs,0.415,111.9,111.7,55.6,0
+2021-22,Houston Rockets,0.244,108.1,116.4,56.5,0
+2020-21,Dallas Mavericks,0.583,114.6,112.3,58.2,1
+2020-21,Memphis Grizzlies,0.528,111.7,110.5,56,1
+2020-21,San Antonio Spurs,0.458,110.5,112,55.4,0
+2020-21,New Orleans Pelicans,0.431,113,113.3,57,0
+2020-21,Houston Rockets,0.236,107,114.4,55.3,0
+2019-20,Houston Rockets,0.611,112.5,109.8,57.8,1
+2019-20,Dallas Mavericks,0.573,115.9,111.2,58.1,1
+2019-20,Memphis Grizzlies,0.466,108.7,109.7,56.1,0
+2019-20,San Antonio Spurs,0.451,111.7,112.6,57.2,0
+2019-20,New Orleans Pelicans,0.417,110.5,111.8,56.8,0
+2018-19,Houston Rockets,0.646,114.9,110.1,58.1,1
+2018-19,San Antonio Spurs,0.585,112.2,110.6,57.2,1
+2018-19,Dallas Mavericks,0.402,108.7,110.1,55.5,0
+2018-19,Memphis Grizzlies,0.402,105.6,108,54.8,0
+2018-19,New Orleans Pelicans,0.402,110.7,112,56.3,0
+2017-18,Houston Rockets,0.793,114.1,105.7,59,1
+2017-18,New Orleans Pelicans,0.585,108.5,107.4,57.3,1
+2017-18,San Antonio Spurs,0.573,107.1,104.1,54.3,1
+2017-18,Dallas Mavericks,0.293,105.4,108.4,54.4,0
+2017-18,Memphis Grizzlies,0.268,103.6,110.4,53.9,0
+2016-17,San Antonio Spurs,0.744,110.3,102.9,56.4,1
+2016-17,Houston Rockets,0.671,114.1,108.4,58.3,1
+2016-17,Memphis Grizzlies,0.524,107,106.5,53.5,1
+2016-17,New Orleans Pelicans,0.415,104.7,106.8,53.9,0
+2016-17,Dallas Mavericks,0.402,104.7,107.7,54.1,0

@@ -1,0 +1,51 @@
+Season,Team,Win_Pct,Off_Rating,Def_Rating,MadePlayoffs
+2025-26,Los Angeles Lakers,0.627,116.5,116.5,1
+2025-26,Phoenix Suns,0.585,114.5,112.3,1
+2025-26,Golden State Warriors,0.528,114.3,112.2,1
+2025-26,LA Clippers,0.481,115.6,115.8,0
+2025-26,Sacramento Kings,0.222,110.2,119.8,0
+2024-25,LA Clippers,0.61,114.3,109.4,1
+2024-25,Los Angeles Lakers,0.61,115,113.8,1
+2024-25,Golden State Warriors,0.585,114.2,111,1
+2024-25,Sacramento Kings,0.488,115.9,115.3,0
+2024-25,Phoenix Suns,0.439,114.7,117.7,0
+2023-24,LA Clippers,0.622,117.9,114.6,1
+2023-24,Phoenix Suns,0.598,116.8,113.7,1
+2023-24,Los Angeles Lakers,0.573,115.4,114.8,1
+2023-24,Golden State Warriors,0.561,116.9,114.5,0
+2023-24,Sacramento Kings,0.561,116.2,114.4,0
+2022-23,Sacramento Kings,0.585,118.6,116,1
+2022-23,Phoenix Suns,0.549,114.5,112.3,1
+2022-23,Golden State Warriors,0.537,115.1,113.4,1
+2022-23,LA Clippers,0.537,114,113.6,1
+2022-23,Los Angeles Lakers,0.524,113.9,113.2,1
+2021-22,Phoenix Suns,0.78,114.2,106.8,1
+2021-22,Golden State Warriors,0.646,112.1,106.6,1
+2021-22,LA Clippers,0.512,109.5,109.5,0
+2021-22,Los Angeles Lakers,0.402,110,112.8,0
+2021-22,Sacramento Kings,0.366,109.6,114.8,0
+2020-21,Phoenix Suns,0.708,116.3,110.4,1
+2020-21,LA Clippers,0.653,116.7,110.6,1
+2020-21,Los Angeles Lakers,0.583,109.8,106.8,1
+2020-21,Golden State Warriors,0.542,110.5,109.4,0
+2020-21,Sacramento Kings,0.431,112.7,116.5,0
+2019-20,Los Angeles Lakers,0.732,111.7,106.1,1
+2019-20,LA Clippers,0.681,113.3,106.9,1
+2019-20,Phoenix Suns,0.466,111.3,110.8,0
+2019-20,Sacramento Kings,0.431,109.5,111.4,0
+2019-20,Golden State Warriors,0.231,104.4,113,0
+2018-19,Golden State Warriors,0.695,115,108.6,1
+2018-19,LA Clippers,0.585,111.4,110.4,1
+2018-19,Sacramento Kings,0.476,109.6,110.8,0
+2018-19,Los Angeles Lakers,0.451,107.4,108.9,0
+2018-19,Phoenix Suns,0.232,105.3,114.2,0
+2017-18,Golden State Warriors,0.707,112.8,106.8,1
+2017-18,LA Clippers,0.512,109.4,109.2,0
+2017-18,Los Angeles Lakers,0.427,106,107.3,0
+2017-18,Sacramento Kings,0.329,103.1,110.4,0
+2017-18,Phoenix Suns,0.256,102.8,111.7,0
+2016-17,Golden State Warriors,0.817,114.8,103.4,1
+2016-17,LA Clippers,0.622,111.8,107.5,1
+2016-17,Sacramento Kings,0.39,106.6,110.8,0
+2016-17,Los Angeles Lakers,0.317,105.3,112,0
+2016-17,Phoenix Suns,0.293,106.1,111.3,0

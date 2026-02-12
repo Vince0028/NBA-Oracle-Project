@@ -1,7 +1,2963 @@
-[
-  { "team": "Boston Celtics", "probability": "99%", "status": "Clinched" },
-  { "team": "Oklahoma City Thunder", "probability": "95%", "status": "High" },
-  { "team": "Denver Nuggets", "probability": "92%", "status": "High" },
-  { "team": "Los Angeles Lakers", "probability": "68%", "status": "In-Hunt" },
-  { "team": "Golden State Warriors", "probability": "45%", "status": "Bubble" }
-]
+{
+  "meta": {
+    "model": "NBA Oracle AI Prediction Model",
+    "version": "2.0",
+    "dataset_seasons": [
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "prediction_target": "2025-26",
+    "last_updated": "2026-02-12",
+    "methodology": {
+      "prediction_algorithm": "Log5 probability model with offensive/defensive rating adjustments",
+      "normalization": "Min-max scaling across offensive ratings, defensive ratings, and win percentages",
+      "data_pipeline": [
+        "Dataset collection (2022-23 through 2025-26 seasons)",
+        "Feed to prediction model",
+        "Normalization of team statistics",
+        "Organization by NBA division",
+        "Match generation and AI probability scoring"
+      ]
+    }
+  },
+  "divisions": {
+    "atlantic": {
+      "name": "Atlantic Division",
+      "conference": "Eastern",
+      "teams": [
+        {
+          "team": "Boston Celtics",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "wins": 53,
+            "losses": 29,
+            "off_rating": 120.0,
+            "def_rating": 112.7,
+            "net_rating": 7.3,
+            "efficiency_pct": 0.55
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 100.0,
+            "defensive_score": 89.8,
+            "overall_rating": 96.9
+          },
+          "trend": "declining",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.695,
+              "off_rating": 117.3,
+              "def_rating": 110.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.78,
+              "off_rating": 122.2,
+              "def_rating": 110.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.744,
+              "off_rating": 119.5,
+              "def_rating": 110.1,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "New York Knicks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "wins": 53,
+            "losses": 29,
+            "off_rating": 118.6,
+            "def_rating": 113.1,
+            "net_rating": 5.5,
+            "efficiency_pct": 0.553
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 85.3,
+            "defensive_score": 83.1,
+            "overall_rating": 90.5
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.573,
+              "off_rating": 117.0,
+              "def_rating": 114.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.61,
+              "off_rating": 117.3,
+              "def_rating": 112.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.622,
+              "off_rating": 117.3,
+              "def_rating": 113.3,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Toronto Raptors",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.593,
+            "wins": 49,
+            "losses": 33,
+            "off_rating": 114.0,
+            "def_rating": 112.1,
+            "net_rating": 1.9,
+            "efficiency_pct": 0.538
+          },
+          "normalized_scores": {
+            "win_pct_score": 86.6,
+            "offensive_score": 36.8,
+            "defensive_score": 100.0,
+            "overall_rating": 75.7
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.5,
+              "off_rating": 114.6,
+              "def_rating": 113.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.305,
+              "off_rating": 111.8,
+              "def_rating": 118.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.366,
+              "off_rating": 109.6,
+              "def_rating": 113.6,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Philadelphia 76ers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.577,
+            "wins": 47,
+            "losses": 35,
+            "off_rating": 115.4,
+            "def_rating": 113.8,
+            "net_rating": 1.6,
+            "efficiency_pct": 0.533
+          },
+          "normalized_scores": {
+            "win_pct_score": 82.3,
+            "offensive_score": 51.6,
+            "defensive_score": 71.2,
+            "overall_rating": 69.8
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.659,
+              "off_rating": 117.0,
+              "def_rating": 112.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 116.2,
+              "def_rating": 113.0,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.293,
+              "off_rating": 111.0,
+              "def_rating": 117.3,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Brooklyn Nets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.275,
+            "wins": 23,
+            "losses": 59,
+            "off_rating": 110.5,
+            "def_rating": 118.0,
+            "net_rating": -7.5,
+            "efficiency_pct": 0.525
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 0.0,
+            "defensive_score": 0.0,
+            "overall_rating": 0.0
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.549,
+              "off_rating": 114.6,
+              "def_rating": 113.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.39,
+              "off_rating": 112.4,
+              "def_rating": 115.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.317,
+              "off_rating": 108.1,
+              "def_rating": 115.4,
+              "made_playoffs": false
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "ATL_01",
+          "home_team": "Boston Celtics",
+          "away_team": "New York Knicks",
+          "prediction": {
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.518,
+            "away_win_probability": 0.482,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 118,
+              "away": 117
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Boston Celtics's superior offensive rating (120.0 vs 118.6)"
+            ],
+            "home_net_rating": 7.3,
+            "away_net_rating": 5.5,
+            "rating_differential": 1.8
+          }
+        },
+        {
+          "match_id": "ATL_02",
+          "home_team": "Boston Celtics",
+          "away_team": "Toronto Raptors",
+          "prediction": {
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.606,
+            "away_win_probability": 0.394,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 118,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Boston Celtics's superior offensive rating (120.0 vs 114.0)",
+              "Boston Celtics's superior net rating (+7.3 vs +1.9)"
+            ],
+            "home_net_rating": 7.3,
+            "away_net_rating": 1.9,
+            "rating_differential": 5.4
+          }
+        },
+        {
+          "match_id": "ATL_03",
+          "home_team": "Boston Celtics",
+          "away_team": "Philadelphia 76ers",
+          "prediction": {
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.625,
+            "away_win_probability": 0.375,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 117,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Boston Celtics's superior offensive rating (120.0 vs 115.4)",
+              "Boston Celtics's stronger defensive rating (112.7 vs 113.8)",
+              "Boston Celtics holds a stronger season record (64.2% vs 57.7%)",
+              "Boston Celtics's superior net rating (+7.3 vs +1.6)"
+            ],
+            "home_net_rating": 7.3,
+            "away_net_rating": 1.6,
+            "rating_differential": 5.7
+          }
+        },
+        {
+          "match_id": "ATL_04",
+          "home_team": "Boston Celtics",
+          "away_team": "Brooklyn Nets",
+          "prediction": {
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 115,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Boston Celtics's superior offensive rating (120.0 vs 110.5)",
+              "Boston Celtics's stronger defensive rating (112.7 vs 118.0)",
+              "Boston Celtics holds a stronger season record (64.2% vs 27.5%)",
+              "Boston Celtics's superior net rating (+7.3 vs -7.5)"
+            ],
+            "home_net_rating": 7.3,
+            "away_net_rating": -7.5,
+            "rating_differential": 14.8
+          }
+        },
+        {
+          "match_id": "ATL_05",
+          "home_team": "New York Knicks",
+          "away_team": "Toronto Raptors",
+          "prediction": {
+            "predicted_winner": "New York Knicks",
+            "home_win_probability": 0.588,
+            "away_win_probability": 0.412,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 117,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "New York Knicks's superior offensive rating (118.6 vs 114.0)",
+              "New York Knicks's superior net rating (+5.5 vs +1.9)"
+            ],
+            "home_net_rating": 5.5,
+            "away_net_rating": 1.9,
+            "rating_differential": 3.6
+          }
+        },
+        {
+          "match_id": "ATL_06",
+          "home_team": "New York Knicks",
+          "away_team": "Philadelphia 76ers",
+          "prediction": {
+            "predicted_winner": "New York Knicks",
+            "home_win_probability": 0.607,
+            "away_win_probability": 0.393,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 116,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "New York Knicks's superior offensive rating (118.6 vs 115.4)",
+              "New York Knicks holds a stronger season record (64.2% vs 57.7%)",
+              "New York Knicks's superior net rating (+5.5 vs +1.6)"
+            ],
+            "home_net_rating": 5.5,
+            "away_net_rating": 1.6,
+            "rating_differential": 3.9
+          }
+        },
+        {
+          "match_id": "ATL_07",
+          "home_team": "New York Knicks",
+          "away_team": "Brooklyn Nets",
+          "prediction": {
+            "predicted_winner": "New York Knicks",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 114,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "New York Knicks's superior offensive rating (118.6 vs 110.5)",
+              "New York Knicks's stronger defensive rating (113.1 vs 118.0)",
+              "New York Knicks holds a stronger season record (64.2% vs 27.5%)",
+              "New York Knicks's superior net rating (+5.5 vs -7.5)"
+            ],
+            "home_net_rating": 5.5,
+            "away_net_rating": -7.5,
+            "rating_differential": 13.0
+          }
+        },
+        {
+          "match_id": "ATL_08",
+          "home_team": "Toronto Raptors",
+          "away_team": "Philadelphia 76ers",
+          "prediction": {
+            "predicted_winner": "Toronto Raptors",
+            "home_win_probability": 0.519,
+            "away_win_probability": 0.481,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 117,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Philadelphia 76ers's superior offensive rating (115.4 vs 114.0)",
+              "Toronto Raptors's stronger defensive rating (112.1 vs 113.8)"
+            ],
+            "home_net_rating": 1.9,
+            "away_net_rating": 1.6,
+            "rating_differential": 0.3
+          }
+        },
+        {
+          "match_id": "ATL_09",
+          "home_team": "Toronto Raptors",
+          "away_team": "Brooklyn Nets",
+          "prediction": {
+            "predicted_winner": "Toronto Raptors",
+            "home_win_probability": 0.887,
+            "away_win_probability": 0.113,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 121,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Toronto Raptors's superior offensive rating (114.0 vs 110.5)",
+              "Toronto Raptors's stronger defensive rating (112.1 vs 118.0)",
+              "Toronto Raptors holds a stronger season record (59.3% vs 27.5%)",
+              "Toronto Raptors's superior net rating (+1.9 vs -7.5)"
+            ],
+            "home_net_rating": 1.9,
+            "away_net_rating": -7.5,
+            "rating_differential": 9.4
+          }
+        },
+        {
+          "match_id": "ATL_10",
+          "home_team": "Philadelphia 76ers",
+          "away_team": "Brooklyn Nets",
+          "prediction": {
+            "predicted_winner": "Philadelphia 76ers",
+            "home_win_probability": 0.873,
+            "away_win_probability": 0.127,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 113,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Philadelphia 76ers's superior offensive rating (115.4 vs 110.5)",
+              "Philadelphia 76ers's stronger defensive rating (113.8 vs 118.0)",
+              "Philadelphia 76ers holds a stronger season record (57.7% vs 27.5%)",
+              "Philadelphia 76ers's superior net rating (+1.6 vs -7.5)"
+            ],
+            "home_net_rating": 1.6,
+            "away_net_rating": -7.5,
+            "rating_differential": 9.1
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 115.7,
+        "average_def_rating": 113.9,
+        "average_win_pct": 0.546,
+        "strongest_team": "Boston Celtics",
+        "weakest_team": "Brooklyn Nets",
+        "best_offense": "Boston Celtics",
+        "best_defense": "Toronto Raptors",
+        "playoff_teams": 4,
+        "competitiveness_index": 0.633
+      }
+    },
+    "central": {
+      "name": "Central Division",
+      "conference": "Eastern",
+      "teams": [
+        {
+          "team": "Detroit Pistons",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.745,
+            "wins": 61,
+            "losses": 21,
+            "off_rating": 116.4,
+            "def_rating": 108.4,
+            "net_rating": 8.0
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 90.8,
+            "defensive_score": 100.0,
+            "overall_rating": 97.2
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.207,
+              "off_rating": 109.9,
+              "def_rating": 117.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.171,
+              "off_rating": 109.0,
+              "def_rating": 118.0,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.537,
+              "off_rating": 114.6,
+              "def_rating": 112.5,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Cleveland Cavaliers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.604,
+            "wins": 50,
+            "losses": 32,
+            "off_rating": 117.2,
+            "def_rating": 113.4,
+            "net_rating": 3.8
+          },
+          "normalized_scores": {
+            "win_pct_score": 71.8,
+            "offensive_score": 100.0,
+            "defensive_score": 45.1,
+            "overall_rating": 72.2
+          },
+          "trend": "declining",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.622,
+              "off_rating": 115.5,
+              "def_rating": 109.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.585,
+              "off_rating": 114.7,
+              "def_rating": 112.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.78,
+              "off_rating": 121.0,
+              "def_rating": 111.8,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Chicago Bulls",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.453,
+            "wins": 37,
+            "losses": 45,
+            "off_rating": 113.7,
+            "def_rating": 117.5,
+            "net_rating": -3.8
+          },
+          "normalized_scores": {
+            "win_pct_score": 41.6,
+            "offensive_score": 59.8,
+            "defensive_score": 0.0,
+            "overall_rating": 34.6
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.488,
+              "off_rating": 112.8,
+              "def_rating": 111.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.476,
+              "off_rating": 114.0,
+              "def_rating": 115.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.476,
+              "off_rating": 113.2,
+              "def_rating": 114.8,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Milwaukee Bucks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.42,
+            "wins": 34,
+            "losses": 48,
+            "off_rating": 113.0,
+            "def_rating": 116.6,
+            "net_rating": -3.6
+          },
+          "normalized_scores": {
+            "win_pct_score": 35.0,
+            "offensive_score": 51.7,
+            "defensive_score": 9.9,
+            "overall_rating": 32.5
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.707,
+              "off_rating": 114.3,
+              "def_rating": 110.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.598,
+              "off_rating": 117.6,
+              "def_rating": 115.0,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.585,
+              "off_rating": 115.1,
+              "def_rating": 112.7,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Indiana Pacers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.245,
+            "wins": 20,
+            "losses": 62,
+            "off_rating": 108.5,
+            "def_rating": 116.2,
+            "net_rating": -7.7
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 0.0,
+            "defensive_score": 14.3,
+            "overall_rating": 4.3
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.427,
+              "off_rating": 113.8,
+              "def_rating": 117.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 120.5,
+              "def_rating": 117.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 115.4,
+              "def_rating": 113.3,
+              "made_playoffs": true
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "CEN_01",
+          "home_team": "Detroit Pistons",
+          "away_team": "Cleveland Cavaliers",
+          "prediction": {
+            "predicted_winner": "Detroit Pistons",
+            "home_win_probability": 0.699,
+            "away_win_probability": 0.301,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 122,
+              "away": 118
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Detroit Pistons's stronger defensive rating (108.4 vs 113.4)",
+              "Detroit Pistons holds a stronger season record (74.5% vs 60.4%)",
+              "Detroit Pistons's superior net rating (+8.0 vs +3.8)"
+            ],
+            "home_net_rating": 8.0,
+            "away_net_rating": 3.8,
+            "rating_differential": 4.2
+          }
+        },
+        {
+          "match_id": "CEN_02",
+          "home_team": "Detroit Pistons",
+          "away_team": "Chicago Bulls",
+          "prediction": {
+            "predicted_winner": "Detroit Pistons",
+            "home_win_probability": 0.897,
+            "away_win_probability": 0.103,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 125,
+              "away": 117
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Detroit Pistons's superior offensive rating (116.4 vs 113.7)",
+              "Detroit Pistons's stronger defensive rating (108.4 vs 117.5)",
+              "Detroit Pistons holds a stronger season record (74.5% vs 45.3%)",
+              "Detroit Pistons's superior net rating (+8.0 vs -3.8)"
+            ],
+            "home_net_rating": 8.0,
+            "away_net_rating": -3.8,
+            "rating_differential": 11.8
+          }
+        },
+        {
+          "match_id": "CEN_03",
+          "home_team": "Detroit Pistons",
+          "away_team": "Milwaukee Bucks",
+          "prediction": {
+            "predicted_winner": "Detroit Pistons",
+            "home_win_probability": 0.917,
+            "away_win_probability": 0.083,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 124,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Detroit Pistons's superior offensive rating (116.4 vs 113.0)",
+              "Detroit Pistons's stronger defensive rating (108.4 vs 116.6)",
+              "Detroit Pistons holds a stronger season record (74.5% vs 42.0%)",
+              "Detroit Pistons's superior net rating (+8.0 vs -3.6)"
+            ],
+            "home_net_rating": 8.0,
+            "away_net_rating": -3.6,
+            "rating_differential": 11.6
+          }
+        },
+        {
+          "match_id": "CEN_04",
+          "home_team": "Detroit Pistons",
+          "away_team": "Indiana Pacers",
+          "prediction": {
+            "predicted_winner": "Detroit Pistons",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 123,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Detroit Pistons's superior offensive rating (116.4 vs 108.5)",
+              "Detroit Pistons's stronger defensive rating (108.4 vs 116.2)",
+              "Detroit Pistons holds a stronger season record (74.5% vs 24.5%)",
+              "Detroit Pistons's superior net rating (+8.0 vs -7.7)"
+            ],
+            "home_net_rating": 8.0,
+            "away_net_rating": -7.7,
+            "rating_differential": 15.7
+          }
+        },
+        {
+          "match_id": "CEN_05",
+          "home_team": "Cleveland Cavaliers",
+          "away_team": "Chicago Bulls",
+          "prediction": {
+            "predicted_winner": "Cleveland Cavaliers",
+            "home_win_probability": 0.724,
+            "away_win_probability": 0.276,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 118,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Cleveland Cavaliers's superior offensive rating (117.2 vs 113.7)",
+              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 117.5)",
+              "Cleveland Cavaliers holds a stronger season record (60.4% vs 45.3%)",
+              "Cleveland Cavaliers's superior net rating (+3.8 vs -3.8)"
+            ],
+            "home_net_rating": 3.8,
+            "away_net_rating": -3.8,
+            "rating_differential": 7.6
+          }
+        },
+        {
+          "match_id": "CEN_06",
+          "home_team": "Cleveland Cavaliers",
+          "away_team": "Milwaukee Bucks",
+          "prediction": {
+            "predicted_winner": "Cleveland Cavaliers",
+            "home_win_probability": 0.752,
+            "away_win_probability": 0.248,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 119,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Cleveland Cavaliers's superior offensive rating (117.2 vs 113.0)",
+              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 116.6)",
+              "Cleveland Cavaliers holds a stronger season record (60.4% vs 42.0%)",
+              "Cleveland Cavaliers's superior net rating (+3.8 vs -3.6)"
+            ],
+            "home_net_rating": 3.8,
+            "away_net_rating": -3.6,
+            "rating_differential": 7.4
+          }
+        },
+        {
+          "match_id": "CEN_07",
+          "home_team": "Cleveland Cavaliers",
+          "away_team": "Indiana Pacers",
+          "prediction": {
+            "predicted_winner": "Cleveland Cavaliers",
+            "home_win_probability": 0.94,
+            "away_win_probability": 0.06,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 114,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Cleveland Cavaliers's superior offensive rating (117.2 vs 108.5)",
+              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 116.2)",
+              "Cleveland Cavaliers holds a stronger season record (60.4% vs 24.5%)",
+              "Cleveland Cavaliers's superior net rating (+3.8 vs -7.7)"
+            ],
+            "home_net_rating": 3.8,
+            "away_net_rating": -7.7,
+            "rating_differential": 11.5
+          }
+        },
+        {
+          "match_id": "CEN_08",
+          "home_team": "Chicago Bulls",
+          "away_team": "Milwaukee Bucks",
+          "prediction": {
+            "predicted_winner": "Chicago Bulls",
+            "home_win_probability": 0.532,
+            "away_win_probability": 0.468,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 113,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [],
+            "home_net_rating": -3.8,
+            "away_net_rating": -3.6,
+            "rating_differential": -0.2
+          }
+        },
+        {
+          "match_id": "CEN_09",
+          "home_team": "Chicago Bulls",
+          "away_team": "Indiana Pacers",
+          "prediction": {
+            "predicted_winner": "Chicago Bulls",
+            "home_win_probability": 0.757,
+            "away_win_probability": 0.243,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 113,
+              "away": 110
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Chicago Bulls's superior offensive rating (113.7 vs 108.5)",
+              "Indiana Pacers's stronger defensive rating (116.2 vs 117.5)",
+              "Chicago Bulls holds a stronger season record (45.3% vs 24.5%)",
+              "Chicago Bulls's superior net rating (-3.8 vs -7.7)"
+            ],
+            "home_net_rating": -3.8,
+            "away_net_rating": -7.7,
+            "rating_differential": 3.9
+          }
+        },
+        {
+          "match_id": "CEN_10",
+          "home_team": "Milwaukee Bucks",
+          "away_team": "Indiana Pacers",
+          "prediction": {
+            "predicted_winner": "Milwaukee Bucks",
+            "home_win_probability": 0.732,
+            "away_win_probability": 0.268,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 112,
+              "away": 110
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Milwaukee Bucks's superior offensive rating (113.0 vs 108.5)",
+              "Milwaukee Bucks holds a stronger season record (42.0% vs 24.5%)",
+              "Milwaukee Bucks's superior net rating (-3.6 vs -7.7)"
+            ],
+            "home_net_rating": -3.6,
+            "away_net_rating": -7.7,
+            "rating_differential": 4.1
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 113.8,
+        "average_def_rating": 114.4,
+        "average_win_pct": 0.493,
+        "strongest_team": "Detroit Pistons",
+        "weakest_team": "Indiana Pacers",
+        "best_offense": "Cleveland Cavaliers",
+        "best_defense": "Detroit Pistons",
+        "playoff_teams": 2,
+        "competitiveness_index": 0.5
+      }
+    },
+    "southeast": {
+      "name": "Southeast Division",
+      "conference": "Eastern",
+      "teams": [
+        {
+          "team": "Orlando Magic",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.529,
+            "wins": 43,
+            "losses": 39,
+            "off_rating": 113.4,
+            "def_rating": 114.1,
+            "net_rating": -0.7,
+            "efficiency_pct": 35.8
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 51.9,
+            "defensive_score": 71.8,
+            "overall_rating": 77.1
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.415,
+              "off_rating": 111.3,
+              "def_rating": 113.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 112.9,
+              "def_rating": 110.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.5,
+              "off_rating": 108.9,
+              "def_rating": 109.1,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Miami Heat",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.519,
+            "wins": 43,
+            "losses": 39,
+            "off_rating": 113.7,
+            "def_rating": 111.7,
+            "net_rating": 2.0,
+            "efficiency_pct": 36.4
+          },
+          "normalized_scores": {
+            "win_pct_score": 96.2,
+            "offensive_score": 55.8,
+            "defensive_score": 100.0,
+            "overall_rating": 85.2
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.537,
+              "off_rating": 112.3,
+              "def_rating": 112.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.561,
+              "off_rating": 113.3,
+              "def_rating": 111.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.451,
+              "off_rating": 112.4,
+              "def_rating": 112.0,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Atlanta Hawks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.481,
+            "wins": 39,
+            "losses": 43,
+            "off_rating": 113.8,
+            "def_rating": 114.7,
+            "net_rating": -0.9,
+            "efficiency_pct": 37.1
+          },
+          "normalized_scores": {
+            "win_pct_score": 81.5,
+            "offensive_score": 57.1,
+            "defensive_score": 64.7,
+            "overall_rating": 69.1
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.5,
+              "off_rating": 115.5,
+              "def_rating": 115.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.439,
+              "off_rating": 116.4,
+              "def_rating": 118.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.488,
+              "off_rating": 113.7,
+              "def_rating": 114.8,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Charlotte Hornets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.472,
+            "wins": 39,
+            "losses": 43,
+            "off_rating": 117.1,
+            "def_rating": 114.9,
+            "net_rating": 2.2,
+            "efficiency_pct": 37.5
+          },
+          "normalized_scores": {
+            "win_pct_score": 78.1,
+            "offensive_score": 100.0,
+            "defensive_score": 62.4,
+            "overall_rating": 80.0
+          },
+          "trend": "improving",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.329,
+              "off_rating": 108.4,
+              "def_rating": 114.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.256,
+              "off_rating": 108.6,
+              "def_rating": 119.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.232,
+              "off_rating": 106.7,
+              "def_rating": 115.7,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Washington Wizards",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.269,
+            "wins": 22,
+            "losses": 60,
+            "off_rating": 109.4,
+            "def_rating": 120.2,
+            "net_rating": -10.8,
+            "efficiency_pct": 34.2
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 0.0,
+            "defensive_score": 0.0,
+            "overall_rating": 0.0
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.427,
+              "off_rating": 113.7,
+              "def_rating": 114.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.183,
+              "off_rating": 110.2,
+              "def_rating": 118.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.22,
+              "off_rating": 105.8,
+              "def_rating": 118.0,
+              "made_playoffs": false
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "SOU_01",
+          "home_team": "Orlando Magic",
+          "away_team": "Miami Heat",
+          "prediction": {
+            "predicted_winner": "Miami Heat",
+            "home_win_probability": 0.483,
+            "away_win_probability": 0.517,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 115,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Miami Heat's stronger defensive rating (111.7 vs 114.1)",
+              "Miami Heat's superior net rating (+2.0 vs -0.7)"
+            ],
+            "home_net_rating": -0.7,
+            "away_net_rating": 2.0,
+            "rating_differential": -2.7
+          }
+        },
+        {
+          "match_id": "SOU_02",
+          "home_team": "Orlando Magic",
+          "away_team": "Atlanta Hawks",
+          "prediction": {
+            "predicted_winner": "Orlando Magic",
+            "home_win_probability": 0.55,
+            "away_win_probability": 0.45,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 115,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [],
+            "home_net_rating": -0.7,
+            "away_net_rating": -0.9,
+            "rating_differential": 0.2
+          }
+        },
+        {
+          "match_id": "SOU_03",
+          "home_team": "Orlando Magic",
+          "away_team": "Charlotte Hornets",
+          "prediction": {
+            "predicted_winner": "Orlando Magic",
+            "home_win_probability": 0.528,
+            "away_win_probability": 0.472,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 117,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Charlotte Hornets's superior offensive rating (117.1 vs 113.4)",
+              "Orlando Magic holds a stronger season record (52.9% vs 47.2%)",
+              "Charlotte Hornets's superior net rating (+2.2 vs -0.7)"
+            ],
+            "home_net_rating": -0.7,
+            "away_net_rating": 2.2,
+            "rating_differential": -2.9
+          }
+        },
+        {
+          "match_id": "SOU_04",
+          "home_team": "Orlando Magic",
+          "away_team": "Washington Wizards",
+          "prediction": {
+            "predicted_winner": "Orlando Magic",
+            "home_win_probability": 0.854,
+            "away_win_probability": 0.146,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 119,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Orlando Magic's superior offensive rating (113.4 vs 109.4)",
+              "Orlando Magic's stronger defensive rating (114.1 vs 120.2)",
+              "Orlando Magic holds a stronger season record (52.9% vs 26.9%)",
+              "Orlando Magic's superior net rating (-0.7 vs -10.8)"
+            ],
+            "home_net_rating": -0.7,
+            "away_net_rating": -10.8,
+            "rating_differential": 10.1
+          }
+        },
+        {
+          "match_id": "SOU_05",
+          "home_team": "Miami Heat",
+          "away_team": "Atlanta Hawks",
+          "prediction": {
+            "predicted_winner": "Miami Heat",
+            "home_win_probability": 0.567,
+            "away_win_probability": 0.433,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 116,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Miami Heat's stronger defensive rating (111.7 vs 114.7)",
+              "Miami Heat's superior net rating (+2.0 vs -0.9)"
+            ],
+            "home_net_rating": 2.0,
+            "away_net_rating": -0.9,
+            "rating_differential": 2.9
+          }
+        },
+        {
+          "match_id": "SOU_06",
+          "home_team": "Miami Heat",
+          "away_team": "Charlotte Hornets",
+          "prediction": {
+            "predicted_winner": "Miami Heat",
+            "home_win_probability": 0.545,
+            "away_win_probability": 0.455,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 118,
+              "away": 117
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Charlotte Hornets's superior offensive rating (117.1 vs 113.7)",
+              "Miami Heat's stronger defensive rating (111.7 vs 114.9)"
+            ],
+            "home_net_rating": 2.0,
+            "away_net_rating": 2.2,
+            "rating_differential": -0.2
+          }
+        },
+        {
+          "match_id": "SOU_07",
+          "home_team": "Miami Heat",
+          "away_team": "Washington Wizards",
+          "prediction": {
+            "predicted_winner": "Miami Heat",
+            "home_win_probability": 0.874,
+            "away_win_probability": 0.126,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 120,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Miami Heat's superior offensive rating (113.7 vs 109.4)",
+              "Miami Heat's stronger defensive rating (111.7 vs 120.2)",
+              "Miami Heat holds a stronger season record (51.9% vs 26.9%)",
+              "Miami Heat's superior net rating (+2.0 vs -10.8)"
+            ],
+            "home_net_rating": 2.0,
+            "away_net_rating": -10.8,
+            "rating_differential": 12.8
+          }
+        },
+        {
+          "match_id": "SOU_08",
+          "home_team": "Atlanta Hawks",
+          "away_team": "Charlotte Hornets",
+          "prediction": {
+            "predicted_winner": "Charlotte Hornets",
+            "home_win_probability": 0.478,
+            "away_win_probability": 0.522,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 113,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Charlotte Hornets's superior offensive rating (117.1 vs 113.8)",
+              "Charlotte Hornets's superior net rating (+2.2 vs -0.9)"
+            ],
+            "home_net_rating": -0.9,
+            "away_net_rating": 2.2,
+            "rating_differential": -3.1
+          }
+        },
+        {
+          "match_id": "SOU_09",
+          "home_team": "Atlanta Hawks",
+          "away_team": "Washington Wizards",
+          "prediction": {
+            "predicted_winner": "Atlanta Hawks",
+            "home_win_probability": 0.815,
+            "away_win_probability": 0.185,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 117,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Atlanta Hawks's superior offensive rating (113.8 vs 109.4)",
+              "Atlanta Hawks's stronger defensive rating (114.7 vs 120.2)",
+              "Atlanta Hawks holds a stronger season record (48.1% vs 26.9%)",
+              "Atlanta Hawks's superior net rating (-0.9 vs -10.8)"
+            ],
+            "home_net_rating": -0.9,
+            "away_net_rating": -10.8,
+            "rating_differential": 9.9
+          }
+        },
+        {
+          "match_id": "SOU_10",
+          "home_team": "Charlotte Hornets",
+          "away_team": "Washington Wizards",
+          "prediction": {
+            "predicted_winner": "Charlotte Hornets",
+            "home_win_probability": 0.838,
+            "away_win_probability": 0.162,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 112,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Charlotte Hornets's superior offensive rating (117.1 vs 109.4)",
+              "Charlotte Hornets's stronger defensive rating (114.9 vs 120.2)",
+              "Charlotte Hornets holds a stronger season record (47.2% vs 26.9%)",
+              "Charlotte Hornets's superior net rating (+2.2 vs -10.8)"
+            ],
+            "home_net_rating": 2.2,
+            "away_net_rating": -10.8,
+            "rating_differential": 13.0
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 113.5,
+        "average_def_rating": 115.1,
+        "average_win_pct": 0.454,
+        "strongest_team": "Orlando Magic",
+        "weakest_team": "Washington Wizards",
+        "best_offense": "Charlotte Hornets",
+        "best_defense": "Miami Heat",
+        "playoff_teams": 2,
+        "competitiveness_index": 0.74
+      }
+    },
+    "northwest": {
+      "name": "Northwest Division",
+      "conference": "Western",
+      "teams": [
+        {
+          "team": "Oklahoma City Thunder",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.755,
+            "wins": 62,
+            "losses": 20,
+            "off_rating": 117.7,
+            "def_rating": 105.9,
+            "net_rating": 11.8,
+            "efficiency_pct": 56.3
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 57.7,
+            "defensive_score": 100.0,
+            "overall_rating": 87.3
+          },
+          "trend": "declining",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.488,
+              "off_rating": 114.2,
+              "def_rating": 113.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.695,
+              "off_rating": 118.3,
+              "def_rating": 111.0,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.829,
+              "off_rating": 119.2,
+              "def_rating": 106.6,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Denver Nuggets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "wins": 53,
+            "losses": 29,
+            "off_rating": 121.0,
+            "def_rating": 116.8,
+            "net_rating": 4.2,
+            "efficiency_pct": 57.5
+          },
+          "normalized_scores": {
+            "win_pct_score": 75.1,
+            "offensive_score": 100.0,
+            "defensive_score": 31.0,
+            "overall_rating": 69.3
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.646,
+              "off_rating": 116.8,
+              "def_rating": 113.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.695,
+              "off_rating": 117.8,
+              "def_rating": 112.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 118.9,
+              "def_rating": 115.1,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Minnesota Timberwolves",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.593,
+            "wins": 49,
+            "losses": 33,
+            "off_rating": 116.6,
+            "def_rating": 112.8,
+            "net_rating": 3.8,
+            "efficiency_pct": 56.1
+          },
+          "normalized_scores": {
+            "win_pct_score": 64.2,
+            "offensive_score": 43.6,
+            "defensive_score": 56.3,
+            "overall_rating": 55.7
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.512,
+              "off_rating": 113.3,
+              "def_rating": 113.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.683,
+              "off_rating": 114.6,
+              "def_rating": 108.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.598,
+              "off_rating": 115.7,
+              "def_rating": 110.8,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Portland Trail Blazers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.472,
+            "wins": 39,
+            "losses": 43,
+            "off_rating": 113.2,
+            "def_rating": 115.4,
+            "net_rating": -2.2,
+            "efficiency_pct": 52.9
+          },
+          "normalized_scores": {
+            "win_pct_score": 37.5,
+            "offensive_score": 0.0,
+            "defensive_score": 39.9,
+            "overall_rating": 27.0
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.402,
+              "off_rating": 114.0,
+              "def_rating": 118.0,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.256,
+              "off_rating": 107.6,
+              "def_rating": 116.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.439,
+              "off_rating": 111.0,
+              "def_rating": 113.7,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Utah Jazz",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.302,
+            "wins": 25,
+            "losses": 57,
+            "off_rating": 113.6,
+            "def_rating": 121.7,
+            "net_rating": -8.1,
+            "efficiency_pct": 54.0
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 5.1,
+            "defensive_score": 0.0,
+            "overall_rating": 1.5
+          },
+          "trend": "improving",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.451,
+              "off_rating": 115.3,
+              "def_rating": 116.0,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.378,
+              "off_rating": 114.5,
+              "def_rating": 119.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.207,
+              "off_rating": 110.2,
+              "def_rating": 119.4,
+              "made_playoffs": false
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "NOR_01",
+          "home_team": "Oklahoma City Thunder",
+          "away_team": "Denver Nuggets",
+          "prediction": {
+            "predicted_winner": "Oklahoma City Thunder",
+            "home_win_probability": 0.708,
+            "away_win_probability": 0.292,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 126,
+              "away": 122
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Denver Nuggets's superior offensive rating (121.0 vs 117.7)",
+              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 116.8)",
+              "Oklahoma City Thunder holds a stronger season record (75.5% vs 64.2%)",
+              "Oklahoma City Thunder's superior net rating (+11.8 vs +4.2)"
+            ],
+            "home_net_rating": 11.8,
+            "away_net_rating": 4.2,
+            "rating_differential": 7.6
+          }
+        },
+        {
+          "match_id": "NOR_02",
+          "home_team": "Oklahoma City Thunder",
+          "away_team": "Minnesota Timberwolves",
+          "prediction": {
+            "predicted_winner": "Oklahoma City Thunder",
+            "home_win_probability": 0.759,
+            "away_win_probability": 0.241,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 124,
+              "away": 119
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Oklahoma City Thunder's superior offensive rating (117.7 vs 116.6)",
+              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 112.8)",
+              "Oklahoma City Thunder holds a stronger season record (75.5% vs 59.3%)",
+              "Oklahoma City Thunder's superior net rating (+11.8 vs +3.8)"
+            ],
+            "home_net_rating": 11.8,
+            "away_net_rating": 3.8,
+            "rating_differential": 8.0
+          }
+        },
+        {
+          "match_id": "NOR_03",
+          "home_team": "Oklahoma City Thunder",
+          "away_team": "Portland Trail Blazers",
+          "prediction": {
+            "predicted_winner": "Oklahoma City Thunder",
+            "home_win_probability": 0.915,
+            "away_win_probability": 0.085,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 126,
+              "away": 118
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Oklahoma City Thunder's superior offensive rating (117.7 vs 113.2)",
+              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 115.4)",
+              "Oklahoma City Thunder holds a stronger season record (75.5% vs 47.2%)",
+              "Oklahoma City Thunder's superior net rating (+11.8 vs -2.2)"
+            ],
+            "home_net_rating": 11.8,
+            "away_net_rating": -2.2,
+            "rating_differential": 14.0
+          }
+        },
+        {
+          "match_id": "NOR_04",
+          "home_team": "Oklahoma City Thunder",
+          "away_team": "Utah Jazz",
+          "prediction": {
+            "predicted_winner": "Oklahoma City Thunder",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 127,
+              "away": 118
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Oklahoma City Thunder's superior offensive rating (117.7 vs 113.6)",
+              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 121.7)",
+              "Oklahoma City Thunder holds a stronger season record (75.5% vs 30.2%)",
+              "Oklahoma City Thunder's superior net rating (+11.8 vs -8.1)"
+            ],
+            "home_net_rating": 11.8,
+            "away_net_rating": -8.1,
+            "rating_differential": 19.9
+          }
+        },
+        {
+          "match_id": "NOR_05",
+          "home_team": "Denver Nuggets",
+          "away_team": "Minnesota Timberwolves",
+          "prediction": {
+            "predicted_winner": "Denver Nuggets",
+            "home_win_probability": 0.556,
+            "away_win_probability": 0.444,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 118,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Denver Nuggets's superior offensive rating (121.0 vs 116.6)",
+              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 116.8)"
+            ],
+            "home_net_rating": 4.2,
+            "away_net_rating": 3.8,
+            "rating_differential": 0.4
+          }
+        },
+        {
+          "match_id": "NOR_06",
+          "home_team": "Denver Nuggets",
+          "away_team": "Portland Trail Blazers",
+          "prediction": {
+            "predicted_winner": "Denver Nuggets",
+            "home_win_probability": 0.731,
+            "away_win_probability": 0.269,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 117,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Denver Nuggets's superior offensive rating (121.0 vs 113.2)",
+              "Portland Trail Blazers's stronger defensive rating (115.4 vs 116.8)",
+              "Denver Nuggets holds a stronger season record (64.2% vs 47.2%)",
+              "Denver Nuggets's superior net rating (+4.2 vs -2.2)"
+            ],
+            "home_net_rating": 4.2,
+            "away_net_rating": -2.2,
+            "rating_differential": 6.4
+          }
+        },
+        {
+          "match_id": "NOR_07",
+          "home_team": "Denver Nuggets",
+          "away_team": "Utah Jazz",
+          "prediction": {
+            "predicted_winner": "Denver Nuggets",
+            "home_win_probability": 0.929,
+            "away_win_probability": 0.071,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 114,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Denver Nuggets's superior offensive rating (121.0 vs 113.6)",
+              "Denver Nuggets's stronger defensive rating (116.8 vs 121.7)",
+              "Denver Nuggets holds a stronger season record (64.2% vs 30.2%)",
+              "Denver Nuggets's superior net rating (+4.2 vs -8.1)"
+            ],
+            "home_net_rating": 4.2,
+            "away_net_rating": -8.1,
+            "rating_differential": 12.3
+          }
+        },
+        {
+          "match_id": "NOR_08",
+          "home_team": "Minnesota Timberwolves",
+          "away_team": "Portland Trail Blazers",
+          "prediction": {
+            "predicted_winner": "Minnesota Timberwolves",
+            "home_win_probability": 0.68,
+            "away_win_probability": 0.32,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 115,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Minnesota Timberwolves's superior offensive rating (116.6 vs 113.2)",
+              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 115.4)",
+              "Minnesota Timberwolves holds a stronger season record (59.3% vs 47.2%)",
+              "Minnesota Timberwolves's superior net rating (+3.8 vs -2.2)"
+            ],
+            "home_net_rating": 3.8,
+            "away_net_rating": -2.2,
+            "rating_differential": 6.0
+          }
+        },
+        {
+          "match_id": "NOR_09",
+          "home_team": "Minnesota Timberwolves",
+          "away_team": "Utah Jazz",
+          "prediction": {
+            "predicted_winner": "Minnesota Timberwolves",
+            "home_win_probability": 0.89,
+            "away_win_probability": 0.11,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 122,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Minnesota Timberwolves's superior offensive rating (116.6 vs 113.6)",
+              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 121.7)",
+              "Minnesota Timberwolves holds a stronger season record (59.3% vs 30.2%)",
+              "Minnesota Timberwolves's superior net rating (+3.8 vs -8.1)"
+            ],
+            "home_net_rating": 3.8,
+            "away_net_rating": -8.1,
+            "rating_differential": 11.9
+          }
+        },
+        {
+          "match_id": "NOR_10",
+          "home_team": "Portland Trail Blazers",
+          "away_team": "Utah Jazz",
+          "prediction": {
+            "predicted_winner": "Portland Trail Blazers",
+            "home_win_probability": 0.733,
+            "away_win_probability": 0.267,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 118,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Portland Trail Blazers's stronger defensive rating (115.4 vs 121.7)",
+              "Portland Trail Blazers holds a stronger season record (47.2% vs 30.2%)",
+              "Portland Trail Blazers's superior net rating (-2.2 vs -8.1)"
+            ],
+            "home_net_rating": -2.2,
+            "away_net_rating": -8.1,
+            "rating_differential": 5.9
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 116.4,
+        "average_def_rating": 114.5,
+        "average_win_pct": 0.553,
+        "strongest_team": "Oklahoma City Thunder",
+        "weakest_team": "Utah Jazz",
+        "best_offense": "Denver Nuggets",
+        "best_defense": "Oklahoma City Thunder",
+        "playoff_teams": 3,
+        "competitiveness_index": 0.547
+      }
+    },
+    "pacific": {
+      "name": "Pacific Division",
+      "conference": "Western",
+      "teams": [
+        {
+          "team": "Los Angeles Lakers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.627,
+            "wins": 51,
+            "losses": 31,
+            "off_rating": 116.5,
+            "def_rating": 116.5,
+            "net_rating": 0.0
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 100.0,
+            "defensive_score": 43.4,
+            "overall_rating": 83.0
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.524,
+              "off_rating": 113.9,
+              "def_rating": 113.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 115.4,
+              "def_rating": 114.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 115.0,
+              "def_rating": 113.8,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Phoenix Suns",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.585,
+            "wins": 48,
+            "losses": 34,
+            "off_rating": 114.5,
+            "def_rating": 112.3,
+            "net_rating": 2.2
+          },
+          "normalized_scores": {
+            "win_pct_score": 89.6,
+            "offensive_score": 68.3,
+            "defensive_score": 98.7,
+            "overall_rating": 85.9
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.549,
+              "off_rating": 114.5,
+              "def_rating": 112.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.598,
+              "off_rating": 116.8,
+              "def_rating": 113.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.439,
+              "off_rating": 114.7,
+              "def_rating": 117.7,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Golden State Warriors",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.528,
+            "wins": 43,
+            "losses": 39,
+            "off_rating": 114.3,
+            "def_rating": 112.2,
+            "net_rating": 2.1
+          },
+          "normalized_scores": {
+            "win_pct_score": 75.6,
+            "offensive_score": 65.1,
+            "defensive_score": 100.0,
+            "overall_rating": 79.8
+          },
+          "trend": "declining",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.537,
+              "off_rating": 115.1,
+              "def_rating": 113.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.561,
+              "off_rating": 116.9,
+              "def_rating": 114.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.585,
+              "off_rating": 114.2,
+              "def_rating": 111.0,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "LA Clippers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.481,
+            "wins": 39,
+            "losses": 43,
+            "off_rating": 115.6,
+            "def_rating": 115.8,
+            "net_rating": -0.2
+          },
+          "normalized_scores": {
+            "win_pct_score": 64.0,
+            "offensive_score": 85.7,
+            "defensive_score": 52.6,
+            "overall_rating": 67.1
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.537,
+              "off_rating": 114.0,
+              "def_rating": 113.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.622,
+              "off_rating": 117.9,
+              "def_rating": 114.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 114.3,
+              "def_rating": 109.4,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Sacramento Kings",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.222,
+            "wins": 18,
+            "losses": 64,
+            "off_rating": 110.2,
+            "def_rating": 119.8,
+            "net_rating": -9.6
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 0.0,
+            "defensive_score": 0.0,
+            "overall_rating": 0.0
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.585,
+              "off_rating": 118.6,
+              "def_rating": 116.0,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.561,
+              "off_rating": 116.2,
+              "def_rating": 114.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.488,
+              "off_rating": 115.9,
+              "def_rating": 115.3,
+              "made_playoffs": false
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "PAC_01",
+          "home_team": "Los Angeles Lakers",
+          "away_team": "Phoenix Suns",
+          "prediction": {
+            "predicted_winner": "Los Angeles Lakers",
+            "home_win_probability": 0.522,
+            "away_win_probability": 0.478,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 116,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Los Angeles Lakers's superior offensive rating (116.5 vs 114.5)",
+              "Phoenix Suns's stronger defensive rating (112.3 vs 116.5)",
+              "Phoenix Suns's superior net rating (+2.2 vs +0.0)"
+            ],
+            "home_net_rating": 0.0,
+            "away_net_rating": 2.2,
+            "rating_differential": -2.2
+          }
+        },
+        {
+          "match_id": "PAC_02",
+          "home_team": "Los Angeles Lakers",
+          "away_team": "Golden State Warriors",
+          "prediction": {
+            "predicted_winner": "Los Angeles Lakers",
+            "home_win_probability": 0.579,
+            "away_win_probability": 0.421,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 116,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Los Angeles Lakers's superior offensive rating (116.5 vs 114.3)",
+              "Golden State Warriors's stronger defensive rating (112.2 vs 116.5)",
+              "Los Angeles Lakers holds a stronger season record (62.7% vs 52.8%)",
+              "Golden State Warriors's superior net rating (+2.1 vs +0.0)"
+            ],
+            "home_net_rating": 0.0,
+            "away_net_rating": 2.1,
+            "rating_differential": -2.1
+          }
+        },
+        {
+          "match_id": "PAC_03",
+          "home_team": "Los Angeles Lakers",
+          "away_team": "LA Clippers",
+          "prediction": {
+            "predicted_winner": "Los Angeles Lakers",
+            "home_win_probability": 0.647,
+            "away_win_probability": 0.353,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 117,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Los Angeles Lakers holds a stronger season record (62.7% vs 48.1%)"
+            ],
+            "home_net_rating": 0.0,
+            "away_net_rating": -0.2,
+            "rating_differential": 0.2
+          }
+        },
+        {
+          "match_id": "PAC_04",
+          "home_team": "Los Angeles Lakers",
+          "away_team": "Sacramento Kings",
+          "prediction": {
+            "predicted_winner": "Los Angeles Lakers",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 112,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Los Angeles Lakers's superior offensive rating (116.5 vs 110.2)",
+              "Los Angeles Lakers's stronger defensive rating (116.5 vs 119.8)",
+              "Los Angeles Lakers holds a stronger season record (62.7% vs 22.2%)",
+              "Los Angeles Lakers's superior net rating (+0.0 vs -9.6)"
+            ],
+            "home_net_rating": 0.0,
+            "away_net_rating": -9.6,
+            "rating_differential": 9.6
+          }
+        },
+        {
+          "match_id": "PAC_05",
+          "home_team": "Phoenix Suns",
+          "away_team": "Golden State Warriors",
+          "prediction": {
+            "predicted_winner": "Phoenix Suns",
+            "home_win_probability": 0.559,
+            "away_win_probability": 0.441,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 116,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Phoenix Suns holds a stronger season record (58.5% vs 52.8%)"
+            ],
+            "home_net_rating": 2.2,
+            "away_net_rating": 2.1,
+            "rating_differential": 0.1
+          }
+        },
+        {
+          "match_id": "PAC_06",
+          "home_team": "Phoenix Suns",
+          "away_team": "LA Clippers",
+          "prediction": {
+            "predicted_winner": "Phoenix Suns",
+            "home_win_probability": 0.627,
+            "away_win_probability": 0.373,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 119,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "LA Clippers's superior offensive rating (115.6 vs 114.5)",
+              "Phoenix Suns's stronger defensive rating (112.3 vs 115.8)",
+              "Phoenix Suns holds a stronger season record (58.5% vs 48.1%)",
+              "Phoenix Suns's superior net rating (+2.2 vs -0.2)"
+            ],
+            "home_net_rating": 2.2,
+            "away_net_rating": -0.2,
+            "rating_differential": 2.4
+          }
+        },
+        {
+          "match_id": "PAC_07",
+          "home_team": "Phoenix Suns",
+          "away_team": "Sacramento Kings",
+          "prediction": {
+            "predicted_winner": "Phoenix Suns",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 122,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Phoenix Suns's superior offensive rating (114.5 vs 110.2)",
+              "Phoenix Suns's stronger defensive rating (112.3 vs 119.8)",
+              "Phoenix Suns holds a stronger season record (58.5% vs 22.2%)",
+              "Phoenix Suns's superior net rating (+2.2 vs -9.6)"
+            ],
+            "home_net_rating": 2.2,
+            "away_net_rating": -9.6,
+            "rating_differential": 11.8
+          }
+        },
+        {
+          "match_id": "PAC_08",
+          "home_team": "Golden State Warriors",
+          "away_team": "LA Clippers",
+          "prediction": {
+            "predicted_winner": "Golden State Warriors",
+            "home_win_probability": 0.57,
+            "away_win_probability": 0.43,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 117,
+              "away": 116
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "LA Clippers's superior offensive rating (115.6 vs 114.3)",
+              "Golden State Warriors's stronger defensive rating (112.2 vs 115.8)",
+              "Golden State Warriors's superior net rating (+2.1 vs -0.2)"
+            ],
+            "home_net_rating": 2.1,
+            "away_net_rating": -0.2,
+            "rating_differential": 2.3
+          }
+        },
+        {
+          "match_id": "PAC_09",
+          "home_team": "Golden State Warriors",
+          "away_team": "Sacramento Kings",
+          "prediction": {
+            "predicted_winner": "Golden State Warriors",
+            "home_win_probability": 0.914,
+            "away_win_probability": 0.086,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 121,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Golden State Warriors's superior offensive rating (114.3 vs 110.2)",
+              "Golden State Warriors's stronger defensive rating (112.2 vs 119.8)",
+              "Golden State Warriors holds a stronger season record (52.8% vs 22.2%)",
+              "Golden State Warriors's superior net rating (+2.1 vs -9.6)"
+            ],
+            "home_net_rating": 2.1,
+            "away_net_rating": -9.6,
+            "rating_differential": 11.7
+          }
+        },
+        {
+          "match_id": "PAC_10",
+          "home_team": "LA Clippers",
+          "away_team": "Sacramento Kings",
+          "prediction": {
+            "predicted_winner": "LA Clippers",
+            "home_win_probability": 0.859,
+            "away_win_probability": 0.141,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 112,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "LA Clippers's superior offensive rating (115.6 vs 110.2)",
+              "LA Clippers's stronger defensive rating (115.8 vs 119.8)",
+              "LA Clippers holds a stronger season record (48.1% vs 22.2%)",
+              "LA Clippers's superior net rating (-0.2 vs -9.6)"
+            ],
+            "home_net_rating": -0.2,
+            "away_net_rating": -9.6,
+            "rating_differential": 9.4
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 114.2,
+        "average_def_rating": 115.3,
+        "average_win_pct": 0.489,
+        "strongest_team": "Los Angeles Lakers",
+        "weakest_team": "Sacramento Kings",
+        "best_offense": "Los Angeles Lakers",
+        "best_defense": "Golden State Warriors",
+        "playoff_teams": 3,
+        "competitiveness_index": 0.595
+      }
+    },
+    "southwest": {
+      "name": "Southwest Division",
+      "conference": "Western",
+      "teams": [
+        {
+          "team": "San Antonio Spurs",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.692,
+            "wins": 57,
+            "losses": 25,
+            "off_rating": 116.5,
+            "def_rating": 111.1,
+            "net_rating": 5.4,
+            "efficiency_pct": 58.6
+          },
+          "normalized_scores": {
+            "win_pct_score": 100.0,
+            "offensive_score": 88.6,
+            "defensive_score": 100.0,
+            "overall_rating": 96.6
+          },
+          "trend": "improving",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.268,
+              "off_rating": 109.7,
+              "def_rating": 119.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.268,
+              "off_rating": 109.3,
+              "def_rating": 115.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.415,
+              "off_rating": 113.5,
+              "def_rating": 116.3,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "Houston Rockets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.627,
+            "wins": 51,
+            "losses": 31,
+            "off_rating": 117.3,
+            "def_rating": 112.2,
+            "net_rating": 5.1,
+            "efficiency_pct": 56.8
+          },
+          "normalized_scores": {
+            "win_pct_score": 85.0,
+            "offensive_score": 100.0,
+            "defensive_score": 84.9,
+            "overall_rating": 89.5
+          },
+          "trend": "stable",
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.268,
+              "off_rating": 110.5,
+              "def_rating": 118.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.5,
+              "off_rating": 113.7,
+              "def_rating": 112.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.634,
+              "off_rating": 114.9,
+              "def_rating": 110.3,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Memphis Grizzlies",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.392,
+            "wins": 32,
+            "losses": 50,
+            "off_rating": 113.2,
+            "def_rating": 115.4,
+            "net_rating": -2.2,
+            "efficiency_pct": 56.9
+          },
+          "normalized_scores": {
+            "win_pct_score": 30.7,
+            "offensive_score": 41.4,
+            "defensive_score": 41.1,
+            "overall_rating": 37.0
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.622,
+              "off_rating": 114.7,
+              "def_rating": 110.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.329,
+              "off_rating": 106.8,
+              "def_rating": 113.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.585,
+              "off_rating": 117.2,
+              "def_rating": 112.6,
+              "made_playoffs": true
+            }
+          ]
+        },
+        {
+          "team": "Dallas Mavericks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.365,
+            "wins": 30,
+            "losses": 52,
+            "off_rating": 110.3,
+            "def_rating": 113.2,
+            "net_rating": -2.9,
+            "efficiency_pct": 56.6
+          },
+          "normalized_scores": {
+            "win_pct_score": 24.5,
+            "offensive_score": 0.0,
+            "defensive_score": 71.2,
+            "overall_rating": 31.2
+          },
+          "trend": "declining",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.463,
+              "off_rating": 115.9,
+              "def_rating": 116.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.61,
+              "off_rating": 117.0,
+              "def_rating": 114.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.476,
+              "off_rating": 113.7,
+              "def_rating": 115.0,
+              "made_playoffs": false
+            }
+          ]
+        },
+        {
+          "team": "New Orleans Pelicans",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.259,
+            "wins": 21,
+            "losses": 61,
+            "off_rating": 112.3,
+            "def_rating": 118.4,
+            "net_rating": -6.1,
+            "efficiency_pct": 56.2
+          },
+          "normalized_scores": {
+            "win_pct_score": 0.0,
+            "offensive_score": 28.6,
+            "defensive_score": 0.0,
+            "overall_rating": 8.6
+          },
+          "trend": "stable",
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2022-23",
+              "win_pct": 0.512,
+              "off_rating": 113.8,
+              "def_rating": 112.0,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.598,
+              "off_rating": 116.5,
+              "def_rating": 111.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2024-25",
+              "win_pct": 0.256,
+              "off_rating": 109.7,
+              "def_rating": 119.1,
+              "made_playoffs": false
+            }
+          ]
+        }
+      ],
+      "matches": [
+        {
+          "match_id": "SOU_01",
+          "home_team": "San Antonio Spurs",
+          "away_team": "Houston Rockets",
+          "prediction": {
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.575,
+            "away_win_probability": 0.425,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 118,
+              "away": 117
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "San Antonio Spurs's stronger defensive rating (111.1 vs 112.2)",
+              "San Antonio Spurs holds a stronger season record (69.2% vs 62.7%)"
+            ],
+            "home_net_rating": 5.4,
+            "away_net_rating": 5.1,
+            "rating_differential": 0.3
+          }
+        },
+        {
+          "match_id": "SOU_02",
+          "home_team": "San Antonio Spurs",
+          "away_team": "Memphis Grizzlies",
+          "prediction": {
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.853,
+            "away_win_probability": 0.147,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 122,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "San Antonio Spurs's superior offensive rating (116.5 vs 113.2)",
+              "San Antonio Spurs's stronger defensive rating (111.1 vs 115.4)",
+              "San Antonio Spurs holds a stronger season record (69.2% vs 39.2%)",
+              "San Antonio Spurs's superior net rating (+5.4 vs -2.2)"
+            ],
+            "home_net_rating": 5.4,
+            "away_net_rating": -2.2,
+            "rating_differential": 7.6
+          }
+        },
+        {
+          "match_id": "SOU_03",
+          "home_team": "San Antonio Spurs",
+          "away_team": "Dallas Mavericks",
+          "prediction": {
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.879,
+            "away_win_probability": 0.121,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 116,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "San Antonio Spurs's superior offensive rating (116.5 vs 110.3)",
+              "San Antonio Spurs's stronger defensive rating (111.1 vs 113.2)",
+              "San Antonio Spurs holds a stronger season record (69.2% vs 36.5%)",
+              "San Antonio Spurs's superior net rating (+5.4 vs -2.9)"
+            ],
+            "home_net_rating": 5.4,
+            "away_net_rating": -2.9,
+            "rating_differential": 8.3
+          }
+        },
+        {
+          "match_id": "SOU_04",
+          "home_team": "San Antonio Spurs",
+          "away_team": "New Orleans Pelicans",
+          "prediction": {
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.95,
+            "away_win_probability": 0.05,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 124,
+              "away": 115
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "San Antonio Spurs's superior offensive rating (116.5 vs 112.3)",
+              "San Antonio Spurs's stronger defensive rating (111.1 vs 118.4)",
+              "San Antonio Spurs holds a stronger season record (69.2% vs 25.9%)",
+              "San Antonio Spurs's superior net rating (+5.4 vs -6.1)"
+            ],
+            "home_net_rating": 5.4,
+            "away_net_rating": -6.1,
+            "rating_differential": 11.5
+          }
+        },
+        {
+          "match_id": "SOU_05",
+          "home_team": "Houston Rockets",
+          "away_team": "Memphis Grizzlies",
+          "prediction": {
+            "predicted_winner": "Houston Rockets",
+            "home_win_probability": 0.796,
+            "away_win_probability": 0.204,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 115,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Houston Rockets's superior offensive rating (117.3 vs 113.2)",
+              "Houston Rockets's stronger defensive rating (112.2 vs 115.4)",
+              "Houston Rockets holds a stronger season record (62.7% vs 39.2%)",
+              "Houston Rockets's superior net rating (+5.1 vs -2.2)"
+            ],
+            "home_net_rating": 5.1,
+            "away_net_rating": -2.2,
+            "rating_differential": 7.3
+          }
+        },
+        {
+          "match_id": "SOU_06",
+          "home_team": "Houston Rockets",
+          "away_team": "Dallas Mavericks",
+          "prediction": {
+            "predicted_winner": "Houston Rockets",
+            "home_win_probability": 0.825,
+            "away_win_probability": 0.175,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 116,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Houston Rockets's superior offensive rating (117.3 vs 110.3)",
+              "Houston Rockets holds a stronger season record (62.7% vs 36.5%)",
+              "Houston Rockets's superior net rating (+5.1 vs -2.9)"
+            ],
+            "home_net_rating": 5.1,
+            "away_net_rating": -2.9,
+            "rating_differential": 8.0
+          }
+        },
+        {
+          "match_id": "SOU_07",
+          "home_team": "Houston Rockets",
+          "away_team": "New Orleans Pelicans",
+          "prediction": {
+            "predicted_winner": "Houston Rockets",
+            "home_win_probability": 0.94,
+            "away_win_probability": 0.06,
+            "confidence": "very_high",
+            "predicted_score": {
+              "home": 123,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Houston Rockets's superior offensive rating (117.3 vs 112.3)",
+              "Houston Rockets's stronger defensive rating (112.2 vs 118.4)",
+              "Houston Rockets holds a stronger season record (62.7% vs 25.9%)",
+              "Houston Rockets's superior net rating (+5.1 vs -6.1)"
+            ],
+            "home_net_rating": 5.1,
+            "away_net_rating": -6.1,
+            "rating_differential": 11.2
+          }
+        },
+        {
+          "match_id": "SOU_08",
+          "home_team": "Memphis Grizzlies",
+          "away_team": "Dallas Mavericks",
+          "prediction": {
+            "predicted_winner": "Memphis Grizzlies",
+            "home_win_probability": 0.536,
+            "away_win_probability": 0.464,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 114,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Memphis Grizzlies's superior offensive rating (113.2 vs 110.3)",
+              "Dallas Mavericks's stronger defensive rating (113.2 vs 115.4)"
+            ],
+            "home_net_rating": -2.2,
+            "away_net_rating": -2.9,
+            "rating_differential": 0.7
+          }
+        },
+        {
+          "match_id": "SOU_09",
+          "home_team": "Memphis Grizzlies",
+          "away_team": "New Orleans Pelicans",
+          "prediction": {
+            "predicted_winner": "Memphis Grizzlies",
+            "home_win_probability": 0.687,
+            "away_win_probability": 0.313,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 116,
+              "away": 112
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Memphis Grizzlies's stronger defensive rating (115.4 vs 118.4)",
+              "Memphis Grizzlies holds a stronger season record (39.2% vs 25.9%)",
+              "Memphis Grizzlies's superior net rating (-2.2 vs -6.1)"
+            ],
+            "home_net_rating": -2.2,
+            "away_net_rating": -6.1,
+            "rating_differential": 3.9
+          }
+        },
+        {
+          "match_id": "SOU_10",
+          "home_team": "Dallas Mavericks",
+          "away_team": "New Orleans Pelicans",
+          "prediction": {
+            "predicted_winner": "Dallas Mavericks",
+            "home_win_probability": 0.654,
+            "away_win_probability": 0.346,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 117,
+              "away": 114
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "New Orleans Pelicans's superior offensive rating (112.3 vs 110.3)",
+              "Dallas Mavericks's stronger defensive rating (113.2 vs 118.4)",
+              "Dallas Mavericks holds a stronger season record (36.5% vs 25.9%)",
+              "Dallas Mavericks's superior net rating (-2.9 vs -6.1)"
+            ],
+            "home_net_rating": -2.9,
+            "away_net_rating": -6.1,
+            "rating_differential": 3.2
+          }
+        }
+      ],
+      "division_analytics": {
+        "average_off_rating": 113.9,
+        "average_def_rating": 114.1,
+        "average_win_pct": 0.467,
+        "strongest_team": "San Antonio Spurs",
+        "weakest_team": "New Orleans Pelicans",
+        "best_offense": "Houston Rockets",
+        "best_defense": "San Antonio Spurs",
+        "playoff_teams": 2,
+        "competitiveness_index": 0.567
+      }
+    }
+  }
+}
