@@ -179,6 +179,19 @@ function renderMatchCard(match) {
     html += 'Predicted Winner: ' + p.predicted_winner;
     html += '</div>';
 
+    // Probability bar chart
+    html += '<div class="oracle-prob-chart">';
+    html += '<div class="chart-label">Win Probability</div>';
+    html += '<div class="oracle-prob-bar-wrap">';
+    html += '<div class="oracle-prob-bar-home" style="width:' + homeProb + '%"><span>' + homeProb + '%</span></div>';
+    html += '<div class="oracle-prob-bar-away" style="width:' + awayProb + '%"><span>' + awayProb + '%</span></div>';
+    html += '</div>';
+    html += '<div class="oracle-prob-legend">';
+    html += '<span class="legend-item"><span class="legend-dot home"></span>' + shortenTeam(match.home_team) + '</span>';
+    html += '<span class="legend-item"><span class="legend-dot away"></span>' + shortenTeam(match.away_team) + '</span>';
+    html += '</div>';
+    html += '</div>';
+
     html += '</div>';
     return html;
 }

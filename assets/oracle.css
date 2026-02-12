@@ -434,8 +434,8 @@
 
 .oracle-matches-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
 }
 
 /* --- Match Card --- */
@@ -472,7 +472,7 @@
 .oracle-match-teams {
     display: flex;
     align-items: center;
-    padding: 12px;
+    padding: 16px 20px;
 }
 
 .oracle-match-team {
@@ -481,7 +481,7 @@
 }
 
 .oracle-match-team .team-name {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     color: #111;
     margin-bottom: 2px;
@@ -490,7 +490,7 @@
 }
 
 .oracle-match-team .team-prob {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 800;
     letter-spacing: -0.5px;
 }
@@ -513,10 +513,10 @@
 
 .oracle-match-score {
     text-align: center;
-    padding: 6px 12px;
+    padding: 8px 20px;
     background: #f3f3f3;
     border-top: 1px solid #e5e7eb;
-    font-size: 10px;
+    font-size: 11px;
     color: #666;
     letter-spacing: 0.3px;
 }
@@ -524,20 +524,20 @@
 .oracle-match-score .predicted-score {
     font-weight: 800;
     color: #111;
-    font-size: 13px;
+    font-size: 15px;
     margin-left: 4px;
 }
 
 .oracle-match-analysis {
-    padding: 8px 12px;
+    padding: 10px 20px;
     border-top: 1px solid #e5e7eb;
     background: #fafafa;
 }
 
 .oracle-match-analysis .factor {
-    font-size: 10px;
+    font-size: 11px;
     color: #555;
-    padding: 2px 0 2px 12px;
+    padding: 3px 0 3px 14px;
     position: relative;
     line-height: 1.5;
 }
@@ -561,6 +561,88 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-top: 1px solid #c3e6cb;
+}
+
+/* --- Probability Bar Chart --- */
+.oracle-prob-chart {
+    padding: 12px 20px 16px;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.oracle-prob-chart .chart-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #8e9196;
+    margin-bottom: 8px;
+}
+
+.oracle-prob-bar-wrap {
+    display: flex;
+    height: 28px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.oracle-prob-bar-home {
+    background: #166b2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease;
+    position: relative;
+    min-width: 40px;
+}
+
+.oracle-prob-bar-away {
+    background: #C8102E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.5s ease;
+    position: relative;
+    min-width: 40px;
+}
+
+.oracle-prob-bar-home span,
+.oracle-prob-bar-away span {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.oracle-prob-legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 10px;
+    color: #555;
+}
+
+.oracle-prob-legend .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 600;
+}
+
+.oracle-prob-legend .legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+.oracle-prob-legend .legend-dot.home {
+    background: #166b2a;
+}
+
+.oracle-prob-legend .legend-dot.away {
+    background: #C8102E;
 }
 
 /* --- Confidence Badges --- */
@@ -615,10 +697,6 @@
 
     .oracle-analytics-bar {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .oracle-matches-grid {
-        grid-template-columns: 1fr;
     }
 
     .oracle-modal-header h2 {
