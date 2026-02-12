@@ -1,6 +1,51 @@
 /* ===== NBA Oracle AI - Complete Styles ===== */
 
-/* --- Sidebar Widget Button --- */
+/* --- LIVE Badge in Playoff Predictor --- */
+.oracle-live-badge {
+    background: #C8102E;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    animation: oracle-pulse 2s infinite;
+}
+
+@keyframes oracle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* --- View Division Predictions Button --- */
+.oracle-division-btn {
+    display: block;
+    width: 100%;
+    background: #C8102E;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.oracle-division-btn:hover {
+    background: #a00d24;
+    transform: translateY(-1px);
+}
+
+.oracle-division-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Sidebar Widget Button (legacy - can be removed) --- */
 .oracle-predictor-widget {
     border-top: 4px solid #C8102E;
     background: linear-gradient(135deg, #1D428A 0%, #17336b 100%);

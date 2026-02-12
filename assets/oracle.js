@@ -210,10 +210,14 @@ function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-// Old floating widget (kept for backward compatibility)
+// Playoff Predictor widget with LIVE badge + Division Predictions button
 document.addEventListener('DOMContentLoaded', function() {
     let container = document.getElementById('oracle-widget');
-    if (!container) return; // Skip old widget if element doesn't exist
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'oracle-widget';
+        document.body.appendChild(container);
+    }
 
     fetch('./oracle-data.json')
         .then(function(response) { return response.json(); })
@@ -221,7 +225,10 @@ document.addEventListener('DOMContentLoaded', function() {
             let html = '<div class="nba-oracle-container">';
             html += '<div class="nba-oracle-header">';
             html += '<h2>Playoff Predictor</h2>';
+            html += '<div style="display:flex;align-items:center;gap:8px;">';
+            html += '<span class="oracle-live-badge">LIVE</span>';
             html += '<span style="font-size:10px;">Acc: ' + data.oracle_metadata.global_accuracy + '</span>';
+            html += '</div>';
             html += '</div>';
             html += '<table class="nba-oracle-table">';
 
@@ -238,7 +245,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 html += '</td></tr>';
             });
 
-            html += '</table></div>';
+            html += '</table>';
+            html += '<button class="oracle-division-btn" onclick="openOracleModal()">';
+            html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:6px;">';
+            html += '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>';
+            html += '</svg>';
+            html += 'View Division Predictions';
+            html += '</button>';
+            html += '</div>';
             container.innerHTML = html;
         })
         .catch(function(err) {
