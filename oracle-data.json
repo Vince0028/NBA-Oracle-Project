@@ -6,7 +6,7 @@
     },
     "teams": [
         {
-            "id": "BOS",
+            "id": "BOSS",
             "name": "Boston Celtics",
             "win_prob": 0.99,
             "conf": "East"
