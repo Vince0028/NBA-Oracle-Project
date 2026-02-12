@@ -1,135 +1,151 @@
-/* ===== NBA Oracle AI - Complete Styles ===== */
+/* ===== NBA Oracle AI — NBA.com Design System ===== */
 
-/* --- LIVE Badge in Playoff Predictor --- */
+/* --- Floating Sidebar Widget --- */
+.nba-oracle-container {
+    background: #fff;
+    border-top: 3px solid #C8102E;
+    border-radius: 4px;
+    font-family: "Roboto", Arial, sans-serif;
+    max-width: 380px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.nba-oracle-header {
+    background: #000;
+    color: #fff;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nba-oracle-header h2 {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
 .oracle-live-badge {
     background: #C8102E;
     color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    animation: oracle-pulse 2s infinite;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 2px;
+    letter-spacing: 1.2px;
+    animation: oracle-pulse 2s ease-in-out infinite;
 }
 
 @keyframes oracle-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
+    50% { opacity: 0.45; }
+}
+
+.nba-oracle-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nba-oracle-row {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.15s;
+}
+
+.nba-oracle-row:last-child {
+    border-bottom: none;
+}
+
+.nba-oracle-row:hover {
+    background: #f8f9fa;
+}
+
+.nba-oracle-cell {
+    padding: 7px 14px;
+    font-size: 12px;
+    color: #111;
+}
+
+.nba-oracle-cell strong {
+    color: #555;
+    font-weight: 700;
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+.prob-badge {
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    display: inline-block;
+    min-width: 34px;
+    text-align: center;
+}
+
+.status-lock {
+    background: #dbf0e0;
+    color: #166b2a;
+}
+
+.status-contend {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-out {
+    background: #f8d7da;
+    color: #721c24;
 }
 
 /* --- View Division Predictions Button --- */
 .oracle-division-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     background: #C8102E;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 9px 14px;
+    font-size: 11px;
     font-weight: 700;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: 0.5px;
+    font-family: "Roboto", Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    border-radius: 6px;
-    transition: background 0.2s, transform 0.1s;
-    text-align: center;
-    margin-top: 10px;
+    transition: background 0.2s;
+    border-radius: 0;
 }
 
 .oracle-division-btn:hover {
-    background: #a00d24;
-    transform: translateY(-1px);
+    background: #a50d24;
 }
 
-.oracle-division-btn:active {
-    transform: translateY(0);
+.oracle-division-btn svg {
+    margin-right: 6px;
 }
 
-/* --- Sidebar Widget Button (legacy - can be removed) --- */
-.oracle-predictor-widget {
-    border-top: 4px solid #C8102E;
-    background: linear-gradient(135deg, #1D428A 0%, #17336b 100%);
-    border-radius: 0 0 8px 8px;
-    overflow: hidden;
-}
-
-.oracle-widget-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 8px 0;
-}
-
-.oracle-widget-title {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    margin: 0;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.oracle-widget-badge {
-    background: #C8102E;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    animation: oracle-pulse 2s infinite;
-}
-
-@keyframes oracle-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-.oracle-widget-desc {
-    color: rgba(255,255,255,0.75);
-    font-size: 12px;
-    margin: 0 0 12px 0;
-    font-family: "Roboto", sans-serif;
-}
-
-.oracle-open-button {
-    display: block;
-    width: 100%;
-    background: #C8102E;
-    color: white;
-    border: none;
-    padding: 12px 16px;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background 0.2s, transform 0.1s;
-    text-align: center;
-}
-
-.oracle-open-button:hover {
-    background: #a00d24;
-    transform: translateY(-1px);
-}
-
-.oracle-open-button:active {
-    transform: translateY(0);
-}
-
-/* --- Full-Screen Modal --- */
+/* ============================================
+   FULL-SCREEN MODAL — NBA.com Style
+   ============================================ */
 .oracle-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.65);
     z-index: 10000;
     overflow-y: auto;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    animation: oracle-fadeIn 0.3s ease;
+    font-family: "Roboto", Arial, sans-serif;
+    animation: oracle-fadeIn 0.2s ease;
 }
 
 @keyframes oracle-fadeIn {
@@ -138,18 +154,19 @@
 }
 
 .oracle-modal-content {
-    max-width: 1100px;
-    margin: 30px auto;
-    background: #fff;
-    border-radius: 12px;
+    max-width: 1080px;
+    margin: 20px auto;
+    background: #f3f3f3;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
 }
 
+/* Modal Header */
 .oracle-modal-header {
-    background: linear-gradient(135deg, #1D428A 0%, #0d2240 100%);
-    color: white;
-    padding: 18px 24px;
+    background: #000;
+    color: #fff;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -158,26 +175,37 @@
 .oracle-modal-header-left {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .oracle-modal-header h2 {
     margin: 0;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+}
+
+.oracle-header-badge {
+    background: #C8102E;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 2px;
+    letter-spacing: 1px;
 }
 
 .oracle-modal-close {
     background: none;
     border: none;
-    color: white;
-    font-size: 30px;
+    color: #fff;
+    font-size: 26px;
     cursor: pointer;
     line-height: 1;
     padding: 0 4px;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.5;
+    transition: opacity 0.15s;
 }
 
 .oracle-modal-close:hover {
@@ -187,239 +215,264 @@
 /* --- Division Tabs --- */
 .oracle-division-tabs {
     display: flex;
-    background: #f5f5f5;
-    border-bottom: 2px solid #e0e0e0;
+    background: #fff;
+    border-bottom: 1px solid #e5e7eb;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
 
 .oracle-tab {
     flex: 1;
-    padding: 12px 8px;
+    padding: 11px 8px 9px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    color: #666;
+    letter-spacing: 0.8px;
+    color: #8e9196;
     background: transparent;
     border: none;
     cursor: pointer;
     border-bottom: 3px solid transparent;
-    transition: all 0.2s;
+    transition: all 0.15s;
     white-space: nowrap;
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     text-transform: uppercase;
 }
 
 .oracle-tab:hover {
-    color: #1D428A;
-    background: #e8ecf4;
+    color: #111;
+    background: #fafafa;
 }
 
 .oracle-tab.active {
-    color: #1D428A;
+    color: #000;
     border-bottom-color: #C8102E;
-    background: #fff;
 }
 
 .oracle-tab .tab-conference {
     display: block;
     font-size: 9px;
     font-weight: 400;
-    color: #999;
+    color: #bbb;
     margin-top: 2px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .oracle-tab.active .tab-conference {
-    color: #1D428A;
+    color: #666;
 }
 
 /* --- Division Content --- */
 .oracle-division-content {
-    padding: 24px;
+    padding: 20px;
 }
 
 .oracle-loading {
     text-align: center;
-    padding: 60px;
-    color: #999;
-    font-size: 14px;
+    padding: 48px;
+    color: #8e9196;
+    font-size: 13px;
 }
 
-/* Division Analytics Summary */
+/* --- Analytics Summary Cards --- */
 .oracle-analytics-bar {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .oracle-stat-card {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 14px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 12px 6px;
     text-align: center;
-    border: 1px solid #e9ecef;
+    border: 1px solid #e5e7eb;
 }
 
 .oracle-stat-card .stat-label {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #888;
-    letter-spacing: 0.5px;
+    color: #8e9196;
+    letter-spacing: 0.4px;
     margin-bottom: 4px;
 }
 
 .oracle-stat-card .stat-value {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 800;
-    color: #1D428A;
+    color: #111;
 }
 
-.oracle-stat-card .stat-value.red {
-    color: #C8102E;
-}
-
-/* Teams Standings */
+/* --- Teams Standings Table --- */
 .oracle-teams-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
 }
 
 .oracle-teams-table th {
-    background: #1D428A;
-    color: white;
-    padding: 10px 12px;
+    background: #000;
+    color: #fff;
+    padding: 8px 12px;
     text-align: left;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.oracle-teams-table th:first-child {
-    border-radius: 6px 0 0 0;
-}
-
-.oracle-teams-table th:last-child {
-    border-radius: 0 6px 0 0;
+    letter-spacing: 0.8px;
 }
 
 .oracle-teams-table td {
-    padding: 10px 12px;
-    font-size: 13px;
-    border-bottom: 1px solid #f0f0f0;
-    color: #333;
+    padding: 7px 12px;
+    font-size: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111;
+}
+
+.oracle-teams-table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 .oracle-teams-table tr:hover {
-    background: #f8f9ff;
+    background: #f8f9fa;
 }
 
 .oracle-teams-table .team-name {
     font-weight: 700;
+    font-size: 12px;
 }
 
 .oracle-teams-table .playoff-badge {
     display: inline-block;
-    font-size: 9px;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 3px;
+    font-size: 8px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 2px;
     margin-left: 6px;
     vertical-align: middle;
+    letter-spacing: 0.5px;
 }
 
 .playoff-badge.clinched {
-    background: #e6f4ea;
-    color: #1e7e34;
+    background: #dbf0e0;
+    color: #166b2a;
 }
 
 .playoff-badge.eliminated {
-    background: #fdeaea;
-    color: #c8102e;
+    background: #f8d7da;
+    color: #721c24;
 }
 
 .trend-badge {
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 700;
     padding: 2px 6px;
-    border-radius: 3px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .trend-badge.improving {
-    background: #e6f4ea;
-    color: #1e7e34;
+    background: #dbf0e0;
+    color: #166b2a;
 }
 
 .trend-badge.declining {
-    background: #fdeaea;
-    color: #c8102e;
+    background: #f8d7da;
+    color: #721c24;
 }
 
 .trend-badge.stable {
-    background: #f0f0f0;
-    color: #666;
+    background: #e5e7eb;
+    color: #555;
 }
 
-/* Matches Section */
+/* --- Rating Bar --- */
+.oracle-rating-bar {
+    width: 56px;
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.oracle-rating-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+}
+
+.oracle-rating-fill.high {
+    background: #166b2a;
+}
+
+.oracle-rating-fill.mid {
+    background: #d4a017;
+}
+
+.oracle-rating-fill.low {
+    background: #C8102E;
+}
+
+/* --- Match Predictions Section --- */
 .oracle-matches-title {
-    font-size: 16px;
-    font-weight: 800;
-    color: #1D428A;
-    margin: 0 0 16px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 12px 0;
     padding-bottom: 8px;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 1px solid #e5e7eb;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .oracle-matches-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+    gap: 10px;
 }
 
+/* --- Match Card --- */
 .oracle-match-card {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
     overflow: hidden;
-    transition: box-shadow 0.2s, transform 0.15s;
     background: #fff;
+    transition: box-shadow 0.15s;
 }
 
 .oracle-match-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .oracle-match-header {
-    background: #1D428A;
-    color: white;
-    padding: 10px 14px;
+    background: #000;
+    color: #fff;
+    padding: 7px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .oracle-match-header .match-id {
-    opacity: 0.7;
-    font-size: 10px;
+    opacity: 0.4;
+    font-size: 9px;
 }
 
 .oracle-match-teams {
     display: flex;
     align-items: center;
-    padding: 14px;
-    gap: 8px;
+    padding: 12px;
 }
 
 .oracle-match-team {
@@ -428,97 +481,107 @@
 }
 
 .oracle-match-team .team-name {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 4px;
+    color: #111;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .oracle-match-team .team-prob {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .oracle-match-team .team-prob.favored {
-    color: #1e7e34;
+    color: #166b2a;
 }
 
 .oracle-match-team .team-prob.underdog {
-    color: #999;
+    color: #bbb;
 }
 
 .oracle-match-vs {
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 800;
     color: #ccc;
-    padding: 0 4px;
+    padding: 0 6px;
+    text-transform: uppercase;
 }
 
 .oracle-match-score {
     text-align: center;
-    padding: 8px 14px;
-    background: #f8f9fa;
-    border-top: 1px solid #eee;
-    font-size: 12px;
+    padding: 6px 12px;
+    background: #f3f3f3;
+    border-top: 1px solid #e5e7eb;
+    font-size: 10px;
     color: #666;
+    letter-spacing: 0.3px;
 }
 
 .oracle-match-score .predicted-score {
     font-weight: 800;
-    color: #333;
-    font-size: 15px;
+    color: #111;
+    font-size: 13px;
+    margin-left: 4px;
 }
 
 .oracle-match-analysis {
-    padding: 10px 14px;
-    border-top: 1px solid #eee;
+    padding: 8px 12px;
+    border-top: 1px solid #e5e7eb;
+    background: #fafafa;
 }
 
 .oracle-match-analysis .factor {
-    font-size: 11px;
+    font-size: 10px;
     color: #555;
-    padding: 3px 0;
-    padding-left: 14px;
+    padding: 2px 0 2px 12px;
     position: relative;
+    line-height: 1.5;
 }
 
 .oracle-match-analysis .factor::before {
-    content: "▸";
+    content: "›";
     position: absolute;
-    left: 0;
+    left: 2px;
     color: #C8102E;
-    font-size: 10px;
+    font-weight: 800;
+    font-size: 11px;
 }
 
 .oracle-match-winner {
-    background: linear-gradient(135deg, #e6f4ea 0%, #d4edda 100%);
-    padding: 8px 14px;
+    background: #dbf0e0;
+    padding: 7px 12px;
     text-align: center;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    color: #1e7e34;
+    color: #166b2a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     border-top: 1px solid #c3e6cb;
 }
 
-/* Confidence badges */
+/* --- Confidence Badges --- */
 .confidence-badge {
     display: inline-block;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-size: 10px;
-    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-size: 9px;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .confidence-badge.very_high {
-    background: #1e7e34;
-    color: white;
+    background: #166b2a;
+    color: #fff;
 }
 
 .confidence-badge.high {
     background: #28a745;
-    color: white;
+    color: #fff;
 }
 
 .confidence-badge.medium {
@@ -527,116 +590,14 @@
 }
 
 .confidence-badge.low {
-    background: #e0e0e0;
+    background: #e5e7eb;
     color: #666;
 }
 
-/* Rating bar */
-.oracle-rating-bar {
-    width: 100%;
-    height: 6px;
-    background: #e9ecef;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 4px;
-}
-
-.oracle-rating-fill {
-    height: 100%;
-    border-radius: 3px;
-    transition: width 0.5s ease;
-}
-
-.oracle-rating-fill.high {
-    background: linear-gradient(90deg, #1e7e34, #28a745);
-}
-
-.oracle-rating-fill.mid {
-    background: linear-gradient(90deg, #ffc107, #e0a800);
-}
-
-.oracle-rating-fill.low {
-    background: linear-gradient(90deg, #dc3545, #c8102e);
-}
-
-/* Old floating widget - keep for backward compat */
-.nba-oracle-container {
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid #1D428A;
-    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    max-width: 400px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.nba-oracle-header {
-    background-color: #1D428A;
-    color: white;
-    padding: 12px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nba-oracle-header h2 {
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.nba-oracle-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.nba-oracle-row {
-    border-bottom: 1px solid #f0f0f0;
-    transition: background-color 0.2s;
-}
-
-.nba-oracle-row:hover {
-    background-color: #f9f9f9;
-}
-
-.nba-oracle-cell {
-    padding: 10px 16px;
-    font-size: 13px;
-    color: #222;
-}
-
-.prob-badge {
-    font-weight: 700;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-}
-
-.status-lock {
-    background: #e6f4ea;
-    color: #1e7e34;
-}
-
-.status-contend {
-    background: #fff4e5;
-    color: #b7791f;
-}
-
-.status-out {
-    background: #fdeaea;
-    color: #c8102e;
-}
-
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .oracle-modal-content {
-        margin: 10px;
-        border-radius: 8px;
+        margin: 8px;
     }
 
     .oracle-division-tabs {
@@ -644,19 +605,41 @@
     }
 
     .oracle-tab {
-        font-size: 10px;
-        padding: 10px 6px;
+        font-size: 9px;
+        padding: 10px 5px 8px;
+    }
+
+    .oracle-division-content {
+        padding: 12px;
+    }
+
+    .oracle-analytics-bar {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .oracle-matches-grid {
         grid-template-columns: 1fr;
     }
 
-    .oracle-analytics-bar {
-        grid-template-columns: repeat(2, 1fr);
+    .oracle-modal-header h2 {
+        font-size: 11px;
     }
 
-    .oracle-modal-header h2 {
-        font-size: 14px;
+    .oracle-teams-table th,
+    .oracle-teams-table td {
+        padding: 6px 8px;
+        font-size: 10px;
+    }
+
+    .nba-oracle-container {
+        max-width: calc(100% - 24px);
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .oracle-analytics-bar {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
