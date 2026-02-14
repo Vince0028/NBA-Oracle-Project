@@ -34,13 +34,13 @@ CORE CONCEPTS EXPLAINED:
 
 4. MATCH PREDICTION (Head-to-Head)
    - To predict who wins a game between Team A vs Team B:
-     Step 1: Get each team's season win percentage (e.g., BOS=0.642, GSW=0.481)
+     Step 1: Get each team's season win percentage (e.g., BOS=0.642, GSW=0.528)
      Step 2: Normalize to a head-to-head probability:
-             total = 0.642 + 0.481 = 1.123
-             BOS chance = 0.642 / 1.123 = 57.2%
-             GSW chance = 0.481 / 1.123 = 42.8%
+             total = 0.642 + 0.528 = 1.170
+             BOS chance = 0.642 / 1.170 = 54.9%
+             GSW chance = 0.528 / 1.170 = 45.1%
      Step 3: Higher chance = projected winner (BOS wins)
-     Step 4: Confidence = |57.2% - 42.8%| = 14.3% gap
+     Step 4: Confidence = |54.9% - 45.1%| = 9.7% gap
 
 ==============================================================================
 """

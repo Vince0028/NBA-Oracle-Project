@@ -21,11 +21,11 @@
  *
  *   Formula:  teamChance = teamWinPct / (teamAWinPct + teamBWinPct)
  *
- *   Example:  BOS (0.642) vs GSW (0.481)
- *             total       = 0.642 + 0.481 = 1.123
- *             BOS chance  = 0.642 / 1.123 = 57.2%  ← higher = projected winner
- *             GSW chance  = 0.481 / 1.123 = 42.8%
- *             confidence  = |57.2 - 42.8| = 14.3 points
+ *   Example:  BOS (0.642) vs GSW (0.528)
+ *             total       = 0.642 + 0.528 = 1.170
+ *             BOS chance  = 0.642 / 1.170 = 54.9%  ← higher = projected winner
+ *             GSW chance  = 0.528 / 1.170 = 45.1%
+ *             confidence  = |54.9 - 45.1| = 9.7 points
  *
  *   WHY NORMALIZE? Because raw win percentages don't sum to 100%.
  *   Normalization converts them into a proper probability distribution
