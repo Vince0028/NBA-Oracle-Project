@@ -526,6 +526,14 @@
     line-height: 1.1;
 }
 
+.oracle-match-team .team-prob.favored {
+    color: #166b2a;
+}
+
+.oracle-match-team .team-prob.underdog {
+    color: #bbb;
+}
+
 .oracle-match-team .team-stats {
     font-size: 10px;
     color: #666;

@@ -135,20 +135,20 @@ function renderDivision(divKey) {
         <strong>Model Confidence:</strong> ${oracleData.metadata?.global_accuracy || 'N/A'}
     </div>`;
 
-    // --- Teams Table ---
+    // --- Teams Table (with Off Rtg, Def Rtg columns) ---
     html += '<table class="oracle-teams-table">';
     html += '<thead><tr>';
-    html += '<th>Rank</th><th>Team</th><th>Win Probability</th><th>Status</th>';
+    html += '<th>Rank</th><th>Team</th><th>Win Probability</th><th>Off Rtg</th><th>Def Rtg</th><th>Status</th>';
     html += '</tr></thead><tbody>';
 
     div.teams.forEach((team, i) => {
         let statusClass = 'status-out';
         let statusText = 'Eliminated';
 
-        if (team.win_prob >= 0.8) {
+        if (team.win_prob >= 0.60) {
             statusClass = 'status-lock';
             statusText = 'Lock';
-        } else if (team.win_prob >= 0.35) {
+        } else if (team.win_prob >= 0.40) {
             statusClass = 'status-contend';
             statusText = 'Contender';
         }
@@ -168,6 +168,10 @@ function renderDivision(divKey) {
             </div>
         </td>`;
 
+        // Off Rtg and Def Rtg columns
+        html += `<td style="font-weight:600; font-size:12px;">${team.off_rtg || '-'}</td>`;
+        html += `<td style="font-weight:600; font-size:12px;">${team.def_rtg || '-'}</td>`;
+
         html += `<td><span class="prob-badge ${statusClass}">${statusText}</span></td>`;
         html += '</tr>';
     });
@@ -176,7 +180,6 @@ function renderDivision(divKey) {
     html += '</tbody></table>';
 
     // --- Upcoming Matches (Filtered by Division) ---
-    // A match shows if EITHER team is in this division
     if (oracleData.matches && oracleData.matches.length > 0) {
         const divMatches = oracleData.matches.filter(m => {
             const team1Div = TEAM_TO_DIVISION[m.ids[0]];
@@ -185,50 +188,56 @@ function renderDivision(divKey) {
         });
 
         if (divMatches.length > 0) {
-            html += '<h3 style="margin-top:20px; font-size:14px; text-transform:uppercase; border-bottom:1px solid #ddd; padding-bottom:5px;">Tonight\'s Predictions</h3>';
+            html += '<h3 style="margin-top:24px; font-size:14px; text-transform:uppercase; border-bottom:2px solid #1D428A; padding-bottom:8px; letter-spacing:1px;">Tonight\'s Predictions</h3>';
             html += '<div class="oracle-matches-grid">';
 
             divMatches.forEach(match => {
                 const winner = match.projected_winner;
-                // Calculate pseudo-probabilities for the bar if not present (simplified logic)
                 const conf = match.confidence || 0;
                 let homeProb = 50;
                 let awayProb = 50;
 
-                if (winner === match.ids[1]) { // Home wins
+                if (winner === match.ids[1]) {
                     homeProb += (conf / 2);
                     awayProb -= (conf / 2);
-                } else { // Away wins
+                } else {
                     awayProb += (conf / 2);
                     homeProb -= (conf / 2);
                 }
 
-                // Clamp
                 homeProb = Math.min(Math.max(homeProb, 1), 99).toFixed(0);
                 awayProb = Math.min(Math.max(awayProb, 1), 99).toFixed(0);
 
                 // Stats
-                const homeStats = match.stats[match.ids[1]];
-                const awayStats = match.stats[match.ids[0]];
+                const homeStats = match.stats ? match.stats[match.ids[1]] || { off: 0, def: 0 } : { off: 0, def: 0 };
+                const awayStats = match.stats ? match.stats[match.ids[0]] || { off: 0, def: 0 } : { off: 0, def: 0 };
+
+                // Winner badges - only show above the projected winner
+                const awayIsWinner = winner === match.ids[0];
+                const homeIsWinner = winner === match.ids[1];
+                const awayBadge = awayIsWinner ? '<div class="oracle-winner-label">\u2605 PROJECTED WINNER</div>' : '<div style="height:19px;"></div>';
+                const homeBadge = homeIsWinner ? '<div class="oracle-winner-label">\u2605 PROJECTED WINNER</div>' : '<div style="height:19px;"></div>';
 
                 html += `
                 <div class="oracle-match-card">
                     <div class="oracle-match-header">
-                        <span>${match.time} ET</span>
+                        <span>\uD83C\uDFC0 ${match.time} ET</span>
                         <span class="match-id">Azure ML v2.1</span>
                     </div>
                     
                     <div class="oracle-match-teams">
                         <div class="oracle-match-team">
+                            ${awayBadge}
                             <div class="team-name">${match.ids[0]}</div>
-                            <div class="team-prob ${awayProb > homeProb ? 'favored' : 'underdog'}">${awayProb}%</div>
-                            <div style="font-size:9px; color:#888;">OFF ${awayStats.off}</div>
+                            <div class="team-prob ${awayIsWinner ? 'favored' : 'underdog'}">${awayProb}%</div>
+                            <div class="team-stats">OFF ${awayStats.off} | DEF ${awayStats.def}</div>
                         </div>
                         <div class="oracle-match-vs">VS</div>
                         <div class="oracle-match-team">
+                            ${homeBadge}
                             <div class="team-name">${match.ids[1]}</div>
-                            <div class="team-prob ${homeProb > awayProb ? 'favored' : 'underdog'}">${homeProb}%</div>
-                             <div style="font-size:9px; color:#888;">OFF ${homeStats.off}</div>
+                            <div class="team-prob ${homeIsWinner ? 'favored' : 'underdog'}">${homeProb}%</div>
+                            <div class="team-stats">OFF ${homeStats.off} | DEF ${homeStats.def}</div>
                         </div>
                     </div>
                     
@@ -237,15 +246,15 @@ function renderDivision(divKey) {
                             <div class="oracle-prob-bar-away" style="width:${awayProb}%"></div>
                             <div class="oracle-prob-bar-home" style="width:${homeProb}%"></div>
                         </div>
+                        <div class="oracle-prob-legend">
+                            <div class="legend-item"><span class="legend-dot away"></span> ${match.ids[0]}</div>
+                            <div class="legend-item"><span class="legend-dot home"></span> ${match.ids[1]}</div>
+                        </div>
                     </div>
 
                     <div class="oracle-match-analysis">
-                        <div style="font-size:10px; font-weight:700; color:#000; margin-bottom:4px; text-transform:uppercase;">AI Analysis</div>
-                        <div class="factor">${match.reasoning}</div>
-                    </div>
-
-                    <div class="oracle-match-winner">
-                        Projected Winner: ${winner}
+                        <div style="font-size:10px; font-weight:700; color:#1D428A; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">\uD83E\uDDE0 AI Analysis</div>
+                        <div class="factor">${match.reasoning || 'Overall Win Probability'}</div>
                     </div>
                 </div>`;
             });
