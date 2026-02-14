@@ -484,44 +484,100 @@
 .oracle-match-teams {
     display: flex;
     align-items: center;
-    padding: 16px 20px;
+    padding: 20px 20px;
+    position: relative;
 }
 
 .oracle-match-team {
     flex: 1;
     text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Winner Label above team */
+.oracle-winner-label {
+    display: inline-block;
+    background: #166b2a;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 4px rgba(22, 107, 42, 0.3);
 }
 
 .oracle-match-team .team-name {
-    font-size: 13px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 800;
     color: #111;
     margin-bottom: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
 }
 
 .oracle-match-team .team-prob {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.1;
 }
 
-.oracle-match-team .team-prob.favored {
-    color: #166b2a;
-}
-
-.oracle-match-team .team-prob.underdog {
-    color: #bbb;
+.oracle-match-team .team-stats {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+    font-weight: 600;
+    background: #f0f0f0;
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .oracle-match-vs {
-    font-size: 9px;
-    font-weight: 800;
-    color: #ccc;
-    padding: 0 6px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #e5e7eb;
+    padding: 0 15px;
     text-transform: uppercase;
+    font-style: italic;
+    user-select: none;
 }
+
+/* Expanded Table Styles */
+.oracle-teams-table th {
+    background: #000;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: center;
+    /* Center align headers */
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.oracle-teams-table th:nth-child(2) {
+    text-align: left;
+}
+
+/* Keep Team Name left aligned */
+.oracle-teams-table td {
+    padding: 10px 12px;
+    font-size: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #111;
+    text-align: center;
+}
+
+.oracle-teams-table td:nth-child(2) {
+    text-align: left;
+}
+
+/* Keep Team Name left aligned */
 
 .oracle-match-score {
     text-align: center;
