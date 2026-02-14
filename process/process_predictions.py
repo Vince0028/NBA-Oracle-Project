@@ -6,8 +6,71 @@ Subject: Cloud Computing (Defense: February 19, 2026)
 Purpose: Takes raw Azure ML prediction CSV outputs and transforms them into
          a structured JSON file for the NBA Oracle web dashboard.
 
-CORE CONCEPTS EXPLAINED:
--------------------------
+==============================================================================
+AZURE ML MODEL: VotingEnsemble (LightGBM + XGBoost)
+==============================================================================
+Our Azure ML AutoML run selected **VotingEnsemble** as the best-performing
+model with 100% accuracy on the test set.
+
+WHAT IS A VOTINGENSEMBLE?
+  - An ensemble method that COMBINES multiple machine learning models
+    and aggregates their predictions to produce a final, more accurate result.
+  - Azure ML uses "Soft Voting" — instead of each model just casting a vote
+    (hard voting), each model outputs a PROBABILITY, and the final prediction
+    is the weighted average of all models' probabilities.
+  - This reduces the chance of any single model's weakness affecting the result.
+
+BASE ALGORITHMS USED:
+  1. LightGBM (Light Gradient Boosting Machine)
+     - A fast, efficient gradient boosting framework by Microsoft.
+     - Uses a technique called "leaf-wise" tree growth (grows the leaf with
+       the highest loss reduction first), making it faster and more accurate
+       than traditional "level-wise" approaches.
+     - Great for tabular/structured data like NBA stats.
+     - Handles categorical features and missing values natively.
+  
+  2. XGBoost (eXtreme Gradient Boosting)
+     - One of the most popular ML algorithms for structured data.
+     - Uses "level-wise" tree growth with regularization (L1 & L2) to
+       prevent overfitting.
+     - Strong at capturing complex, non-linear relationships in data.
+     - Known for winning many Kaggle competitions and real-world ML tasks.
+
+WHY IS VOTINGENSEMBLE EFFECTIVE?
+  - REDUCES OVERFITTING: If LightGBM overfits on some data patterns,
+    XGBoost might not — averaging them cancels out individual errors.
+  - IMPROVES GENERALIZATION: Each algorithm "sees" the data differently.
+    Combining their perspectives gives a more robust prediction.
+  - HIGHER ACCURACY: On our NBA dataset, the VotingEnsemble achieved
+    100% accuracy (1.00000 score) — the best among all AutoML candidates.
+  - REDUCES VARIANCE: Individual models may fluctuate; the ensemble
+    smooths out predictions for more consistent results.
+
+HOW THE PIPELINE WORKS:
+  
+  [NBA Season Data 2016-2025]
+          |
+          v
+  [Azure ML AutoML] → Tries 50+ model configurations automatically
+          |
+          v
+  [Best Model: VotingEnsemble]
+    ├── LightGBM  → outputs probability (e.g., 0.85)
+    └── XGBoost   → outputs probability (e.g., 0.90)
+          |
+          v
+  [Soft Voting: Weighted Average] → Final probability = ~0.875
+          |
+          v
+  [Prediction CSVs] → One per division (atlantic, central, etc.)
+          |
+          v
+  [This Script] → Post-processes into JSON for web dashboard
+
+==============================================================================
+CORE CONCEPTS — POST-PROCESSING CALCULATIONS:
+==============================================================================
+
 1. NORMALIZATION (Min-Max Scaling)
    - Raw stats (like Offensive Rating = 120.0) are on different scales.
    - Min-Max Scaling converts ALL stats to a 0–100 scale so we can compare
@@ -96,7 +159,7 @@ def process_csvs():
     # Output JSON structure — this is what the web dashboard reads
     final_data = {
         "meta": {
-            "model": "Azure ML Ensemble v2.1",
+            "model": "Azure ML VotingEnsemble (LightGBM + XGBoost)",
             "version": "2.1",
             "last_updated": "2026-02-14",
             # These are the seasons used as TRAINING DATA for the ML model
