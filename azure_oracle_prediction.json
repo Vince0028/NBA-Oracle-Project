@@ -189,7 +189,7 @@
       "time": "7:00 PM",
       "projected_winner": "DET",
       "confidence": 7.4,
-      "reasoning": "Stronger Defense (-4.7 Rtg)"
+      "reasoning": "DET projected to win — stronger defense (-4.7 Rtg)"
     },
     {
       "teams": [
@@ -213,7 +213,7 @@
       "time": "8:00 PM",
       "projected_winner": "BOS",
       "confidence": 9.7,
-      "reasoning": "Superior Offense (+5.7 Rtg)"
+      "reasoning": "BOS projected to win — superior offense (+5.7 Rtg)"
     },
     {
       "teams": [
@@ -237,7 +237,7 @@
       "time": "10:30 PM",
       "projected_winner": "DEN",
       "confidence": 14.3,
-      "reasoning": "Superior Offense (+5.4 Rtg)"
+      "reasoning": "DEN projected to win — superior offense (+5.4 Rtg)"
     }
   ]
 }
