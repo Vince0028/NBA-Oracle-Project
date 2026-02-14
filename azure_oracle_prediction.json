@@ -9,120 +9,160 @@
       "id": "BOS",
       "name": "Boston Celtics",
       "win_prob": 0.642,
+      "off_rtg": 120,
+      "def_rtg": 112.7,
       "conf": "East"
     },
     {
       "id": "NYK",
       "name": "New York Knicks",
       "win_prob": 0.642,
+      "off_rtg": 118.6,
+      "def_rtg": 113.1,
       "conf": "East"
     },
     {
       "id": "TOR",
       "name": "Toronto Raptors",
       "win_prob": 0.593,
+      "off_rtg": 114,
+      "def_rtg": 112.1,
       "conf": "East"
     },
     {
       "id": "PHI",
       "name": "Philadelphia 76ers",
       "win_prob": 0.577,
+      "off_rtg": 115.4,
+      "def_rtg": 113.8,
       "conf": "East"
     },
     {
       "id": "BKN",
       "name": "Brooklyn Nets",
       "win_prob": 0.275,
+      "off_rtg": 110.5,
+      "def_rtg": 118,
       "conf": "East"
     },
     {
       "id": "DET",
       "name": "Detroit Pistons",
       "win_prob": 0.745,
+      "off_rtg": 116.4,
+      "def_rtg": 108.4,
       "conf": "East"
     },
     {
       "id": "CLE",
       "name": "Cleveland Cavaliers",
       "win_prob": 0.604,
+      "off_rtg": 117.2,
+      "def_rtg": 113.4,
       "conf": "East"
     },
     {
       "id": "CHI",
       "name": "Chicago Bulls",
       "win_prob": 0.453,
+      "off_rtg": 113.7,
+      "def_rtg": 117.5,
       "conf": "East"
     },
     {
       "id": "MIL",
       "name": "Milwaukee Bucks",
       "win_prob": 0.42,
+      "off_rtg": 113,
+      "def_rtg": 116.6,
       "conf": "East"
     },
     {
       "id": "IND",
       "name": "Indiana Pacers",
       "win_prob": 0.245,
+      "off_rtg": 108.5,
+      "def_rtg": 116.2,
       "conf": "East"
     },
     {
       "id": "OKC",
       "name": "Oklahoma City Thunder",
       "win_prob": 0.755,
+      "off_rtg": 117.7,
+      "def_rtg": 105.9,
       "conf": "West"
     },
     {
       "id": "DEN",
       "name": "Denver Nuggets",
       "win_prob": 0.642,
+      "off_rtg": 121,
+      "def_rtg": 116.8,
       "conf": "West"
     },
     {
       "id": "MIN",
       "name": "Minnesota Timberwolves",
       "win_prob": 0.593,
+      "off_rtg": 116.6,
+      "def_rtg": 112.8,
       "conf": "West"
     },
     {
       "id": "POR",
       "name": "Portland Trail Blazers",
       "win_prob": 0.472,
+      "off_rtg": 113.2,
+      "def_rtg": 115.4,
       "conf": "West"
     },
     {
       "id": "UTA",
       "name": "Utah Jazz",
       "win_prob": 0.302,
+      "off_rtg": 113.6,
+      "def_rtg": 121.7,
       "conf": "West"
     },
     {
       "id": "LAL",
       "name": "Los Angeles Lakers",
       "win_prob": 0.627,
+      "off_rtg": 116.5,
+      "def_rtg": 116.5,
       "conf": "West"
     },
     {
       "id": "PHX",
       "name": "Phoenix Suns",
       "win_prob": 0.585,
+      "off_rtg": 114.5,
+      "def_rtg": 112.3,
       "conf": "West"
     },
     {
       "id": "GSW",
       "name": "Golden State Warriors",
       "win_prob": 0.528,
+      "off_rtg": 114.3,
+      "def_rtg": 112.2,
       "conf": "West"
     },
     {
       "id": "LAC",
       "name": "LA Clippers",
       "win_prob": 0.481,
+      "off_rtg": 115.6,
+      "def_rtg": 115.8,
       "conf": "West"
     },
     {
       "id": "SAC",
       "name": "Sacramento Kings",
       "win_prob": 0.222,
+      "off_rtg": 110.2,
+      "def_rtg": 119.8,
       "conf": "West"
     }
   ],
@@ -136,9 +176,20 @@
         "NYK",
         "DET"
       ],
+      "stats": {
+        "NYK": {
+          "off": 118.6,
+          "def": 113.1
+        },
+        "DET": {
+          "off": 116.4,
+          "def": 108.4
+        }
+      },
       "time": "7:00 PM",
       "projected_winner": "DET",
-      "confidence": 7.4
+      "confidence": 7.4,
+      "reasoning": "Stronger Defense (-4.7 Rtg)"
     },
     {
       "teams": [
@@ -149,9 +200,20 @@
         "BOS",
         "GSW"
       ],
+      "stats": {
+        "BOS": {
+          "off": 120,
+          "def": 112.7
+        },
+        "GSW": {
+          "off": 114.3,
+          "def": 112.2
+        }
+      },
       "time": "8:00 PM",
       "projected_winner": "BOS",
-      "confidence": 9.7
+      "confidence": 9.7,
+      "reasoning": "Superior Offense (+5.7 Rtg)"
     },
     {
       "teams": [
@@ -162,9 +224,20 @@
         "DEN",
         "LAC"
       ],
+      "stats": {
+        "DEN": {
+          "off": 121,
+          "def": 116.8
+        },
+        "LAC": {
+          "off": 115.6,
+          "def": 115.8
+        }
+      },
       "time": "10:30 PM",
       "projected_winner": "DEN",
-      "confidence": 14.3
+      "confidence": 14.3,
+      "reasoning": "Superior Offense (+5.4 Rtg)"
     }
   ]
 }

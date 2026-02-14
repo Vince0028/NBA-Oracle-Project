@@ -186,19 +186,66 @@ function renderDivision(divKey) {
 
         if (divMatches.length > 0) {
             html += '<h3 style="margin-top:20px; font-size:14px; text-transform:uppercase; border-bottom:1px solid #ddd; padding-bottom:5px;">Tonight\'s Predictions</h3>';
-            html += '<div class="oracle-matches-grid" style="display:grid; gap:10px; margin-top:10px;">';
+            html += '<div class="oracle-matches-grid">';
 
             divMatches.forEach(match => {
                 const winner = match.projected_winner;
+                // Calculate pseudo-probabilities for the bar if not present (simplified logic)
+                const conf = match.confidence || 0;
+                let homeProb = 50;
+                let awayProb = 50;
+
+                if (winner === match.ids[1]) { // Home wins
+                    homeProb += (conf / 2);
+                    awayProb -= (conf / 2);
+                } else { // Away wins
+                    awayProb += (conf / 2);
+                    homeProb -= (conf / 2);
+                }
+
+                // Clamp
+                homeProb = Math.min(Math.max(homeProb, 1), 99).toFixed(0);
+                awayProb = Math.min(Math.max(awayProb, 1), 99).toFixed(0);
+
+                // Stats
+                const homeStats = match.stats[match.ids[1]];
+                const awayStats = match.stats[match.ids[0]];
+
                 html += `
-                <div style="background:#f8f9fa; padding:10px; border-radius:4px; border-left:4px solid #1D428A; display:flex; justify-content:space-between; align-items:center;">
-                    <div style="font-size:12px; color:#666;">${match.time} ET</div>
-                    <div style="font-weight:bold; font-size:13px;">
-                        ${match.ids[0]} <span style="font-weight:normal; color:#888;">@</span> ${match.ids[1]}
+                <div class="oracle-match-card">
+                    <div class="oracle-match-header">
+                        <span>${match.time} ET</span>
+                        <span class="match-id">Azure ML v2.1</span>
                     </div>
-                    <div style="text-align:right;">
-                        <div style="font-size:10px; color:#888;">PROJECTED WINNER</div>
-                        <div style="color:#1D428A; font-weight:800;">${winner}</div>
+                    
+                    <div class="oracle-match-teams">
+                        <div class="oracle-match-team">
+                            <div class="team-name">${match.ids[0]}</div>
+                            <div class="team-prob ${awayProb > homeProb ? 'favored' : 'underdog'}">${awayProb}%</div>
+                            <div style="font-size:9px; color:#888;">OFF ${awayStats.off}</div>
+                        </div>
+                        <div class="oracle-match-vs">VS</div>
+                        <div class="oracle-match-team">
+                            <div class="team-name">${match.ids[1]}</div>
+                            <div class="team-prob ${homeProb > awayProb ? 'favored' : 'underdog'}">${homeProb}%</div>
+                             <div style="font-size:9px; color:#888;">OFF ${homeStats.off}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="oracle-prob-chart">
+                        <div class="oracle-prob-bar-wrap">
+                            <div class="oracle-prob-bar-away" style="width:${awayProb}%"></div>
+                            <div class="oracle-prob-bar-home" style="width:${homeProb}%"></div>
+                        </div>
+                    </div>
+
+                    <div class="oracle-match-analysis">
+                        <div style="font-size:10px; font-weight:700; color:#000; margin-bottom:4px; text-transform:uppercase;">AI Analysis</div>
+                        <div class="factor">${match.reasoning}</div>
+                    </div>
+
+                    <div class="oracle-match-winner">
+                        Projected Winner: ${winner}
                     </div>
                 </div>`;
             });

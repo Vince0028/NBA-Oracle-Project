@@ -69,7 +69,11 @@ for (const [divKey, filename] of Object.entries(csvFiles)) {
 
     const seasonIdx = headers.indexOf('Season_orig');
     const teamIdx = headers.indexOf('Team_orig');
-    const winIdx = headers.indexOf('Win_Pct_orig'); // Correct column for actual win %
+    const winIdx = headers.indexOf('Win_Pct_orig');
+
+    // NEW: Capture additional stats
+    const offRtgIdx = headers.indexOf('Off_Rating_orig');
+    const defRtgIdx = headers.indexOf('Def_Rating_orig');
 
     if (seasonIdx === -1 || teamIdx === -1 || winIdx === -1) {
         console.warn(`Error: Missing columns in ${filename}`);
@@ -84,11 +88,15 @@ for (const [divKey, filename] of Object.entries(csvFiles)) {
         if (row[seasonIdx] === '2025-26') {
             const name = row[teamIdx];
             const winPct = parseFloat(row[winIdx]);
+            const offRtg = offRtgIdx !== -1 ? parseFloat(row[offRtgIdx]) : 0;
+            const defRtg = defRtgIdx !== -1 ? parseFloat(row[defRtgIdx]) : 0;
 
             finalData.teams.push({
                 "id": TEAM_IDS[name] || name.substring(0, 3).toUpperCase(),
                 "name": name,
-                "win_prob": parseFloat((winPct).toFixed(3)), // Keep as decimal 0.xxx
+                "win_prob": parseFloat((winPct).toFixed(3)),
+                "off_rtg": parseFloat(offRtg.toFixed(1)),
+                "def_rtg": parseFloat(defRtg.toFixed(1)),
                 "conf": CONF_MAP[divKey] || "Unknown"
             });
         }
@@ -96,14 +104,6 @@ for (const [divKey, filename] of Object.entries(csvFiles)) {
 }
 
 // --- Schedule Integration ---
-// User provided games:
-// NY Knicks @ Detroit Pistons
-// Washington Wizards @ Indiana Pacers (Exclude SE)
-// Philadelphia 76ers @ Atlanta Hawks (Exclude SE)
-// Boston Celtics @ Golden State Warriors
-// Phoenix Suns @ San Antonio Spurs (Exclude SW)
-// Denver Nuggets @ LA Clippers
-
 const schedule = [
     { away: "New York Knicks", home: "Detroit Pistons", time: "7:00 PM" },
     { away: "Washington Wizards", home: "Indiana Pacers", time: "7:00 PM" },
@@ -116,26 +116,54 @@ const schedule = [
 finalData.matches = [];
 
 schedule.forEach(game => {
-    // Find team objects
     const awayTeam = finalData.teams.find(t => t.name === game.away);
     const homeTeam = finalData.teams.find(t => t.name === game.home);
 
-    // Only include if BOTH teams exist (filters out SE/SW automatically)
     if (awayTeam && homeTeam) {
-        // Simple prediction logic based on higher win_prob
+        // Prediction Logic
         const totalProb = awayTeam.win_prob + homeTeam.win_prob;
         const awayChance = awayTeam.win_prob / totalProb;
         const homeChance = homeTeam.win_prob / totalProb;
 
         let projectedWinner = awayChance > homeChance ? awayTeam.id : homeTeam.id;
-        let confidence = Math.abs(awayChance - homeChance) * 100; // spread
+        let winnerObj = awayChance > homeChance ? awayTeam : homeTeam;
+        let loserObj = awayChance > homeChance ? homeTeam : awayTeam;
+
+        let confidence = Math.abs(awayChance - homeChance) * 100;
+
+        // --- Reasoning Generation ---
+        let factors = [];
+        const winDiff = (winnerObj.win_prob - loserObj.win_prob) * 100;
+
+        if (winnerObj.off_rtg > loserObj.off_rtg) {
+            const diff = (winnerObj.off_rtg - loserObj.off_rtg).toFixed(1);
+            factors.push(`Superior Offense (+${diff} Rtg)`);
+        }
+        if (winnerObj.def_rtg < loserObj.def_rtg) { // Lower is better for Def Rtg
+            const diff = (loserObj.def_rtg - winnerObj.def_rtg).toFixed(1);
+            factors.push(`Stronger Defense (-${diff} Rtg)`);
+        }
+        if (winDiff > 20) {
+            factors.push(`Dominant Season Performance`);
+        } else if (winDiff < 5) {
+            factors.push(`Tight Matchup - Edge via Efficiency`);
+        }
+
+        // Pick top reason
+        let primaryFactor = factors.length > 0 ? factors[0] : "Overall Win Probability";
+        if (factors.length > 1) primaryFactor += ` & ${factors[1]}`;
 
         finalData.matches.push({
-            teams: [awayTeam.name, homeTeam.name], // [Away, Home]
+            teams: [awayTeam.name, homeTeam.name],
             ids: [awayTeam.id, homeTeam.id],
+            stats: {
+                [awayTeam.id]: { off: awayTeam.off_rtg, def: awayTeam.def_rtg },
+                [homeTeam.id]: { off: homeTeam.off_rtg, def: homeTeam.def_rtg }
+            },
             time: game.time,
             projected_winner: projectedWinner,
-            confidence: parseFloat(confidence.toFixed(1))
+            confidence: parseFloat(confidence.toFixed(1)),
+            reasoning: primaryFactor
         });
     }
 });
@@ -143,6 +171,6 @@ schedule.forEach(game => {
 // Write the file
 const outputPath = 'c:/Users/Vince/Downloads/NBA-Oracle/azure_oracle_prediction.json';
 fs.writeFileSync(outputPath, JSON.stringify(finalData, null, 2));
-console.log('Created simplified JSON with matches:', outputPath);
+console.log('Created simplified JSON with matches & stats:', outputPath);
 console.log('Total teams:', finalData.teams.length);
 console.log('Total matches:', finalData.matches.length);
