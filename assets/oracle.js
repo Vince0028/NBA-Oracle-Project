@@ -76,6 +76,7 @@ async function loadPredictions() {
         });
 
         oracleData.metadata = rawData.oracle_metadata; // Store metadata
+        oracleData.matches = rawData.matches || []; // Store matches
         renderDivisionTabs();
         renderDivision(currentDivision);
 
@@ -171,7 +172,40 @@ function renderDivision(divKey) {
         html += '</tr>';
     });
 
+
     html += '</tbody></table>';
+
+    // --- Upcoming Matches (Filtered by Division) ---
+    // A match shows if EITHER team is in this division
+    if (oracleData.matches && oracleData.matches.length > 0) {
+        const divMatches = oracleData.matches.filter(m => {
+            const team1Div = TEAM_TO_DIVISION[m.ids[0]];
+            const team2Div = TEAM_TO_DIVISION[m.ids[1]];
+            return team1Div === divKey || team2Div === divKey;
+        });
+
+        if (divMatches.length > 0) {
+            html += '<h3 style="margin-top:20px; font-size:14px; text-transform:uppercase; border-bottom:1px solid #ddd; padding-bottom:5px;">Tonight\'s Predictions</h3>';
+            html += '<div class="oracle-matches-grid" style="display:grid; gap:10px; margin-top:10px;">';
+
+            divMatches.forEach(match => {
+                const winner = match.projected_winner;
+                html += `
+                <div style="background:#f8f9fa; padding:10px; border-radius:4px; border-left:4px solid #1D428A; display:flex; justify-content:space-between; align-items:center;">
+                    <div style="font-size:12px; color:#666;">${match.time} ET</div>
+                    <div style="font-weight:bold; font-size:13px;">
+                        ${match.ids[0]} <span style="font-weight:normal; color:#888;">@</span> ${match.ids[1]}
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:10px; color:#888;">PROJECTED WINNER</div>
+                        <div style="color:#1D428A; font-weight:800;">${winner}</div>
+                    </div>
+                </div>`;
+            });
+            html += '</div>';
+        }
+    }
+
     container.innerHTML = html;
 }
 
@@ -214,8 +248,8 @@ document.addEventListener('DOMContentLoaded', function () {
             sortedTeams.forEach(function (team) {
                 const percentage = (team.win_prob * 100).toFixed(0) + '%';
                 let statusClass = 'status-contend';
-                if (team.win_prob >= 0.80) statusClass = 'status-lock';
-                if (team.win_prob <= 0.20) statusClass = 'status-out';
+                if (team.win_prob >= 0.60) statusClass = 'status-lock';
+                if (team.win_prob <= 0.40) statusClass = 'status-out';
 
                 html += '<tr class="nba-oracle-row">';
                 html += '<td class="nba-oracle-cell"><strong>' + team.id + '</strong> ' + team.name.split(' ').pop() + '</td>';
