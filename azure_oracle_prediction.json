@@ -8,122 +8,163 @@
     {
       "id": "BOS",
       "name": "Boston Celtics",
-      "win_prob": 1,
+      "win_prob": 0.642,
       "conf": "East"
     },
     {
       "id": "NYK",
       "name": "New York Knicks",
-      "win_prob": 1,
+      "win_prob": 0.642,
       "conf": "East"
     },
     {
       "id": "TOR",
       "name": "Toronto Raptors",
-      "win_prob": 1,
+      "win_prob": 0.593,
       "conf": "East"
     },
     {
       "id": "PHI",
       "name": "Philadelphia 76ers",
-      "win_prob": 1,
+      "win_prob": 0.577,
       "conf": "East"
     },
     {
       "id": "BKN",
       "name": "Brooklyn Nets",
-      "win_prob": 0,
+      "win_prob": 0.275,
       "conf": "East"
     },
     {
       "id": "DET",
       "name": "Detroit Pistons",
-      "win_prob": 0.96,
+      "win_prob": 0.745,
       "conf": "East"
     },
     {
       "id": "CLE",
       "name": "Cleveland Cavaliers",
-      "win_prob": 0.95,
+      "win_prob": 0.604,
       "conf": "East"
     },
     {
       "id": "CHI",
       "name": "Chicago Bulls",
-      "win_prob": 0.01,
+      "win_prob": 0.453,
       "conf": "East"
     },
     {
       "id": "MIL",
       "name": "Milwaukee Bucks",
-      "win_prob": 0.01,
+      "win_prob": 0.42,
       "conf": "East"
     },
     {
       "id": "IND",
       "name": "Indiana Pacers",
-      "win_prob": 0.04,
+      "win_prob": 0.245,
       "conf": "East"
     },
     {
       "id": "OKC",
       "name": "Oklahoma City Thunder",
-      "win_prob": 0.99,
+      "win_prob": 0.755,
       "conf": "West"
     },
     {
       "id": "DEN",
       "name": "Denver Nuggets",
-      "win_prob": 0.97,
+      "win_prob": 0.642,
       "conf": "West"
     },
     {
       "id": "MIN",
       "name": "Minnesota Timberwolves",
-      "win_prob": 0.99,
+      "win_prob": 0.593,
       "conf": "West"
     },
     {
       "id": "POR",
       "name": "Portland Trail Blazers",
-      "win_prob": 0.11,
+      "win_prob": 0.472,
       "conf": "West"
     },
     {
       "id": "UTA",
       "name": "Utah Jazz",
-      "win_prob": 0.03,
+      "win_prob": 0.302,
       "conf": "West"
     },
     {
       "id": "LAL",
       "name": "Los Angeles Lakers",
-      "win_prob": 0.93,
+      "win_prob": 0.627,
       "conf": "West"
     },
     {
       "id": "PHX",
       "name": "Phoenix Suns",
-      "win_prob": 0.95,
+      "win_prob": 0.585,
       "conf": "West"
     },
     {
       "id": "GSW",
       "name": "Golden State Warriors",
-      "win_prob": 0.86,
+      "win_prob": 0.528,
       "conf": "West"
     },
     {
       "id": "LAC",
       "name": "LA Clippers",
-      "win_prob": 0.12,
+      "win_prob": 0.481,
       "conf": "West"
     },
     {
       "id": "SAC",
       "name": "Sacramento Kings",
-      "win_prob": 0.01,
+      "win_prob": 0.222,
       "conf": "West"
+    }
+  ],
+  "matches": [
+    {
+      "teams": [
+        "New York Knicks",
+        "Detroit Pistons"
+      ],
+      "ids": [
+        "NYK",
+        "DET"
+      ],
+      "time": "7:00 PM",
+      "projected_winner": "DET",
+      "confidence": 7.4
+    },
+    {
+      "teams": [
+        "Boston Celtics",
+        "Golden State Warriors"
+      ],
+      "ids": [
+        "BOS",
+        "GSW"
+      ],
+      "time": "8:00 PM",
+      "projected_winner": "BOS",
+      "confidence": 9.7
+    },
+    {
+      "teams": [
+        "Denver Nuggets",
+        "LA Clippers"
+      ],
+      "ids": [
+        "DEN",
+        "LAC"
+      ],
+      "time": "10:30 PM",
+      "projected_winner": "DEN",
+      "confidence": 14.3
     }
   ]
 }
