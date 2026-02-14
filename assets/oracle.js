@@ -1,6 +1,23 @@
 // NBA Oracle AI - Division Predictions UI
 let oracleData = null;
 let currentDivision = 'atlantic';
+const DATA_URL = './azure_oracle_prediction.json';
+
+// --- Division Helper ---
+const TEAM_TO_DIVISION = {
+    // Atlantic
+    "BOS": "atlantic", "BKN": "atlantic", "NYK": "atlantic", "PHI": "atlantic", "TOR": "atlantic",
+    // Central
+    "CHI": "central", "CLE": "central", "DET": "central", "IND": "central", "MIL": "central",
+    // Southeast
+    "ATL": "southeast", "CHA": "southeast", "MIA": "southeast", "ORL": "southeast", "WAS": "southeast",
+    // Northwest
+    "DEN": "northwest", "MIN": "northwest", "OKC": "northwest", "POR": "northwest", "UTA": "northwest",
+    // Pacific
+    "GSW": "pacific", "LAC": "pacific", "LAL": "pacific", "PHX": "pacific", "SAC": "pacific",
+    // Southwest
+    "DAL": "southwest", "HOU": "southwest", "MEM": "southwest", "NOP": "southwest", "SAS": "southwest"
+};
 
 // Open/Close modal
 function openOracleModal() {
@@ -29,10 +46,39 @@ document.addEventListener('click', function (e) {
 
 async function loadPredictions() {
     try {
-        const response = await fetch('./azure_oracle_prediction.json');
-        oracleData = await response.json();
+        const response = await fetch(DATA_URL);
+        const rawData = await response.json();
+
+        // Transform Flat List to Division Map
+        oracleData = { divisions: {} };
+        const divisions = ['atlantic', 'central', 'southeast', 'northwest', 'pacific', 'southwest'];
+
+        divisions.forEach(div => {
+            oracleData.divisions[div] = {
+                name: div.charAt(0).toUpperCase() + div.slice(1) + " Division",
+                conference: ['atlantic', 'central', 'southeast'].includes(div) ? 'Eastern' : 'Western',
+                teams: []
+            };
+        });
+
+        if (rawData.teams && Array.isArray(rawData.teams)) {
+            rawData.teams.forEach(team => {
+                const div = TEAM_TO_DIVISION[team.id];
+                if (div && oracleData.divisions[div]) {
+                    oracleData.divisions[div].teams.push(team);
+                }
+            });
+        }
+
+        // Sort teams by win_prob
+        Object.values(oracleData.divisions).forEach(div => {
+            div.teams.sort((a, b) => b.win_prob - a.win_prob);
+        });
+
+        oracleData.metadata = rawData.oracle_metadata; // Store metadata
         renderDivisionTabs();
         renderDivision(currentDivision);
+
     } catch (err) {
         console.error('Oracle: Failed to load predictions', err);
         document.getElementById('oracle-division-content').innerHTML =
@@ -47,19 +93,17 @@ function renderDivisionTabs() {
     let html = '';
     divisionOrder.forEach(key => {
         const div = oracleData.divisions[key];
-        // Always render all tabs now
         const isActive = key === currentDivision ? ' active' : '';
-        html += '<button class="oracle-tab' + isActive + '" data-division="' + key + '" onclick="switchDivision(\'' + key + '\')">';
-        html += (div ? div.name.replace(' Division', '') : key.charAt(0).toUpperCase() + key.slice(1));
-        html += '<span class="tab-conference">' + (div ? div.conference : (['atlantic', 'central', 'southeast'].includes(key) ? 'Eastern' : 'Western')) + '</span>';
-        html += '</button>';
+        html += `<button class="oracle-tab${isActive}" data-division="${key}" onclick="switchDivision('${key}')">`;
+        html += key.charAt(0).toUpperCase() + key.slice(1);
+        html += `<span class="tab-conference">${div.conference}</span>`;
+        html += `</button>`;
     });
     tabsContainer.innerHTML = html;
 }
 
 function switchDivision(divKey) {
     currentDivision = divKey;
-    // Update active tab
     document.querySelectorAll('.oracle-tab').forEach(tab => {
         tab.classList.toggle('active', tab.getAttribute('data-division') === divKey);
     });
@@ -70,7 +114,8 @@ function renderDivision(divKey) {
     const container = document.getElementById('oracle-division-content');
     const div = oracleData.divisions[divKey];
 
-    if (!div || div.is_coming_soon || div.teams.length === 0) {
+    // Check if empty (Southeast/Southwest will be empty)
+    if (!div || div.teams.length === 0) {
         container.innerHTML = `
             <div class="oracle-coming-soon">
                 <div class="coming-soon-icon">⚠️</div>
@@ -84,151 +129,58 @@ function renderDivision(divKey) {
 
     let html = '';
 
-    // Analytics bar
-    const analytics = div.division_analytics;
-    html += '<div class="oracle-analytics-bar">';
-    html += renderStatCard('Strongest', analytics.strongest_team.split(' ').pop(), '');
-    html += renderStatCard('Best Offense', analytics.best_offense.split(' ').pop(), '');
-    html += renderStatCard('Best Defense', analytics.best_defense.split(' ').pop(), '');
-    html += renderStatCard('Avg Off Rtg', analytics.average_off_rating.toString(), '');
-    html += renderStatCard('Avg Def Rtg', analytics.average_def_rating.toString(), '');
-    html += renderStatCard('Playoff Teams', analytics.playoff_teams + ' / ' + div.teams.length, '');
-    html += '</div>';
+    // --- Model Confidence Header ---
+    html += `<div style="margin-bottom: 20px; font-size: 13px; color: #555; text-align: right;">
+        <strong>Model Confidence:</strong> ${oracleData.metadata?.global_accuracy || 'N/A'}
+    </div>`;
 
-    // Teams standings table
+    // --- Teams Table ---
     html += '<table class="oracle-teams-table">';
     html += '<thead><tr>';
-    html += '<th>#</th><th>Team</th><th>W-L</th><th>Win%</th><th>Off Rtg</th><th>Def Rtg</th><th>Net</th><th>Rating</th><th>Trend</th>';
+    html += '<th>Rank</th><th>Team</th><th>Win Probability</th><th>Status</th>';
     html += '</tr></thead><tbody>';
+
     div.teams.forEach((team, i) => {
-        const playoffClass = team.playoff_status === 'clinched' ? 'clinched' : 'eliminated';
-        const playoffLabel = team.playoff_status === 'clinched' ? 'IN' : 'OUT';
-        const ratingPct = team.normalized_scores.overall_rating;
-        const ratingClass = ratingPct >= 65 ? 'high' : (ratingPct >= 35 ? 'mid' : 'low');
+        let statusClass = 'status-out';
+        let statusText = 'Eliminated';
+
+        if (team.win_prob >= 0.8) {
+            statusClass = 'status-lock';
+            statusText = 'Lock';
+        } else if (team.win_prob >= 0.35) {
+            statusClass = 'status-contend';
+            statusText = 'Contender';
+        }
+
         html += '<tr>';
-        html += '<td>' + (i + 1) + '</td>';
-        html += '<td><span class="team-name">' + team.team + '</span>';
-        html += '<span class="playoff-badge ' + playoffClass + '">' + playoffLabel + '</span></td>';
-        html += '<td>' + team.stats.wins + '-' + team.stats.losses + '</td>';
-        html += '<td><strong>' + (team.stats.win_pct * 100).toFixed(1) + '%</strong></td>';
-        html += '<td>' + team.stats.off_rating + '</td>';
-        html += '<td>' + team.stats.def_rating + '</td>';
-        html += '<td><strong>' + (team.stats.net_rating > 0 ? '+' : '') + team.stats.net_rating + '</strong></td>';
-        html += '<td><div style="display:flex;align-items:center;gap:6px;"><span style="font-weight:700;font-size:12px;">' + ratingPct.toFixed(0) + '</span>';
-        html += '<div class="oracle-rating-bar"><div class="oracle-rating-fill ' + ratingClass + '" style="width:' + ratingPct + '%"></div></div></div></td>';
-        html += '<td><span class="trend-badge ' + team.trend + '">' + capitalize(team.trend) + '</span></td>';
+        html += `<td>${i + 1}</td>`;
+        html += `<td class="team-name">${team.name}</td>`;
+
+        // Probability Bar style
+        const pct = Math.round(team.win_prob * 100);
+        html += `<td>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <div style="flex:1; background:#eee; height:6px; border-radius:3px; overflow:hidden; max-width:100px;">
+                    <div style="width:${pct}%; background:#1D428A; height:100%;"></div>
+                </div>
+                <span style="font-weight:700; font-size:12px;">${pct}%</span>
+            </div>
+        </td>`;
+
+        html += `<td><span class="prob-badge ${statusClass}">${statusText}</span></td>`;
         html += '</tr>';
     });
+
     html += '</tbody></table>';
-
-    // Matches
-    html += '<h3 class="oracle-matches-title">AI Match Predictions (' + div.matches.length + ' matchups)</h3>';
-    html += '<div class="oracle-matches-grid">';
-    div.matches.forEach(match => {
-        html += renderMatchCard(match);
-    });
-    html += '</div>';
-
     container.innerHTML = html;
 }
 
 function renderStatCard(label, value) {
-    return '<div class="oracle-stat-card">' +
-        '<div class="stat-label">' + label + '</div>' +
-        '<div class="stat-value">' + value + '</div>' +
-        '</div>';
-}
-
-function renderMatchCard(match) {
-    const p = match.prediction;
-    const a = match.ai_analysis;
-
-    const homeProb = (p.home_win_probability * 100).toFixed(1);
-    const awayProb = (p.away_win_probability * 100).toFixed(1);
-    const homeFavored = p.home_win_probability >= 0.5;
-
-    let html = '<div class="oracle-match-card">';
-
-    // Header
-    html += '<div class="oracle-match-header">';
-    html += '<span class="confidence-badge ' + p.confidence + '">' + p.confidence.replace('_', ' ') + '</span>';
-    html += '<span class="match-id">' + match.match_id + '</span>';
-    html += '</div>';
-
-    // Teams + probabilities
-    html += '<div class="oracle-match-teams">';
-    html += '<div class="oracle-match-team">';
-    html += '<div class="team-name">' + shortenTeam(match.home_team) + '</div>';
-    html += '<div class="team-prob ' + (homeFavored ? 'favored' : 'underdog') + '">' + homeProb + '%</div>';
-    html += '</div>';
-    html += '<div class="oracle-match-vs">VS</div>';
-    html += '<div class="oracle-match-team">';
-    html += '<div class="team-name">' + shortenTeam(match.away_team) + '</div>';
-    html += '<div class="team-prob ' + (!homeFavored ? 'favored' : 'underdog') + '">' + awayProb + '%</div>';
-    html += '</div>';
-    html += '</div>';
-
-    // Predicted score
-    html += '<div class="oracle-match-score">';
-    html += 'Predicted Score: <span class="predicted-score">' + p.predicted_score.home + ' - ' + p.predicted_score.away + '</span>';
-    html += '</div>';
-
-    // Key factors
-    if (a.key_factors && a.key_factors.length > 0) {
-        html += '<div class="oracle-match-analysis">';
-        a.key_factors.forEach(function (f) {
-            html += '<div class="factor">' + f + '</div>';
-        });
-        html += '</div>';
-    }
-
-    // Winner
-    html += '<div class="oracle-match-winner">';
-    html += 'Predicted Winner: ' + p.predicted_winner;
-    html += '</div>';
-
-    // Probability bar chart
-    html += '<div class="oracle-prob-chart">';
-    html += '<div class="chart-label">Win Probability</div>';
-    html += '<div class="oracle-prob-bar-wrap">';
-    html += '<div class="oracle-prob-bar-home" style="width:' + homeProb + '%"><span>' + homeProb + '%</span></div>';
-    html += '<div class="oracle-prob-bar-away" style="width:' + awayProb + '%"><span>' + awayProb + '%</span></div>';
-    html += '</div>';
-    html += '<div class="oracle-prob-legend">';
-    html += '<span class="legend-item"><span class="legend-dot home"></span>' + shortenTeam(match.home_team) + '</span>';
-    html += '<span class="legend-item"><span class="legend-dot away"></span>' + shortenTeam(match.away_team) + '</span>';
-    html += '</div>';
-    html += '</div>';
-
-    html += '</div>';
-    return html;
-}
-
-function shortenTeam(name) {
-    // Keep city + nickname but shorten for card display
-    const parts = name.split(' ');
-    if (parts.length >= 3) {
-        // e.g. "Oklahoma City Thunder" -> "OKC Thunder"
-        const abbreviations = {
-            'Oklahoma City': 'OKC',
-            'Golden State': 'GS',
-            'San Antonio': 'SA',
-            'Los Angeles': 'LA',
-            'New York': 'NY',
-            'New Orleans': 'NO',
-            'Trail Blazers': 'Blazers'
-        };
-        for (const [full, short] of Object.entries(abbreviations)) {
-            if (name.includes(full)) {
-                return name.replace(full, short);
-            }
-        }
-    }
-    return name;
-}
-
-function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    return `
+    <div class="oracle-stat-card">
+        <div class="stat-label">${label}</div>
+        <div class="stat-value">${value}</div>
+    </div>`;
 }
 
 // Playoff Predictor widget with LIVE badge + Division Predictions button
@@ -240,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(container);
     }
 
-    fetch('./azure_oracle_prediction.json')
+    fetch(DATA_URL)
         .then(function (response) { return response.json(); })
         .then(function (data) {
             let html = '<div class="nba-oracle-container">';
@@ -250,30 +202,30 @@ document.addEventListener('DOMContentLoaded', function () {
             html += '<h2>Playoff Predictor</h2>';
             html += '<div style="display:flex;align-items:center;gap:8px;">';
             html += '<span class="oracle-live-badge">LIVE</span>';
-            html += '<span style="font-size:9px;color:#888;letter-spacing:0.5px;">Acc: ' + data.oracle_metadata.global_accuracy + '</span>';
+            const acc = data.oracle_metadata ? data.oracle_metadata.global_accuracy : '0.98';
+            html += '<span style="font-size:9px;color:#888;letter-spacing:0.5px;">Acc: ' + acc + '</span>';
             html += '</div>';
             html += '</div>';
 
-            // Team rows (Limit to top 8 or similar to fit sidebar?)
-            // The screenshot showed about 8 teams. We'll show top 8 sorted by probability.
+            // Sidebar: Top 8 sorted by win prob
             const sortedTeams = data.teams.sort((a, b) => b.win_prob - a.win_prob).slice(0, 8);
 
             html += '<table class="nba-oracle-table">';
             sortedTeams.forEach(function (team) {
                 const percentage = (team.win_prob * 100).toFixed(0) + '%';
-                let statusClass = 'status-contend'; // default yellow/mid
-                if (team.win_prob >= 0.80) statusClass = 'status-lock'; // high green
-                if (team.win_prob <= 0.20) statusClass = 'status-out'; // low red
+                let statusClass = 'status-contend';
+                if (team.win_prob >= 0.80) statusClass = 'status-lock';
+                if (team.win_prob <= 0.20) statusClass = 'status-out';
 
                 html += '<tr class="nba-oracle-row">';
-                html += '<td class="nba-oracle-cell"><strong>' + team.id + '</strong> ' + team.name + '</td>';
+                html += '<td class="nba-oracle-cell"><strong>' + team.id + '</strong> ' + team.name.split(' ').pop() + '</td>';
                 html += '<td class="nba-oracle-cell" style="text-align:right;">';
                 html += '<span class="prob-badge ' + statusClass + '">' + percentage + '</span>';
                 html += '</td></tr>';
             });
             html += '</table>';
 
-            // CTA button — full-width, no radius
+            // CTA button
             html += '<button class="oracle-division-btn" onclick="openOracleModal()">';
             html += 'View Division Predictions';
             html += '</button>';
