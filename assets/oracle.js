@@ -18,18 +18,18 @@ function closeOracleModal() {
 }
 
 // Close on Escape key
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeOracleModal();
 });
 
 // Close on backdrop click
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (e.target && e.target.id === 'oracle-modal') closeOracleModal();
 });
 
 async function loadPredictions() {
     try {
-        const response = await fetch('./predictions.json');
+        const response = await fetch('./azure_oracle_prediction.json');
         oracleData = await response.json();
         renderDivisionTabs();
         renderDivision(currentDivision);
@@ -47,11 +47,11 @@ function renderDivisionTabs() {
     let html = '';
     divisionOrder.forEach(key => {
         const div = oracleData.divisions[key];
-        if (!div) return;
+        // Always render all tabs now
         const isActive = key === currentDivision ? ' active' : '';
         html += '<button class="oracle-tab' + isActive + '" data-division="' + key + '" onclick="switchDivision(\'' + key + '\')">';
-        html += div.name.replace(' Division', '');
-        html += '<span class="tab-conference">' + div.conference + '</span>';
+        html += (div ? div.name.replace(' Division', '') : key.charAt(0).toUpperCase() + key.slice(1));
+        html += '<span class="tab-conference">' + (div ? div.conference : (['atlantic', 'central', 'southeast'].includes(key) ? 'Eastern' : 'Western')) + '</span>';
         html += '</button>';
     });
     tabsContainer.innerHTML = html;
@@ -69,8 +69,16 @@ function switchDivision(divKey) {
 function renderDivision(divKey) {
     const container = document.getElementById('oracle-division-content');
     const div = oracleData.divisions[divKey];
-    if (!div) {
-        container.innerHTML = '<div class="oracle-loading">Division not found.</div>';
+
+    if (!div || div.is_coming_soon || div.teams.length === 0) {
+        container.innerHTML = `
+            <div class="oracle-coming-soon">
+                <div class="coming-soon-icon">⚠️</div>
+                <h3>prediction pending</h3>
+                <p>Azure ML is currently processing data for the ${divKey} division.</p>
+                <span class="coming-soon-badge">COMING SOON</span>
+            </div>
+        `;
         return;
     }
 
@@ -168,7 +176,7 @@ function renderMatchCard(match) {
     // Key factors
     if (a.key_factors && a.key_factors.length > 0) {
         html += '<div class="oracle-match-analysis">';
-        a.key_factors.forEach(function(f) {
+        a.key_factors.forEach(function (f) {
             html += '<div class="factor">' + f + '</div>';
         });
         html += '</div>';
@@ -224,7 +232,7 @@ function capitalize(str) {
 }
 
 // Playoff Predictor widget with LIVE badge + Division Predictions button
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let container = document.getElementById('oracle-widget');
     if (!container) {
         container = document.createElement('div');
@@ -233,8 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     fetch('./oracle-data.json')
-        .then(function(response) { return response.json(); })
-        .then(function(data) {
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
             let html = '<div class="nba-oracle-container">';
 
             // Header — black bar with uppercase title
@@ -248,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Team rows
             html += '<table class="nba-oracle-table">';
-            data.teams.forEach(function(team) {
+            data.teams.forEach(function (team) {
                 const percentage = (team.win_prob * 100).toFixed(0) + '%';
                 let statusClass = 'status-contend';
                 if (team.win_prob >= 0.90) statusClass = 'status-lock';
@@ -270,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
             html += '</div>';
             container.innerHTML = html;
         })
-        .catch(function(err) {
+        .catch(function (err) {
             console.error("Oracle widget failed", err);
         });
 });

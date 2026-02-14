@@ -11,7 +11,7 @@
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     overflow: hidden;
 }
 
@@ -44,8 +44,15 @@
 }
 
 @keyframes oracle-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.45; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
 }
 
 .nba-oracle-table {
@@ -141,7 +148,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.65);
+    background: rgba(0, 0, 0, 0.65);
     z-index: 10000;
     overflow-y: auto;
     font-family: "Roboto", Arial, sans-serif;
@@ -149,8 +156,13 @@
 }
 
 @keyframes oracle-fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .oracle-modal-content {
@@ -159,7 +171,7 @@
     background: #f3f3f3;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* Modal Header */
@@ -448,7 +460,7 @@
 }
 
 .oracle-match-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .oracle-match-header {
@@ -720,4 +732,49 @@
     .oracle-analytics-bar {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+}
+
+/* --- Coming Soon State --- */
+.oracle-coming-soon {
+    text-align: center;
+    padding: 60px 20px;
+    color: #8e9196;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px dashed #e5e7eb;
+}
+
+.coming-soon-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    opacity: 0.7;
+}
+
+.oracle-coming-soon h3 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 8px 0;
+}
+
+.oracle-coming-soon p {
+    font-size: 11px;
+    color: #666;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.coming-soon-badge {
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 2px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: inline-block;
 }

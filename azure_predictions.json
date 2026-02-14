@@ -1,0 +1,1750 @@
+{
+  "meta": {
+    "model": "Azure ML Ensemble v2.1",
+    "version": "2.1",
+    "last_updated": "2026-02-14",
+    "dataset_seasons": [
+      "2016-17",
+      "2017-18",
+      "2018-19",
+      "2019-20",
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24",
+      "2024-25",
+      "2025-26"
+    ],
+    "prediction_target": "2025-26"
+  },
+  "divisions": {
+    "atlantic": {
+      "name": "Atlantic Division",
+      "conference": "Eastern",
+      "teams": [
+        {
+          "team": "Boston Celtics",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "off_rating": 120,
+            "def_rating": 112.7,
+            "net_rating": 7.3,
+            "efficiency_pct": 0.5136000000000001
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.744,
+              "off_rating": 119.5,
+              "def_rating": 110.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.78,
+              "off_rating": 122.2,
+              "def_rating": 110.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.695,
+              "off_rating": 117.3,
+              "def_rating": 110.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.622,
+              "off_rating": 113.6,
+              "def_rating": 106.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.5,
+              "off_rating": 113.1,
+              "def_rating": 111.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.667,
+              "off_rating": 112.8,
+              "def_rating": 106.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.598,
+              "off_rating": 111.3,
+              "def_rating": 107,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.671,
+              "off_rating": 106.8,
+              "def_rating": 103.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.646,
+              "off_rating": 110.6,
+              "def_rating": 108,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 92,
+            "defensive_score": 57,
+            "win_pct_score": 78.8,
+            "overall_rating": 75.3
+          }
+        },
+        {
+          "team": "New York Knicks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "off_rating": 118.6,
+            "def_rating": 113.1,
+            "net_rating": 5.5,
+            "efficiency_pct": 0.5136000000000001
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.622,
+              "off_rating": 117.3,
+              "def_rating": 113.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.61,
+              "off_rating": 117.3,
+              "def_rating": 112.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.573,
+              "off_rating": 117,
+              "def_rating": 114.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.451,
+              "off_rating": 109.7,
+              "def_rating": 110.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.569,
+              "off_rating": 110.2,
+              "def_rating": 107.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.318,
+              "off_rating": 105.9,
+              "def_rating": 112.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.207,
+              "off_rating": 104,
+              "def_rating": 112.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.354,
+              "off_rating": 106.3,
+              "def_rating": 109.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.378,
+              "off_rating": 107.1,
+              "def_rating": 110.7,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 80.8,
+            "defensive_score": 54.4,
+            "win_pct_score": 78.8,
+            "overall_rating": 69.9
+          }
+        },
+        {
+          "team": "Toronto Raptors",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.593,
+            "off_rating": 114,
+            "def_rating": 112.1,
+            "net_rating": 1.9,
+            "efficiency_pct": 0.4744
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.366,
+              "off_rating": 109.6,
+              "def_rating": 113.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.305,
+              "off_rating": 111.8,
+              "def_rating": 118.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.5,
+              "off_rating": 114.6,
+              "def_rating": 113.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.585,
+              "off_rating": 112.1,
+              "def_rating": 109.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.375,
+              "off_rating": 111.6,
+              "def_rating": 112,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.736,
+              "off_rating": 110.8,
+              "def_rating": 104.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.707,
+              "off_rating": 112.6,
+              "def_rating": 106.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.72,
+              "off_rating": 113,
+              "def_rating": 105.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.622,
+              "off_rating": 111.4,
+              "def_rating": 107.1,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 44,
+            "defensive_score": 60.8,
+            "win_pct_score": 69.6,
+            "overall_rating": 55.8
+          }
+        },
+        {
+          "team": "Philadelphia 76ers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.577,
+            "off_rating": 115.4,
+            "def_rating": 113.8,
+            "net_rating": 1.6,
+            "efficiency_pct": 0.4616
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.293,
+              "off_rating": 111,
+              "def_rating": 117.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 116.2,
+              "def_rating": 113,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.659,
+              "off_rating": 117,
+              "def_rating": 112.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.622,
+              "off_rating": 113,
+              "def_rating": 110.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.681,
+              "off_rating": 112.5,
+              "def_rating": 107,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.589,
+              "off_rating": 110.7,
+              "def_rating": 108.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.622,
+              "off_rating": 111.6,
+              "def_rating": 109,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.634,
+              "off_rating": 108.5,
+              "def_rating": 103.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.341,
+              "off_rating": 102.7,
+              "def_rating": 108.2,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 55.2,
+            "defensive_score": 50,
+            "win_pct_score": 66.6,
+            "overall_rating": 55.4
+          }
+        },
+        {
+          "team": "Brooklyn Nets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.275,
+            "off_rating": 110.5,
+            "def_rating": 118,
+            "net_rating": -7.5,
+            "efficiency_pct": 0.22000000000000003
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.317,
+              "off_rating": 108.1,
+              "def_rating": 115.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.39,
+              "off_rating": 112.4,
+              "def_rating": 115.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.549,
+              "off_rating": 114.6,
+              "def_rating": 113.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.537,
+              "off_rating": 113.2,
+              "def_rating": 112.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.667,
+              "off_rating": 117.3,
+              "def_rating": 113.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.486,
+              "off_rating": 108.7,
+              "def_rating": 109.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.512,
+              "off_rating": 108.9,
+              "def_rating": 109,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.341,
+              "off_rating": 106.1,
+              "def_rating": 109.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.244,
+              "off_rating": 103.6,
+              "def_rating": 110.1,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 16,
+            "defensive_score": 23.4,
+            "win_pct_score": 9.9,
+            "overall_rating": 17.8
+          }
+        }
+      ],
+      "division_analytics": {
+        "strongest_team": "Boston Celtics",
+        "weakest_team": "Brooklyn Nets",
+        "playoff_teams": 4,
+        "average_off_rating": 115.7,
+        "average_def_rating": 113.9,
+        "average_win_pct": 0.546,
+        "best_offense": "Boston Celtics",
+        "best_defense": "Toronto Raptors",
+        "competitiveness_index": 0.5
+      }
+    },
+    "central": {
+      "name": "Central Division",
+      "conference": "Eastern",
+      "teams": [
+        {
+          "team": "Detroit Pistons",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.745,
+            "off_rating": 116.4,
+            "def_rating": 108.4,
+            "net_rating": 8,
+            "efficiency_pct": 0.596
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.537,
+              "off_rating": 114.6,
+              "def_rating": 112.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.171,
+              "off_rating": 109,
+              "def_rating": 118,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.207,
+              "off_rating": 109.9,
+              "def_rating": 117.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.28,
+              "off_rating": 105.6,
+              "def_rating": 113.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.278,
+              "off_rating": 107.6,
+              "def_rating": 112.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.303,
+              "off_rating": 108.8,
+              "def_rating": 112.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.5,
+              "off_rating": 108.4,
+              "def_rating": 108.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.476,
+              "off_rating": 106.6,
+              "def_rating": 106.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.451,
+              "off_rating": 105.3,
+              "def_rating": 106.7,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 63.2,
+            "defensive_score": 84.2,
+            "win_pct_score": 98.1,
+            "overall_rating": 78.6
+          }
+        },
+        {
+          "team": "Cleveland Cavaliers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.604,
+            "off_rating": 117.2,
+            "def_rating": 113.4,
+            "net_rating": 3.8,
+            "efficiency_pct": 0.4832
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.78,
+              "off_rating": 121,
+              "def_rating": 111.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.585,
+              "off_rating": 114.7,
+              "def_rating": 112.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.622,
+              "off_rating": 115.5,
+              "def_rating": 109.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.537,
+              "off_rating": 111,
+              "def_rating": 108.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.306,
+              "off_rating": 105.2,
+              "def_rating": 113.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.292,
+              "off_rating": 106.9,
+              "def_rating": 114.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.232,
+              "off_rating": 106.8,
+              "def_rating": 116.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.61,
+              "off_rating": 112,
+              "def_rating": 111.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.622,
+              "off_rating": 112.8,
+              "def_rating": 109.7,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 69.6,
+            "defensive_score": 52.5,
+            "win_pct_score": 71.7,
+            "overall_rating": 63.2
+          }
+        },
+        {
+          "team": "Indiana Pacers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.245,
+            "off_rating": 108.5,
+            "def_rating": 116.2,
+            "net_rating": -7.7,
+            "efficiency_pct": 0.196
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 115.4,
+              "def_rating": 113.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 120.5,
+              "def_rating": 117.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.427,
+              "off_rating": 113.8,
+              "def_rating": 117.1,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.305,
+              "off_rating": 111.9,
+              "def_rating": 115.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.472,
+              "off_rating": 111.9,
+              "def_rating": 111.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.616,
+              "off_rating": 109.5,
+              "def_rating": 107.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.585,
+              "off_rating": 109.4,
+              "def_rating": 106,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.585,
+              "off_rating": 108.5,
+              "def_rating": 107.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.512,
+              "off_rating": 107.9,
+              "def_rating": 108.1,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 0,
+            "defensive_score": 34.8,
+            "win_pct_score": 4.3,
+            "overall_rating": 14.8
+          }
+        },
+        {
+          "team": "Chicago Bulls",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.453,
+            "off_rating": 113.7,
+            "def_rating": 117.5,
+            "net_rating": -3.8,
+            "efficiency_pct": 0.36240000000000006
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.476,
+              "off_rating": 113.2,
+              "def_rating": 114.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.476,
+              "off_rating": 114,
+              "def_rating": 115.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.488,
+              "off_rating": 112.8,
+              "def_rating": 111.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.561,
+              "off_rating": 112.7,
+              "def_rating": 113.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.431,
+              "off_rating": 110.4,
+              "def_rating": 111.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.338,
+              "off_rating": 105.8,
+              "def_rating": 108.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.268,
+              "off_rating": 104.5,
+              "def_rating": 112.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.329,
+              "off_rating": 103.4,
+              "def_rating": 110.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.5,
+              "off_rating": 106.5,
+              "def_rating": 106.2,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 41.6,
+            "defensive_score": 26.6,
+            "win_pct_score": 43.3,
+            "overall_rating": 35.9
+          }
+        },
+        {
+          "team": "Milwaukee Bucks",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.42,
+            "off_rating": 113,
+            "def_rating": 116.6,
+            "net_rating": -3.6,
+            "efficiency_pct": 0.336
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.585,
+              "off_rating": 115.1,
+              "def_rating": 112.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.598,
+              "off_rating": 117.6,
+              "def_rating": 115,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.707,
+              "off_rating": 114.3,
+              "def_rating": 110.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.622,
+              "off_rating": 114.3,
+              "def_rating": 111.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.639,
+              "off_rating": 116.5,
+              "def_rating": 110.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.767,
+              "off_rating": 111.9,
+              "def_rating": 102.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.732,
+              "off_rating": 113.5,
+              "def_rating": 104.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.537,
+              "off_rating": 109,
+              "def_rating": 109.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.512,
+              "off_rating": 108.5,
+              "def_rating": 108.7,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 36,
+            "defensive_score": 32.3,
+            "win_pct_score": 37.1,
+            "overall_rating": 34.7
+          }
+        }
+      ],
+      "division_analytics": {
+        "strongest_team": "Detroit Pistons",
+        "weakest_team": "Milwaukee Bucks",
+        "playoff_teams": 2,
+        "average_off_rating": 113.8,
+        "average_def_rating": 114.4,
+        "average_win_pct": 0.493,
+        "best_offense": "Cleveland Cavaliers",
+        "best_defense": "Detroit Pistons",
+        "competitiveness_index": 0.5
+      }
+    },
+    "northwest": {
+      "name": "Northwest Division",
+      "conference": "Western",
+      "teams": [
+        {
+          "team": "Oklahoma City Thunder",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.755,
+            "off_rating": 117.7,
+            "def_rating": 105.9,
+            "net_rating": 11.8,
+            "efficiency_pct": 0.6040000000000001
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.829,
+              "off_rating": 119.2,
+              "def_rating": 106.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.695,
+              "off_rating": 118.3,
+              "def_rating": 111,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.488,
+              "off_rating": 114.2,
+              "def_rating": 113.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.293,
+              "off_rating": 103.8,
+              "def_rating": 111.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.306,
+              "off_rating": 102.8,
+              "def_rating": 113.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.611,
+              "off_rating": 110.1,
+              "def_rating": 108.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.598,
+              "off_rating": 109.8,
+              "def_rating": 106.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.585,
+              "off_rating": 110.1,
+              "def_rating": 106.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.573,
+              "off_rating": 107.9,
+              "def_rating": 107.1,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 73.6,
+            "defensive_score": 100,
+            "win_pct_score": 100,
+            "overall_rating": 89.4
+          }
+        },
+        {
+          "team": "Minnesota Timberwolves",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.593,
+            "off_rating": 116.6,
+            "def_rating": 112.8,
+            "net_rating": 3.8,
+            "efficiency_pct": 0.4744
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.598,
+              "off_rating": 115.7,
+              "def_rating": 110.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.683,
+              "off_rating": 114.6,
+              "def_rating": 108.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.512,
+              "off_rating": 113.3,
+              "def_rating": 113.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.561,
+              "off_rating": 113.8,
+              "def_rating": 111,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.319,
+              "off_rating": 109.3,
+              "def_rating": 114.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.297,
+              "off_rating": 107.6,
+              "def_rating": 111.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.439,
+              "off_rating": 110.6,
+              "def_rating": 112.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.573,
+              "off_rating": 112.5,
+              "def_rating": 110.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.378,
+              "off_rating": 110,
+              "def_rating": 110.9,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 64.8,
+            "defensive_score": 56.3,
+            "win_pct_score": 69.6,
+            "overall_rating": 62.4
+          }
+        },
+        {
+          "team": "Denver Nuggets",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.642,
+            "off_rating": 121,
+            "def_rating": 116.8,
+            "net_rating": 4.2,
+            "efficiency_pct": 0.5136000000000001
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 118.9,
+              "def_rating": 115.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.695,
+              "off_rating": 117.8,
+              "def_rating": 112.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.646,
+              "off_rating": 116.8,
+              "def_rating": 113.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.585,
+              "off_rating": 113.8,
+              "def_rating": 111.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.653,
+              "off_rating": 116.3,
+              "def_rating": 111.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.63,
+              "off_rating": 112.6,
+              "def_rating": 110.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.659,
+              "off_rating": 112.1,
+              "def_rating": 108.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.561,
+              "off_rating": 111.4,
+              "def_rating": 110,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.488,
+              "off_rating": 112.2,
+              "def_rating": 111.7,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 100,
+            "defensive_score": 31,
+            "win_pct_score": 78.8,
+            "overall_rating": 68.2
+          }
+        },
+        {
+          "team": "Portland Trail Blazers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.472,
+            "off_rating": 113.2,
+            "def_rating": 115.4,
+            "net_rating": -2.2,
+            "efficiency_pct": 0.3776
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.439,
+              "off_rating": 111,
+              "def_rating": 113.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.256,
+              "off_rating": 107.6,
+              "def_rating": 116.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.402,
+              "off_rating": 114,
+              "def_rating": 118,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.329,
+              "off_rating": 107.3,
+              "def_rating": 116.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.583,
+              "off_rating": 117.1,
+              "def_rating": 115.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.473,
+              "off_rating": 113.2,
+              "def_rating": 114.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.646,
+              "off_rating": 113.7,
+              "def_rating": 109.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.598,
+              "off_rating": 108.4,
+              "def_rating": 105.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.5,
+              "off_rating": 109.4,
+              "def_rating": 110,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 37.6,
+            "defensive_score": 39.9,
+            "win_pct_score": 46.9,
+            "overall_rating": 40.4
+          }
+        },
+        {
+          "team": "Utah Jazz",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.302,
+            "off_rating": 113.6,
+            "def_rating": 121.7,
+            "net_rating": -8.1,
+            "efficiency_pct": 0.2416
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.207,
+              "off_rating": 110.2,
+              "def_rating": 119.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.378,
+              "off_rating": 114.5,
+              "def_rating": 119.6,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.451,
+              "off_rating": 115.3,
+              "def_rating": 116,
+              "made_playoffs": false
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.598,
+              "off_rating": 116.2,
+              "def_rating": 110,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.722,
+              "off_rating": 116.5,
+              "def_rating": 107.5,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.611,
+              "off_rating": 111.8,
+              "def_rating": 109.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.61,
+              "off_rating": 110.3,
+              "def_rating": 105.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.585,
+              "off_rating": 107.4,
+              "def_rating": 103,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.622,
+              "off_rating": 109,
+              "def_rating": 104.7,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 40.8,
+            "defensive_score": 0,
+            "win_pct_score": 15,
+            "overall_rating": 19.3
+          }
+        }
+      ],
+      "division_analytics": {
+        "strongest_team": "Oklahoma City Thunder",
+        "weakest_team": "Utah Jazz",
+        "playoff_teams": 3,
+        "average_off_rating": 116.4,
+        "average_def_rating": 114.5,
+        "average_win_pct": 0.553,
+        "best_offense": "Denver Nuggets",
+        "best_defense": "Oklahoma City Thunder",
+        "competitiveness_index": 0.5
+      }
+    },
+    "pacific": {
+      "name": "Pacific Division",
+      "conference": "Western",
+      "teams": [
+        {
+          "team": "Phoenix Suns",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.585,
+            "off_rating": 114.5,
+            "def_rating": 112.3,
+            "net_rating": 2.2,
+            "efficiency_pct": 0.46799999999999997
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.439,
+              "off_rating": 114.7,
+              "def_rating": 117.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.598,
+              "off_rating": 116.8,
+              "def_rating": 113.7,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.549,
+              "off_rating": 114.5,
+              "def_rating": 112.3,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.78,
+              "off_rating": 114.2,
+              "def_rating": 106.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.708,
+              "off_rating": 116.3,
+              "def_rating": 110.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.466,
+              "off_rating": 111.3,
+              "def_rating": 110.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.232,
+              "off_rating": 105.3,
+              "def_rating": 114.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.256,
+              "off_rating": 102.8,
+              "def_rating": 111.7,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.293,
+              "off_rating": 106.1,
+              "def_rating": 111.3,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 48,
+            "defensive_score": 59.5,
+            "win_pct_score": 68.1,
+            "overall_rating": 56.6
+          }
+        },
+        {
+          "team": "Los Angeles Lakers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.627,
+            "off_rating": 116.5,
+            "def_rating": 116.5,
+            "net_rating": 0,
+            "efficiency_pct": 0.5016
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 115,
+              "def_rating": 113.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.573,
+              "off_rating": 115.4,
+              "def_rating": 114.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.524,
+              "off_rating": 113.9,
+              "def_rating": 113.2,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.402,
+              "off_rating": 110,
+              "def_rating": 112.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.583,
+              "off_rating": 109.8,
+              "def_rating": 106.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.732,
+              "off_rating": 111.7,
+              "def_rating": 106.1,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.451,
+              "off_rating": 107.4,
+              "def_rating": 108.9,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.427,
+              "off_rating": 106,
+              "def_rating": 107.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.317,
+              "off_rating": 105.3,
+              "def_rating": 112,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 64,
+            "defensive_score": 32.9,
+            "win_pct_score": 76,
+            "overall_rating": 54
+          }
+        },
+        {
+          "team": "Golden State Warriors",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.528,
+            "off_rating": 114.3,
+            "def_rating": 112.2,
+            "net_rating": 2.1,
+            "efficiency_pct": 0.42240000000000005
+          },
+          "playoff_status": "clinched",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.585,
+              "off_rating": 114.2,
+              "def_rating": 111,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.561,
+              "off_rating": 116.9,
+              "def_rating": 114.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.537,
+              "off_rating": 115.1,
+              "def_rating": 113.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.646,
+              "off_rating": 112.1,
+              "def_rating": 106.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.542,
+              "off_rating": 110.5,
+              "def_rating": 109.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.231,
+              "off_rating": 104.4,
+              "def_rating": 113,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.695,
+              "off_rating": 115,
+              "def_rating": 108.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.707,
+              "off_rating": 112.8,
+              "def_rating": 106.8,
+              "made_playoffs": true
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.817,
+              "off_rating": 114.8,
+              "def_rating": 103.4,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 46.4,
+            "defensive_score": 60.1,
+            "win_pct_score": 57.4,
+            "overall_rating": 54.1
+          }
+        },
+        {
+          "team": "LA Clippers",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.481,
+            "off_rating": 115.6,
+            "def_rating": 115.8,
+            "net_rating": -0.2,
+            "efficiency_pct": 0.38480000000000003
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.61,
+              "off_rating": 114.3,
+              "def_rating": 109.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.622,
+              "off_rating": 117.9,
+              "def_rating": 114.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.537,
+              "off_rating": 114,
+              "def_rating": 113.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.512,
+              "off_rating": 109.5,
+              "def_rating": 109.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.653,
+              "off_rating": 116.7,
+              "def_rating": 110.6,
+              "made_playoffs": true
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.681,
+              "off_rating": 113.3,
+              "def_rating": 106.9,
+              "made_playoffs": true
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.585,
+              "off_rating": 111.4,
+              "def_rating": 110.4,
+              "made_playoffs": true
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.512,
+              "off_rating": 109.4,
+              "def_rating": 109.2,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.622,
+              "off_rating": 111.8,
+              "def_rating": 107.5,
+              "made_playoffs": true
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 56.8,
+            "defensive_score": 37.3,
+            "win_pct_score": 48.6,
+            "overall_rating": 47.4
+          }
+        },
+        {
+          "team": "Sacramento Kings",
+          "season": "2025-26",
+          "stats": {
+            "win_pct": 0.222,
+            "off_rating": 110.2,
+            "def_rating": 119.8,
+            "net_rating": -9.6,
+            "efficiency_pct": 0.1776
+          },
+          "playoff_status": "eliminated",
+          "historical": [
+            {
+              "season": "2024-25",
+              "win_pct": 0.488,
+              "off_rating": 115.9,
+              "def_rating": 115.3,
+              "made_playoffs": false
+            },
+            {
+              "season": "2023-24",
+              "win_pct": 0.561,
+              "off_rating": 116.2,
+              "def_rating": 114.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2022-23",
+              "win_pct": 0.585,
+              "off_rating": 118.6,
+              "def_rating": 116,
+              "made_playoffs": true
+            },
+            {
+              "season": "2021-22",
+              "win_pct": 0.366,
+              "off_rating": 109.6,
+              "def_rating": 114.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2020-21",
+              "win_pct": 0.431,
+              "off_rating": 112.7,
+              "def_rating": 116.5,
+              "made_playoffs": false
+            },
+            {
+              "season": "2019-20",
+              "win_pct": 0.431,
+              "off_rating": 109.5,
+              "def_rating": 111.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2018-19",
+              "win_pct": 0.476,
+              "off_rating": 109.6,
+              "def_rating": 110.8,
+              "made_playoffs": false
+            },
+            {
+              "season": "2017-18",
+              "win_pct": 0.329,
+              "off_rating": 103.1,
+              "def_rating": 110.4,
+              "made_playoffs": false
+            },
+            {
+              "season": "2016-17",
+              "win_pct": 0.39,
+              "off_rating": 106.6,
+              "def_rating": 110.8,
+              "made_playoffs": false
+            }
+          ],
+          "normalized_scores": {
+            "offensive_score": 13.6,
+            "defensive_score": 12,
+            "win_pct_score": 0,
+            "overall_rating": 10.3
+          }
+        }
+      ],
+      "division_analytics": {
+        "strongest_team": "Phoenix Suns",
+        "weakest_team": "Sacramento Kings",
+        "playoff_teams": 3,
+        "average_off_rating": 114.2,
+        "average_def_rating": 115.3,
+        "average_win_pct": 0.489,
+        "best_offense": "Los Angeles Lakers",
+        "best_defense": "Golden State Warriors",
+        "competitiveness_index": 0.5
+      }
+    }
+  }
+}
