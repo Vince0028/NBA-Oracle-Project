@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(container);
     }
 
-    fetch('./oracle-data.json')
+    fetch('./azure_oracle_prediction.json')
         .then(function (response) { return response.json(); })
         .then(function (data) {
             let html = '<div class="nba-oracle-container">';
@@ -250,17 +250,20 @@ document.addEventListener('DOMContentLoaded', function () {
             html += '<h2>Playoff Predictor</h2>';
             html += '<div style="display:flex;align-items:center;gap:8px;">';
             html += '<span class="oracle-live-badge">LIVE</span>';
-            html += '<span style="font-size:9px;color:#888;letter-spacing:0.5px;">' + data.oracle_metadata.global_accuracy + '</span>';
+            html += '<span style="font-size:9px;color:#888;letter-spacing:0.5px;">Acc: ' + data.oracle_metadata.global_accuracy + '</span>';
             html += '</div>';
             html += '</div>';
 
-            // Team rows
+            // Team rows (Limit to top 8 or similar to fit sidebar?)
+            // The screenshot showed about 8 teams. We'll show top 8 sorted by probability.
+            const sortedTeams = data.teams.sort((a, b) => b.win_prob - a.win_prob).slice(0, 8);
+
             html += '<table class="nba-oracle-table">';
-            data.teams.forEach(function (team) {
+            sortedTeams.forEach(function (team) {
                 const percentage = (team.win_prob * 100).toFixed(0) + '%';
-                let statusClass = 'status-contend';
-                if (team.win_prob >= 0.90) statusClass = 'status-lock';
-                if (team.win_prob < 0.45) statusClass = 'status-out';
+                let statusClass = 'status-contend'; // default yellow/mid
+                if (team.win_prob >= 0.80) statusClass = 'status-lock'; // high green
+                if (team.win_prob <= 0.20) statusClass = 'status-out'; // low red
 
                 html += '<tr class="nba-oracle-row">';
                 html += '<td class="nba-oracle-cell"><strong>' + team.id + '</strong> ' + team.name + '</td>';
