@@ -254,7 +254,7 @@ function renderDivision(divKey) {
 
                     <div class="oracle-match-analysis">
                         <div style="font-size:10px; font-weight:700; color:#1D428A; margin-bottom:4px; text-transform:uppercase; letter-spacing:1px;">\uD83E\uDDE0 AI Analysis</div>
-                        <div class="factor">${match.reasoning || 'Overall Win Probability'}</div>
+                        <div class="factor">${Array.isArray(match.reasoning) ? '<ul class="reasoning-list">' + match.reasoning.map(r => '<li>' + r + '</li>').join('') + '</ul>' : (match.reasoning || 'Overall Win Probability')}</div>
                     </div>
                 </div>`;
             });

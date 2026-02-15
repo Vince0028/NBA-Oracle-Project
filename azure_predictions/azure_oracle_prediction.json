@@ -260,7 +260,13 @@
       "venue": "Rocket Mortgage FieldHouse",
       "projected_winner": "CLE",
       "confidence": 13.2,
-      "reasoning": "CLE dominant — ML playoff prob 95.1% vs BKN 0.003%. Net Rtg +3.8 vs -7.5 (diff 11.3). CLE 2024-25 was .780 WP; BKN declining (.317→.275). CLE superior offense (+6.7 Rtg) and defense."
+      "reasoning": [
+        "ML Playoff Prob: CLE 95.1% vs BKN 0.003%",
+        "Net Rating: CLE +3.8 vs BKN -7.5 (gap of 11.3)",
+        "Offense: CLE 117.2 vs BKN 110.5 (+6.7 edge)",
+        "Defense: CLE 113.4 vs BKN 118.0 (CLE allows fewer pts)",
+        "2024-25 Trend: CLE was .780 WP; BKN slipping .317 to .275"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -275,7 +281,14 @@
       "venue": "Madison Square Garden",
       "projected_winner": "DET",
       "confidence": 2.8,
-      "reasoning": "Tight matchup — DET leads in net Rtg (+8.0 vs +5.5) and WP (.745 vs .642). DET's elite defense (108.4) edges NYK home court. ML prob: DET 95.7%, NYK 99.99%. DET 2024-25 surging (.537→.745)."
+      "reasoning": [
+        "ML Playoff Prob: DET 95.7% vs NYK 99.99%",
+        "Net Rating: DET +8.0 vs NYK +5.5 (DET leads by 2.5)",
+        "Defense: DET 108.4 vs NYK 113.1 (DET allows 4.7 fewer pts)",
+        "Win Pct: DET .745 vs NYK .642 (DET higher)",
+        "2024-25 Trend: DET surging from .537 to .745",
+        "Note: NYK has home court at MSG, keeps this tight"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -290,7 +303,14 @@
       "venue": "Wells Fargo Center",
       "projected_winner": "PHI",
       "confidence": 4.6,
-      "reasoning": "PHI at home — ML playoff prob 99.99% vs ATL 69.4%. PHI net Rtg +1.6 vs ATL -0.9 (diff 2.5). PHI rebounded from .293 (2024-25) to .577. PHI superior offense (+1.6) and defense (-0.9 Rtg)."
+      "reasoning": [
+        "ML Playoff Prob: PHI 99.99% vs ATL 69.4%",
+        "Net Rating: PHI +1.6 vs ATL -0.9 (gap of 2.5)",
+        "Offense: PHI 115.4 vs ATL 113.8 (+1.6 edge)",
+        "Defense: PHI 113.8 vs ATL 114.7 (PHI allows fewer pts)",
+        "2024-25 Trend: PHI bounced back from .293 to .577",
+        "Home Court: PHI at Wells Fargo Center"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -305,7 +325,14 @@
       "venue": "Spectrum Center",
       "projected_winner": "HOU",
       "confidence": 5.1,
-      "reasoning": "HOU away but stronger — ML prob 96.6% vs CHA 8.7%. Net Rtg +5.1 vs +2.2 (diff 2.9). HOU defense (-2.7 Rtg better). HOU 2024-25 was .634 (consistent); CHA was .232. Offense nearly equal."
+      "reasoning": [
+        "ML Playoff Prob: HOU 96.6% vs CHA 8.7%",
+        "Net Rating: HOU +5.1 vs CHA +2.2 (gap of 2.9)",
+        "Offense: Nearly equal (HOU 117.3 vs CHA 117.1)",
+        "Defense: HOU 112.2 vs CHA 114.9 (HOU allows 2.7 fewer pts)",
+        "2024-25 Trend: HOU consistent at .634; CHA was .232",
+        "Note: HOU on the road but clearly the stronger team"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -320,7 +347,14 @@
       "venue": "Capital One Arena",
       "projected_winner": "IND",
       "confidence": 2.4,
-      "reasoning": "Both struggling — ML prob: IND 4.4% vs WAS 3.3%. IND better net Rtg (-7.7 vs -10.8, diff 3.1). IND defense -4.0 Rtg better. IND 2024-25 was .610 (more talent); WAS was .220. Low-quality matchup."
+      "reasoning": [
+        "ML Playoff Prob: IND 4.4% vs WAS 3.3% (both low)",
+        "Net Rating: IND -7.7 vs WAS -10.8 (IND less negative by 3.1)",
+        "Defense: IND 116.2 vs WAS 120.2 (IND allows 4.0 fewer pts)",
+        "Offense: Close (WAS 109.4 vs IND 108.5)",
+        "2024-25 Trend: IND was .610 (more roster talent); WAS was .220",
+        "Note: Low-quality matchup between two struggling teams"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -335,7 +369,14 @@
       "venue": "United Center",
       "projected_winner": "TOR",
       "confidence": 3.6,
-      "reasoning": "TOR road win — ML prob 99.99% vs CHI 0.7%. Net Rtg +1.9 vs -3.8 (diff 5.7). TOR defense -5.4 Rtg superior. TOR surged from .366 (2024-25) to .593. CHI declining (.476→.453)."
+      "reasoning": [
+        "ML Playoff Prob: TOR 99.99% vs CHI 0.7%",
+        "Net Rating: TOR +1.9 vs CHI -3.8 (gap of 5.7)",
+        "Defense: TOR 112.1 vs CHI 117.5 (TOR allows 5.4 fewer pts)",
+        "Offense: Close (TOR 114.0 vs CHI 113.7)",
+        "2024-25 Trend: TOR surged from .366 to .593; CHI slipping .476 to .453",
+        "Note: TOR on the road at United Center"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -350,7 +391,14 @@
       "venue": "Moody Center (Austin)",
       "projected_winner": "SAS",
       "confidence": 6.3,
-      "reasoning": "SAS home advantage — ML prob 98.4% vs PHX 95.2%. Net Rtg +5.4 vs +2.2 (diff 3.2). SAS superior offense (+2.0) and defense (-1.2). SAS massive surge from .415 (2024-25) to .692 WP."
+      "reasoning": [
+        "ML Playoff Prob: SAS 98.4% vs PHX 95.2%",
+        "Net Rating: SAS +5.4 vs PHX +2.2 (gap of 3.2)",
+        "Offense: SAS 116.5 vs PHX 114.5 (+2.0 edge)",
+        "Defense: SAS 111.1 vs PHX 112.3 (SAS allows 1.2 fewer pts)",
+        "2024-25 Trend: SAS massive jump from .415 to .692",
+        "Home Court: SAS at Moody Center (Austin)"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -365,7 +413,14 @@
       "venue": "Chase Center",
       "projected_winner": "BOS",
       "confidence": 3.1,
-      "reasoning": "BOS road edge — ML prob 99.99% vs GSW 86.2%. Net Rtg +7.3 vs +2.1 (diff 5.2). BOS elite offense (+5.7 Rtg). BOS 2024-25 was .744 (dominant). GSW home court narrows gap."
+      "reasoning": [
+        "ML Playoff Prob: BOS 99.99% vs GSW 86.2%",
+        "Net Rating: BOS +7.3 vs GSW +2.1 (gap of 5.2)",
+        "Offense: BOS 120.0 vs GSW 114.3 (+5.7 edge, elite)",
+        "Defense: GSW 112.2 vs BOS 112.7 (GSW slightly better here)",
+        "2024-25 Trend: BOS was .744 (dominant); GSW was .585",
+        "Note: GSW home court at Chase Center narrows the gap"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -380,7 +435,14 @@
       "venue": "Golden 1 Center",
       "projected_winner": "ORL",
       "confidence": 7.4,
-      "reasoning": "ORL clearly better — ML prob 80.4% vs SAC 0.9%. Net Rtg -0.7 vs -9.6 (diff 8.9). ORL defense -5.7 Rtg superior. SAC collapsed from .488 (2024-25) to .222. ORL consistent at .529."
+      "reasoning": [
+        "ML Playoff Prob: ORL 80.4% vs SAC 0.9%",
+        "Net Rating: ORL -0.7 vs SAC -9.6 (gap of 8.9)",
+        "Defense: ORL 114.1 vs SAC 119.8 (ORL allows 5.7 fewer pts)",
+        "Offense: ORL 113.4 vs SAC 110.2 (+3.2 edge)",
+        "2024-25 Trend: SAC collapsed from .488 to .222; ORL steady at .529",
+        "Note: SAC at home but too far behind in every metric"
+      ]
     },
     {
       "date": "2026-02-19",
@@ -395,7 +457,14 @@
       "venue": "Intuit Dome",
       "projected_winner": "DEN",
       "confidence": 3.8,
-      "reasoning": "DEN road favorite — ML prob 96.8% vs LAC 12.4%. Net Rtg +4.2 vs -0.2 (diff 4.4). DEN #1 offense (121.0, +5.4 Rtg). LAC dropped from .610 (2024-25) to .481. LAC home court keeps it close."
+      "reasoning": [
+        "ML Playoff Prob: DEN 96.8% vs LAC 12.4%",
+        "Net Rating: DEN +4.2 vs LAC -0.2 (gap of 4.4)",
+        "Offense: DEN 121.0 vs LAC 115.6 (#1 offense, +5.4 edge)",
+        "Defense: LAC 115.8 vs DEN 116.8 (LAC slightly better here)",
+        "2024-25 Trend: LAC dropped from .610 to .481; DEN steady at .642",
+        "Note: LAC home court at Intuit Dome keeps this competitive"
+      ]
     }
   ]
 }

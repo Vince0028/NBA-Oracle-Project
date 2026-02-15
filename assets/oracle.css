@@ -627,6 +627,37 @@
     font-size: 11px;
 }
 
+.oracle-match-analysis .factor .reasoning-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.oracle-match-analysis .factor .reasoning-list li {
+    font-size: 11px;
+    color: #444;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.oracle-match-analysis .factor .reasoning-list li::before {
+    content: "›";
+    position: absolute;
+    left: 2px;
+    color: #C8102E;
+    font-weight: 800;
+    font-size: 11px;
+}
+
+.oracle-match-analysis .factor:has(.reasoning-list)::before {
+    display: none;
+}
+
+.oracle-match-analysis .factor:has(.reasoning-list) {
+    padding-left: 0;
+}
+
 .oracle-match-winner {
     background: #dbf0e0;
     padding: 7px 12px;
