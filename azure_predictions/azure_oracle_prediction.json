@@ -1,7 +1,7 @@
 {
   "oracle_metadata": {
     "model": "Azure ML Ensemble v2.1",
-    "last_updated": "2026-02-14",
+    "last_updated": "2026-02-19",
     "global_accuracy": "0.9850"
   },
   "teams": [
@@ -164,80 +164,238 @@
       "off_rtg": 110.2,
       "def_rtg": 119.8,
       "conf": "West"
+    },
+    {
+      "id": "MIA",
+      "name": "Miami Heat",
+      "win_prob": 0.519,
+      "off_rtg": 113.7,
+      "def_rtg": 111.7,
+      "conf": "East"
+    },
+    {
+      "id": "ORL",
+      "name": "Orlando Magic",
+      "win_prob": 0.529,
+      "off_rtg": 113.4,
+      "def_rtg": 114.1,
+      "conf": "East"
+    },
+    {
+      "id": "ATL",
+      "name": "Atlanta Hawks",
+      "win_prob": 0.481,
+      "off_rtg": 113.8,
+      "def_rtg": 114.7,
+      "conf": "East"
+    },
+    {
+      "id": "CHA",
+      "name": "Charlotte Hornets",
+      "win_prob": 0.472,
+      "off_rtg": 117.1,
+      "def_rtg": 114.9,
+      "conf": "East"
+    },
+    {
+      "id": "WAS",
+      "name": "Washington Wizards",
+      "win_prob": 0.269,
+      "off_rtg": 109.4,
+      "def_rtg": 120.2,
+      "conf": "East"
+    },
+    {
+      "id": "SAS",
+      "name": "San Antonio Spurs",
+      "win_prob": 0.692,
+      "off_rtg": 116.5,
+      "def_rtg": 111.1,
+      "conf": "West"
+    },
+    {
+      "id": "HOU",
+      "name": "Houston Rockets",
+      "win_prob": 0.627,
+      "off_rtg": 117.3,
+      "def_rtg": 112.2,
+      "conf": "West"
+    },
+    {
+      "id": "MEM",
+      "name": "Memphis Grizzlies",
+      "win_prob": 0.392,
+      "off_rtg": 113.2,
+      "def_rtg": 115.4,
+      "conf": "West"
+    },
+    {
+      "id": "DAL",
+      "name": "Dallas Mavericks",
+      "win_prob": 0.365,
+      "off_rtg": 110.3,
+      "def_rtg": 113.2,
+      "conf": "West"
+    },
+    {
+      "id": "NOP",
+      "name": "New Orleans Pelicans",
+      "win_prob": 0.259,
+      "off_rtg": 112.3,
+      "def_rtg": 118.4,
+      "conf": "West"
     }
   ],
   "matches": [
     {
-      "teams": [
-        "New York Knicks",
-        "Detroit Pistons"
-      ],
-      "ids": [
-        "NYK",
-        "DET"
-      ],
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Brooklyn Nets", "Cleveland Cavaliers"],
+      "ids": ["BKN", "CLE"],
       "stats": {
-        "NYK": {
-          "off": 118.6,
-          "def": 113.1
-        },
-        "DET": {
-          "off": 116.4,
-          "def": 108.4
-        }
+        "BKN": { "off": 110.5, "def": 118.0 },
+        "CLE": { "off": 117.2, "def": 113.4 }
       },
       "time": "7:00 PM",
-      "projected_winner": "DET",
-      "confidence": 7.4,
-      "reasoning": "DET projected to win — stronger defense (-4.7 Rtg)"
+      "venue": "Rocket Mortgage FieldHouse",
+      "projected_winner": "CLE",
+      "confidence": 13.2,
+      "reasoning": "CLE dominant — ML playoff prob 95.1% vs BKN 0.003%. Net Rtg +3.8 vs -7.5 (diff 11.3). CLE 2024-25 was .780 WP; BKN declining (.317→.275). CLE superior offense (+6.7 Rtg) and defense."
     },
     {
-      "teams": [
-        "Boston Celtics",
-        "Golden State Warriors"
-      ],
-      "ids": [
-        "BOS",
-        "GSW"
-      ],
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Detroit Pistons", "New York Knicks"],
+      "ids": ["DET", "NYK"],
       "stats": {
-        "BOS": {
-          "off": 120,
-          "def": 112.7
-        },
-        "GSW": {
-          "off": 114.3,
-          "def": 112.2
-        }
+        "DET": { "off": 116.4, "def": 108.4 },
+        "NYK": { "off": 118.6, "def": 113.1 }
+      },
+      "time": "7:30 PM",
+      "venue": "Madison Square Garden",
+      "projected_winner": "DET",
+      "confidence": 2.8,
+      "reasoning": "Tight matchup — DET leads in net Rtg (+8.0 vs +5.5) and WP (.745 vs .642). DET's elite defense (108.4) edges NYK home court. ML prob: DET 95.7%, NYK 99.99%. DET 2024-25 surging (.537→.745)."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Atlanta Hawks", "Philadelphia 76ers"],
+      "ids": ["ATL", "PHI"],
+      "stats": {
+        "ATL": { "off": 113.8, "def": 114.7 },
+        "PHI": { "off": 115.4, "def": 113.8 }
+      },
+      "time": "7:00 PM",
+      "venue": "Wells Fargo Center",
+      "projected_winner": "PHI",
+      "confidence": 4.6,
+      "reasoning": "PHI at home — ML playoff prob 99.99% vs ATL 69.4%. PHI net Rtg +1.6 vs ATL -0.9 (diff 2.5). PHI rebounded from .293 (2024-25) to .577. PHI superior offense (+1.6) and defense (-0.9 Rtg)."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Houston Rockets", "Charlotte Hornets"],
+      "ids": ["HOU", "CHA"],
+      "stats": {
+        "HOU": { "off": 117.3, "def": 112.2 },
+        "CHA": { "off": 117.1, "def": 114.9 }
+      },
+      "time": "7:00 PM",
+      "venue": "Spectrum Center",
+      "projected_winner": "HOU",
+      "confidence": 5.1,
+      "reasoning": "HOU away but stronger — ML prob 96.6% vs CHA 8.7%. Net Rtg +5.1 vs +2.2 (diff 2.9). HOU defense (-2.7 Rtg better). HOU 2024-25 was .634 (consistent); CHA was .232. Offense nearly equal."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Indiana Pacers", "Washington Wizards"],
+      "ids": ["IND", "WAS"],
+      "stats": {
+        "IND": { "off": 108.5, "def": 116.2 },
+        "WAS": { "off": 109.4, "def": 120.2 }
+      },
+      "time": "7:00 PM",
+      "venue": "Capital One Arena",
+      "projected_winner": "IND",
+      "confidence": 2.4,
+      "reasoning": "Both struggling — ML prob: IND 4.4% vs WAS 3.3%. IND better net Rtg (-7.7 vs -10.8, diff 3.1). IND defense -4.0 Rtg better. IND 2024-25 was .610 (more talent); WAS was .220. Low-quality matchup."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Toronto Raptors", "Chicago Bulls"],
+      "ids": ["TOR", "CHI"],
+      "stats": {
+        "TOR": { "off": 114.0, "def": 112.1 },
+        "CHI": { "off": 113.7, "def": 117.5 }
       },
       "time": "8:00 PM",
-      "projected_winner": "BOS",
-      "confidence": 9.7,
-      "reasoning": "BOS projected to win — superior offense (+5.7 Rtg)"
+      "venue": "United Center",
+      "projected_winner": "TOR",
+      "confidence": 3.6,
+      "reasoning": "TOR road win — ML prob 99.99% vs CHI 0.7%. Net Rtg +1.9 vs -3.8 (diff 5.7). TOR defense -5.4 Rtg superior. TOR surged from .366 (2024-25) to .593. CHI declining (.476→.453)."
     },
     {
-      "teams": [
-        "Denver Nuggets",
-        "LA Clippers"
-      ],
-      "ids": [
-        "DEN",
-        "LAC"
-      ],
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Phoenix Suns", "San Antonio Spurs"],
+      "ids": ["PHX", "SAS"],
       "stats": {
-        "DEN": {
-          "off": 121,
-          "def": 116.8
-        },
-        "LAC": {
-          "off": 115.6,
-          "def": 115.8
-        }
+        "PHX": { "off": 114.5, "def": 112.3 },
+        "SAS": { "off": 116.5, "def": 111.1 }
+      },
+      "time": "8:30 PM",
+      "venue": "Moody Center (Austin)",
+      "projected_winner": "SAS",
+      "confidence": 6.3,
+      "reasoning": "SAS home advantage — ML prob 98.4% vs PHX 95.2%. Net Rtg +5.4 vs +2.2 (diff 3.2). SAS superior offense (+2.0) and defense (-1.2). SAS massive surge from .415 (2024-25) to .692 WP."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Boston Celtics", "Golden State Warriors"],
+      "ids": ["BOS", "GSW"],
+      "stats": {
+        "BOS": { "off": 120.0, "def": 112.7 },
+        "GSW": { "off": 114.3, "def": 112.2 }
+      },
+      "time": "10:00 PM",
+      "venue": "Chase Center",
+      "projected_winner": "BOS",
+      "confidence": 3.1,
+      "reasoning": "BOS road edge — ML prob 99.99% vs GSW 86.2%. Net Rtg +7.3 vs +2.1 (diff 5.2). BOS elite offense (+5.7 Rtg). BOS 2024-25 was .744 (dominant). GSW home court narrows gap."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Orlando Magic", "Sacramento Kings"],
+      "ids": ["ORL", "SAC"],
+      "stats": {
+        "ORL": { "off": 113.4, "def": 114.1 },
+        "SAC": { "off": 110.2, "def": 119.8 }
+      },
+      "time": "10:00 PM",
+      "venue": "Golden 1 Center",
+      "projected_winner": "ORL",
+      "confidence": 7.4,
+      "reasoning": "ORL clearly better — ML prob 80.4% vs SAC 0.9%. Net Rtg -0.7 vs -9.6 (diff 8.9). ORL defense -5.7 Rtg superior. SAC collapsed from .488 (2024-25) to .222. ORL consistent at .529."
+    },
+    {
+      "date": "2026-02-19",
+      "date_pht": "2026-02-20",
+      "teams": ["Denver Nuggets", "LA Clippers"],
+      "ids": ["DEN", "LAC"],
+      "stats": {
+        "DEN": { "off": 121.0, "def": 116.8 },
+        "LAC": { "off": 115.6, "def": 115.8 }
       },
       "time": "10:30 PM",
+      "venue": "Intuit Dome",
       "projected_winner": "DEN",
-      "confidence": 14.3,
-      "reasoning": "DEN projected to win — superior offense (+5.4 Rtg)"
+      "confidence": 3.8,
+      "reasoning": "DEN road favorite — ML prob 96.8% vs LAC 12.4%. Net Rtg +4.2 vs -0.2 (diff 4.4). DEN #1 offense (121.0, +5.4 Rtg). LAC dropped from .610 (2024-25) to .481. LAC home court keeps it close."
     }
   ]
 }

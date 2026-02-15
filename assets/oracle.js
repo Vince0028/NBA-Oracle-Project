@@ -188,7 +188,7 @@ function renderDivision(divKey) {
         });
 
         if (divMatches.length > 0) {
-            html += '<h3 style="margin-top:24px; font-size:14px; text-transform:uppercase; border-bottom:2px solid #1D428A; padding-bottom:8px; letter-spacing:1px;">Tonight\'s Predictions</h3>';
+            html += '<h3 style="margin-top:24px; font-size:14px; text-transform:uppercase; border-bottom:2px solid #1D428A; padding-bottom:8px; letter-spacing:1px;">Feb 20 Predictions (PHT)</h3>';
             html += '<div class="oracle-matches-grid">';
 
             divMatches.forEach(match => {
@@ -222,7 +222,7 @@ function renderDivision(divKey) {
                 <div class="oracle-match-card">
                     <div class="oracle-match-header">
                         <span>\uD83C\uDFC0 ${match.time} ET</span>
-                        <span class="match-id">Azure ML v2.1</span>
+                        <span class="match-id">${match.venue || 'Azure ML v2.1'}</span>
                     </div>
                     
                     <div class="oracle-match-teams">

@@ -251,252 +251,119 @@
       "matches": [
         {
           "match_id": "ATL_01",
-          "home_team": "Boston Celtics",
-          "away_team": "New York Knicks",
+          "home_team": "Cleveland Cavaliers",
+          "away_team": "Brooklyn Nets",
           "prediction": {
-            "predicted_winner": "Boston Celtics",
-            "home_win_probability": 0.518,
-            "away_win_probability": 0.482,
-            "confidence": "low",
+            "predicted_winner": "Cleveland Cavaliers",
+            "home_win_probability": 0.687,
+            "away_win_probability": 0.313,
+            "confidence": "very_high",
             "predicted_score": {
-              "home": 118,
-              "away": 117
+              "home": 114,
+              "away": 109
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Boston Celtics's superior offensive rating (120.0 vs 118.6)"
+              "Cleveland Cavaliers's superior offensive rating (117.2 vs 110.5)",
+              "Cleveland Cavaliers's superior net rating (3.8 vs -7.5)"
             ],
-            "home_net_rating": 7.3,
-            "away_net_rating": 5.5,
-            "rating_differential": 1.8
+            "home_net_rating": 3.8,
+            "away_net_rating": -7.5,
+            "rating_differential": 11.3
           }
         },
         {
           "match_id": "ATL_02",
-          "home_team": "Boston Celtics",
-          "away_team": "Toronto Raptors",
-          "prediction": {
-            "predicted_winner": "Boston Celtics",
-            "home_win_probability": 0.606,
-            "away_win_probability": 0.394,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 118,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Boston Celtics's superior offensive rating (120.0 vs 114.0)",
-              "Boston Celtics's superior net rating (+7.3 vs +1.9)"
-            ],
-            "home_net_rating": 7.3,
-            "away_net_rating": 1.9,
-            "rating_differential": 5.4
-          }
-        },
-        {
-          "match_id": "ATL_03",
-          "home_team": "Boston Celtics",
-          "away_team": "Philadelphia 76ers",
-          "prediction": {
-            "predicted_winner": "Boston Celtics",
-            "home_win_probability": 0.625,
-            "away_win_probability": 0.375,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 117,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Boston Celtics's superior offensive rating (120.0 vs 115.4)",
-              "Boston Celtics's stronger defensive rating (112.7 vs 113.8)",
-              "Boston Celtics holds a stronger season record (64.2% vs 57.7%)",
-              "Boston Celtics's superior net rating (+7.3 vs +1.6)"
-            ],
-            "home_net_rating": 7.3,
-            "away_net_rating": 1.6,
-            "rating_differential": 5.7
-          }
-        },
-        {
-          "match_id": "ATL_04",
-          "home_team": "Boston Celtics",
-          "away_team": "Brooklyn Nets",
-          "prediction": {
-            "predicted_winner": "Boston Celtics",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 115,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Boston Celtics's superior offensive rating (120.0 vs 110.5)",
-              "Boston Celtics's stronger defensive rating (112.7 vs 118.0)",
-              "Boston Celtics holds a stronger season record (64.2% vs 27.5%)",
-              "Boston Celtics's superior net rating (+7.3 vs -7.5)"
-            ],
-            "home_net_rating": 7.3,
-            "away_net_rating": -7.5,
-            "rating_differential": 14.8
-          }
-        },
-        {
-          "match_id": "ATL_05",
           "home_team": "New York Knicks",
-          "away_team": "Toronto Raptors",
+          "away_team": "Detroit Pistons",
           "prediction": {
-            "predicted_winner": "New York Knicks",
-            "home_win_probability": 0.588,
-            "away_win_probability": 0.412,
+            "predicted_winner": "Detroit Pistons",
+            "home_win_probability": 0.463,
+            "away_win_probability": 0.537,
             "confidence": "medium",
             "predicted_score": {
-              "home": 117,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "New York Knicks's superior offensive rating (118.6 vs 114.0)",
-              "New York Knicks's superior net rating (+5.5 vs +1.9)"
-            ],
-            "home_net_rating": 5.5,
-            "away_net_rating": 1.9,
-            "rating_differential": 3.6
-          }
-        },
-        {
-          "match_id": "ATL_06",
-          "home_team": "New York Knicks",
-          "away_team": "Philadelphia 76ers",
-          "prediction": {
-            "predicted_winner": "New York Knicks",
-            "home_win_probability": 0.607,
-            "away_win_probability": 0.393,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 116,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "New York Knicks's superior offensive rating (118.6 vs 115.4)",
-              "New York Knicks holds a stronger season record (64.2% vs 57.7%)",
-              "New York Knicks's superior net rating (+5.5 vs +1.6)"
-            ],
-            "home_net_rating": 5.5,
-            "away_net_rating": 1.6,
-            "rating_differential": 3.9
-          }
-        },
-        {
-          "match_id": "ATL_07",
-          "home_team": "New York Knicks",
-          "away_team": "Brooklyn Nets",
-          "prediction": {
-            "predicted_winner": "New York Knicks",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 114,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "New York Knicks's superior offensive rating (118.6 vs 110.5)",
-              "New York Knicks's stronger defensive rating (113.1 vs 118.0)",
-              "New York Knicks holds a stronger season record (64.2% vs 27.5%)",
-              "New York Knicks's superior net rating (+5.5 vs -7.5)"
-            ],
-            "home_net_rating": 5.5,
-            "away_net_rating": -7.5,
-            "rating_differential": 13.0
-          }
-        },
-        {
-          "match_id": "ATL_08",
-          "home_team": "Toronto Raptors",
-          "away_team": "Philadelphia 76ers",
-          "prediction": {
-            "predicted_winner": "Toronto Raptors",
-            "home_win_probability": 0.519,
-            "away_win_probability": 0.481,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 117,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Philadelphia 76ers's superior offensive rating (115.4 vs 114.0)",
-              "Toronto Raptors's stronger defensive rating (112.1 vs 113.8)"
-            ],
-            "home_net_rating": 1.9,
-            "away_net_rating": 1.6,
-            "rating_differential": 0.3
-          }
-        },
-        {
-          "match_id": "ATL_09",
-          "home_team": "Toronto Raptors",
-          "away_team": "Brooklyn Nets",
-          "prediction": {
-            "predicted_winner": "Toronto Raptors",
-            "home_win_probability": 0.887,
-            "away_win_probability": 0.113,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 121,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Toronto Raptors's superior offensive rating (114.0 vs 110.5)",
-              "Toronto Raptors's stronger defensive rating (112.1 vs 118.0)",
-              "Toronto Raptors holds a stronger season record (59.3% vs 27.5%)",
-              "Toronto Raptors's superior net rating (+1.9 vs -7.5)"
-            ],
-            "home_net_rating": 1.9,
-            "away_net_rating": -7.5,
-            "rating_differential": 9.4
-          }
-        },
-        {
-          "match_id": "ATL_10",
-          "home_team": "Philadelphia 76ers",
-          "away_team": "Brooklyn Nets",
-          "prediction": {
-            "predicted_winner": "Philadelphia 76ers",
-            "home_win_probability": 0.873,
-            "away_win_probability": 0.127,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 113,
+              "home": 111,
               "away": 112
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Philadelphia 76ers's superior offensive rating (115.4 vs 110.5)",
-              "Philadelphia 76ers's stronger defensive rating (113.8 vs 118.0)",
-              "Philadelphia 76ers holds a stronger season record (57.7% vs 27.5%)",
-              "Philadelphia 76ers's superior net rating (+1.6 vs -7.5)"
+              "New York Knicks's superior offensive rating (118.6 vs 116.4)"
+            ],
+            "home_net_rating": 5.5,
+            "away_net_rating": 8.0,
+            "rating_differential": -2.5
+          }
+        },
+        {
+          "match_id": "ATL_03",
+          "home_team": "Chicago Bulls",
+          "away_team": "Toronto Raptors",
+          "prediction": {
+            "predicted_winner": "Toronto Raptors",
+            "home_win_probability": 0.433,
+            "away_win_probability": 0.567,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 110,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Toronto Raptors's superior offensive rating (114.0 vs 113.7)"
+            ],
+            "home_net_rating": -3.8,
+            "away_net_rating": 1.9,
+            "rating_differential": -5.7
+          }
+        },
+        {
+          "match_id": "ATL_04",
+          "home_team": "Philadelphia 76ers",
+          "away_team": "Atlanta Hawks",
+          "prediction": {
+            "predicted_winner": "Philadelphia 76ers",
+            "home_win_probability": 0.545,
+            "away_win_probability": 0.455,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 112,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Philadelphia 76ers's superior offensive rating (115.4 vs 113.8)",
+              "Philadelphia 76ers's superior net rating (1.6 vs -0.9)"
             ],
             "home_net_rating": 1.6,
-            "away_net_rating": -7.5,
-            "rating_differential": 9.1
+            "away_net_rating": -0.9,
+            "rating_differential": 2.5
+          }
+        },
+        {
+          "match_id": "ATL_05",
+          "home_team": "Golden State Warriors",
+          "away_team": "Boston Celtics",
+          "prediction": {
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.451,
+            "away_win_probability": 0.549,
+            "confidence": "medium",
+            "predicted_score": {
+              "home": 111,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Boston Celtics's superior offensive rating (120.0 vs 114.3)"
+            ],
+            "home_net_rating": 2.1,
+            "away_net_rating": 7.3,
+            "rating_differential": -5.2
           }
         }
       ],
@@ -735,255 +602,72 @@
       "matches": [
         {
           "match_id": "CEN_01",
-          "home_team": "Detroit Pistons",
-          "away_team": "Cleveland Cavaliers",
+          "home_team": "Washington Wizards",
+          "away_team": "Indiana Pacers",
           "prediction": {
-            "predicted_winner": "Detroit Pistons",
-            "home_win_probability": 0.699,
-            "away_win_probability": 0.301,
-            "confidence": "medium",
+            "predicted_winner": "Washington Wizards",
+            "home_win_probability": 0.523,
+            "away_win_probability": 0.477,
+            "confidence": "low",
             "predicted_score": {
-              "home": 122,
-              "away": 118
+              "home": 112,
+              "away": 111
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Detroit Pistons's stronger defensive rating (108.4 vs 113.4)",
-              "Detroit Pistons holds a stronger season record (74.5% vs 60.4%)",
-              "Detroit Pistons's superior net rating (+8.0 vs +3.8)"
+              "Washington Wizards's superior offensive rating (109.4 vs 108.5)"
             ],
-            "home_net_rating": 8.0,
-            "away_net_rating": 3.8,
-            "rating_differential": 4.2
+            "home_net_rating": -10.8,
+            "away_net_rating": -7.7,
+            "rating_differential": -3.1
           }
         },
         {
           "match_id": "CEN_02",
-          "home_team": "Detroit Pistons",
-          "away_team": "Chicago Bulls",
+          "home_team": "Cleveland Cavaliers",
+          "away_team": "Brooklyn Nets",
           "prediction": {
-            "predicted_winner": "Detroit Pistons",
-            "home_win_probability": 0.897,
-            "away_win_probability": 0.103,
+            "predicted_winner": "Cleveland Cavaliers",
+            "home_win_probability": 0.687,
+            "away_win_probability": 0.313,
             "confidence": "very_high",
             "predicted_score": {
-              "home": 125,
-              "away": 117
+              "home": 114,
+              "away": 109
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Detroit Pistons's superior offensive rating (116.4 vs 113.7)",
-              "Detroit Pistons's stronger defensive rating (108.4 vs 117.5)",
-              "Detroit Pistons holds a stronger season record (74.5% vs 45.3%)",
-              "Detroit Pistons's superior net rating (+8.0 vs -3.8)"
+              "Cleveland Cavaliers's superior offensive rating (117.2 vs 110.5)",
+              "Cleveland Cavaliers's superior net rating (3.8 vs -7.5)"
             ],
-            "home_net_rating": 8.0,
-            "away_net_rating": -3.8,
-            "rating_differential": 11.8
+            "home_net_rating": 3.8,
+            "away_net_rating": -7.5,
+            "rating_differential": 11.3
           }
         },
         {
           "match_id": "CEN_03",
-          "home_team": "Detroit Pistons",
-          "away_team": "Milwaukee Bucks",
-          "prediction": {
-            "predicted_winner": "Detroit Pistons",
-            "home_win_probability": 0.917,
-            "away_win_probability": 0.083,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 124,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Detroit Pistons's superior offensive rating (116.4 vs 113.0)",
-              "Detroit Pistons's stronger defensive rating (108.4 vs 116.6)",
-              "Detroit Pistons holds a stronger season record (74.5% vs 42.0%)",
-              "Detroit Pistons's superior net rating (+8.0 vs -3.6)"
-            ],
-            "home_net_rating": 8.0,
-            "away_net_rating": -3.6,
-            "rating_differential": 11.6
-          }
-        },
-        {
-          "match_id": "CEN_04",
-          "home_team": "Detroit Pistons",
-          "away_team": "Indiana Pacers",
-          "prediction": {
-            "predicted_winner": "Detroit Pistons",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 123,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Detroit Pistons's superior offensive rating (116.4 vs 108.5)",
-              "Detroit Pistons's stronger defensive rating (108.4 vs 116.2)",
-              "Detroit Pistons holds a stronger season record (74.5% vs 24.5%)",
-              "Detroit Pistons's superior net rating (+8.0 vs -7.7)"
-            ],
-            "home_net_rating": 8.0,
-            "away_net_rating": -7.7,
-            "rating_differential": 15.7
-          }
-        },
-        {
-          "match_id": "CEN_05",
-          "home_team": "Cleveland Cavaliers",
-          "away_team": "Chicago Bulls",
-          "prediction": {
-            "predicted_winner": "Cleveland Cavaliers",
-            "home_win_probability": 0.724,
-            "away_win_probability": 0.276,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 118,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Cleveland Cavaliers's superior offensive rating (117.2 vs 113.7)",
-              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 117.5)",
-              "Cleveland Cavaliers holds a stronger season record (60.4% vs 45.3%)",
-              "Cleveland Cavaliers's superior net rating (+3.8 vs -3.8)"
-            ],
-            "home_net_rating": 3.8,
-            "away_net_rating": -3.8,
-            "rating_differential": 7.6
-          }
-        },
-        {
-          "match_id": "CEN_06",
-          "home_team": "Cleveland Cavaliers",
-          "away_team": "Milwaukee Bucks",
-          "prediction": {
-            "predicted_winner": "Cleveland Cavaliers",
-            "home_win_probability": 0.752,
-            "away_win_probability": 0.248,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 119,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Cleveland Cavaliers's superior offensive rating (117.2 vs 113.0)",
-              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 116.6)",
-              "Cleveland Cavaliers holds a stronger season record (60.4% vs 42.0%)",
-              "Cleveland Cavaliers's superior net rating (+3.8 vs -3.6)"
-            ],
-            "home_net_rating": 3.8,
-            "away_net_rating": -3.6,
-            "rating_differential": 7.4
-          }
-        },
-        {
-          "match_id": "CEN_07",
-          "home_team": "Cleveland Cavaliers",
-          "away_team": "Indiana Pacers",
-          "prediction": {
-            "predicted_winner": "Cleveland Cavaliers",
-            "home_win_probability": 0.94,
-            "away_win_probability": 0.06,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 114,
-              "away": 112
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Cleveland Cavaliers's superior offensive rating (117.2 vs 108.5)",
-              "Cleveland Cavaliers's stronger defensive rating (113.4 vs 116.2)",
-              "Cleveland Cavaliers holds a stronger season record (60.4% vs 24.5%)",
-              "Cleveland Cavaliers's superior net rating (+3.8 vs -7.7)"
-            ],
-            "home_net_rating": 3.8,
-            "away_net_rating": -7.7,
-            "rating_differential": 11.5
-          }
-        },
-        {
-          "match_id": "CEN_08",
           "home_team": "Chicago Bulls",
-          "away_team": "Milwaukee Bucks",
+          "away_team": "Toronto Raptors",
           "prediction": {
-            "predicted_winner": "Chicago Bulls",
-            "home_win_probability": 0.532,
-            "away_win_probability": 0.468,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 113,
-              "away": 112
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [],
-            "home_net_rating": -3.8,
-            "away_net_rating": -3.6,
-            "rating_differential": -0.2
-          }
-        },
-        {
-          "match_id": "CEN_09",
-          "home_team": "Chicago Bulls",
-          "away_team": "Indiana Pacers",
-          "prediction": {
-            "predicted_winner": "Chicago Bulls",
-            "home_win_probability": 0.757,
-            "away_win_probability": 0.243,
+            "predicted_winner": "Toronto Raptors",
+            "home_win_probability": 0.433,
+            "away_win_probability": 0.567,
             "confidence": "high",
             "predicted_score": {
-              "home": 113,
-              "away": 110
+              "home": 110,
+              "away": 113
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Chicago Bulls's superior offensive rating (113.7 vs 108.5)",
-              "Indiana Pacers's stronger defensive rating (116.2 vs 117.5)",
-              "Chicago Bulls holds a stronger season record (45.3% vs 24.5%)",
-              "Chicago Bulls's superior net rating (-3.8 vs -7.7)"
+              "Toronto Raptors's superior offensive rating (114.0 vs 113.7)"
             ],
             "home_net_rating": -3.8,
-            "away_net_rating": -7.7,
-            "rating_differential": 3.9
-          }
-        },
-        {
-          "match_id": "CEN_10",
-          "home_team": "Milwaukee Bucks",
-          "away_team": "Indiana Pacers",
-          "prediction": {
-            "predicted_winner": "Milwaukee Bucks",
-            "home_win_probability": 0.732,
-            "away_win_probability": 0.268,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 112,
-              "away": 110
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Milwaukee Bucks's superior offensive rating (113.0 vs 108.5)",
-              "Milwaukee Bucks holds a stronger season record (42.0% vs 24.5%)",
-              "Milwaukee Bucks's superior net rating (-3.6 vs -7.7)"
-            ],
-            "home_net_rating": -3.6,
-            "away_net_rating": -7.7,
-            "rating_differential": 4.1
+            "away_net_rating": 1.9,
+            "rating_differential": -5.7
           }
         }
       ],
@@ -1227,233 +911,13 @@
       "matches": [
         {
           "match_id": "SOU_01",
-          "home_team": "Orlando Magic",
-          "away_team": "Miami Heat",
-          "prediction": {
-            "predicted_winner": "Miami Heat",
-            "home_win_probability": 0.483,
-            "away_win_probability": 0.517,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 115,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Miami Heat's stronger defensive rating (111.7 vs 114.1)",
-              "Miami Heat's superior net rating (+2.0 vs -0.7)"
-            ],
-            "home_net_rating": -0.7,
-            "away_net_rating": 2.0,
-            "rating_differential": -2.7
-          }
-        },
-        {
-          "match_id": "SOU_02",
-          "home_team": "Orlando Magic",
+          "home_team": "Philadelphia 76ers",
           "away_team": "Atlanta Hawks",
           "prediction": {
-            "predicted_winner": "Orlando Magic",
-            "home_win_probability": 0.55,
-            "away_win_probability": 0.45,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 115,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [],
-            "home_net_rating": -0.7,
-            "away_net_rating": -0.9,
-            "rating_differential": 0.2
-          }
-        },
-        {
-          "match_id": "SOU_03",
-          "home_team": "Orlando Magic",
-          "away_team": "Charlotte Hornets",
-          "prediction": {
-            "predicted_winner": "Orlando Magic",
-            "home_win_probability": 0.528,
-            "away_win_probability": 0.472,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 117,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Charlotte Hornets's superior offensive rating (117.1 vs 113.4)",
-              "Orlando Magic holds a stronger season record (52.9% vs 47.2%)",
-              "Charlotte Hornets's superior net rating (+2.2 vs -0.7)"
-            ],
-            "home_net_rating": -0.7,
-            "away_net_rating": 2.2,
-            "rating_differential": -2.9
-          }
-        },
-        {
-          "match_id": "SOU_04",
-          "home_team": "Orlando Magic",
-          "away_team": "Washington Wizards",
-          "prediction": {
-            "predicted_winner": "Orlando Magic",
-            "home_win_probability": 0.854,
-            "away_win_probability": 0.146,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 119,
-              "away": 112
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Orlando Magic's superior offensive rating (113.4 vs 109.4)",
-              "Orlando Magic's stronger defensive rating (114.1 vs 120.2)",
-              "Orlando Magic holds a stronger season record (52.9% vs 26.9%)",
-              "Orlando Magic's superior net rating (-0.7 vs -10.8)"
-            ],
-            "home_net_rating": -0.7,
-            "away_net_rating": -10.8,
-            "rating_differential": 10.1
-          }
-        },
-        {
-          "match_id": "SOU_05",
-          "home_team": "Miami Heat",
-          "away_team": "Atlanta Hawks",
-          "prediction": {
-            "predicted_winner": "Miami Heat",
-            "home_win_probability": 0.567,
-            "away_win_probability": 0.433,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 116,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Miami Heat's stronger defensive rating (111.7 vs 114.7)",
-              "Miami Heat's superior net rating (+2.0 vs -0.9)"
-            ],
-            "home_net_rating": 2.0,
-            "away_net_rating": -0.9,
-            "rating_differential": 2.9
-          }
-        },
-        {
-          "match_id": "SOU_06",
-          "home_team": "Miami Heat",
-          "away_team": "Charlotte Hornets",
-          "prediction": {
-            "predicted_winner": "Miami Heat",
+            "predicted_winner": "Philadelphia 76ers",
             "home_win_probability": 0.545,
             "away_win_probability": 0.455,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 118,
-              "away": 117
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Charlotte Hornets's superior offensive rating (117.1 vs 113.7)",
-              "Miami Heat's stronger defensive rating (111.7 vs 114.9)"
-            ],
-            "home_net_rating": 2.0,
-            "away_net_rating": 2.2,
-            "rating_differential": -0.2
-          }
-        },
-        {
-          "match_id": "SOU_07",
-          "home_team": "Miami Heat",
-          "away_team": "Washington Wizards",
-          "prediction": {
-            "predicted_winner": "Miami Heat",
-            "home_win_probability": 0.874,
-            "away_win_probability": 0.126,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 120,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Miami Heat's superior offensive rating (113.7 vs 109.4)",
-              "Miami Heat's stronger defensive rating (111.7 vs 120.2)",
-              "Miami Heat holds a stronger season record (51.9% vs 26.9%)",
-              "Miami Heat's superior net rating (+2.0 vs -10.8)"
-            ],
-            "home_net_rating": 2.0,
-            "away_net_rating": -10.8,
-            "rating_differential": 12.8
-          }
-        },
-        {
-          "match_id": "SOU_08",
-          "home_team": "Atlanta Hawks",
-          "away_team": "Charlotte Hornets",
-          "prediction": {
-            "predicted_winner": "Charlotte Hornets",
-            "home_win_probability": 0.478,
-            "away_win_probability": 0.522,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 113,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Charlotte Hornets's superior offensive rating (117.1 vs 113.8)",
-              "Charlotte Hornets's superior net rating (+2.2 vs -0.9)"
-            ],
-            "home_net_rating": -0.9,
-            "away_net_rating": 2.2,
-            "rating_differential": -3.1
-          }
-        },
-        {
-          "match_id": "SOU_09",
-          "home_team": "Atlanta Hawks",
-          "away_team": "Washington Wizards",
-          "prediction": {
-            "predicted_winner": "Atlanta Hawks",
-            "home_win_probability": 0.815,
-            "away_win_probability": 0.185,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 117,
-              "away": 111
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Atlanta Hawks's superior offensive rating (113.8 vs 109.4)",
-              "Atlanta Hawks's stronger defensive rating (114.7 vs 120.2)",
-              "Atlanta Hawks holds a stronger season record (48.1% vs 26.9%)",
-              "Atlanta Hawks's superior net rating (-0.9 vs -10.8)"
-            ],
-            "home_net_rating": -0.9,
-            "away_net_rating": -10.8,
-            "rating_differential": 9.9
-          }
-        },
-        {
-          "match_id": "SOU_10",
-          "home_team": "Charlotte Hornets",
-          "away_team": "Washington Wizards",
-          "prediction": {
-            "predicted_winner": "Charlotte Hornets",
-            "home_win_probability": 0.838,
-            "away_win_probability": 0.162,
-            "confidence": "high",
+            "confidence": "medium",
             "predicted_score": {
               "home": 112,
               "away": 111
@@ -1461,14 +925,58 @@
           },
           "ai_analysis": {
             "key_factors": [
-              "Charlotte Hornets's superior offensive rating (117.1 vs 109.4)",
-              "Charlotte Hornets's stronger defensive rating (114.9 vs 120.2)",
-              "Charlotte Hornets holds a stronger season record (47.2% vs 26.9%)",
-              "Charlotte Hornets's superior net rating (+2.2 vs -10.8)"
+              "Philadelphia 76ers's superior offensive rating (115.4 vs 113.8)",
+              "Philadelphia 76ers's superior net rating (1.6 vs -0.9)"
+            ],
+            "home_net_rating": 1.6,
+            "away_net_rating": -0.9,
+            "rating_differential": 2.5
+          }
+        },
+        {
+          "match_id": "SOU_02",
+          "home_team": "Charlotte Hornets",
+          "away_team": "Houston Rockets",
+          "prediction": {
+            "predicted_winner": "Houston Rockets",
+            "home_win_probability": 0.429,
+            "away_win_probability": 0.571,
+            "confidence": "high",
+            "predicted_score": {
+              "home": 111,
+              "away": 113
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Houston Rockets's superior offensive rating (117.3 vs 117.1)"
             ],
             "home_net_rating": 2.2,
-            "away_net_rating": -10.8,
-            "rating_differential": 13.0
+            "away_net_rating": 5.1,
+            "rating_differential": -2.9
+          }
+        },
+        {
+          "match_id": "SOU_03",
+          "home_team": "Washington Wizards",
+          "away_team": "Indiana Pacers",
+          "prediction": {
+            "predicted_winner": "Washington Wizards",
+            "home_win_probability": 0.523,
+            "away_win_probability": 0.477,
+            "confidence": "low",
+            "predicted_score": {
+              "home": 112,
+              "away": 111
+            }
+          },
+          "ai_analysis": {
+            "key_factors": [
+              "Washington Wizards's superior offensive rating (109.4 vs 108.5)"
+            ],
+            "home_net_rating": -10.8,
+            "away_net_rating": -7.7,
+            "rating_differential": -3.1
           }
         }
       ],
@@ -1712,259 +1220,25 @@
       "matches": [
         {
           "match_id": "NOR_01",
-          "home_team": "Oklahoma City Thunder",
+          "home_team": "LA Clippers",
           "away_team": "Denver Nuggets",
           "prediction": {
-            "predicted_winner": "Oklahoma City Thunder",
-            "home_win_probability": 0.708,
-            "away_win_probability": 0.292,
+            "predicted_winner": "Denver Nuggets",
+            "home_win_probability": 0.428,
+            "away_win_probability": 0.572,
             "confidence": "high",
             "predicted_score": {
-              "home": 126,
-              "away": 122
+              "home": 113,
+              "away": 115
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Denver Nuggets's superior offensive rating (121.0 vs 117.7)",
-              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 116.8)",
-              "Oklahoma City Thunder holds a stronger season record (75.5% vs 64.2%)",
-              "Oklahoma City Thunder's superior net rating (+11.8 vs +4.2)"
+              "Denver Nuggets's superior offensive rating (121.0 vs 115.6)"
             ],
-            "home_net_rating": 11.8,
+            "home_net_rating": -0.2,
             "away_net_rating": 4.2,
-            "rating_differential": 7.6
-          }
-        },
-        {
-          "match_id": "NOR_02",
-          "home_team": "Oklahoma City Thunder",
-          "away_team": "Minnesota Timberwolves",
-          "prediction": {
-            "predicted_winner": "Oklahoma City Thunder",
-            "home_win_probability": 0.759,
-            "away_win_probability": 0.241,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 124,
-              "away": 119
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Oklahoma City Thunder's superior offensive rating (117.7 vs 116.6)",
-              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 112.8)",
-              "Oklahoma City Thunder holds a stronger season record (75.5% vs 59.3%)",
-              "Oklahoma City Thunder's superior net rating (+11.8 vs +3.8)"
-            ],
-            "home_net_rating": 11.8,
-            "away_net_rating": 3.8,
-            "rating_differential": 8.0
-          }
-        },
-        {
-          "match_id": "NOR_03",
-          "home_team": "Oklahoma City Thunder",
-          "away_team": "Portland Trail Blazers",
-          "prediction": {
-            "predicted_winner": "Oklahoma City Thunder",
-            "home_win_probability": 0.915,
-            "away_win_probability": 0.085,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 126,
-              "away": 118
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Oklahoma City Thunder's superior offensive rating (117.7 vs 113.2)",
-              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 115.4)",
-              "Oklahoma City Thunder holds a stronger season record (75.5% vs 47.2%)",
-              "Oklahoma City Thunder's superior net rating (+11.8 vs -2.2)"
-            ],
-            "home_net_rating": 11.8,
-            "away_net_rating": -2.2,
-            "rating_differential": 14.0
-          }
-        },
-        {
-          "match_id": "NOR_04",
-          "home_team": "Oklahoma City Thunder",
-          "away_team": "Utah Jazz",
-          "prediction": {
-            "predicted_winner": "Oklahoma City Thunder",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 127,
-              "away": 118
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Oklahoma City Thunder's superior offensive rating (117.7 vs 113.6)",
-              "Oklahoma City Thunder's stronger defensive rating (105.9 vs 121.7)",
-              "Oklahoma City Thunder holds a stronger season record (75.5% vs 30.2%)",
-              "Oklahoma City Thunder's superior net rating (+11.8 vs -8.1)"
-            ],
-            "home_net_rating": 11.8,
-            "away_net_rating": -8.1,
-            "rating_differential": 19.9
-          }
-        },
-        {
-          "match_id": "NOR_05",
-          "home_team": "Denver Nuggets",
-          "away_team": "Minnesota Timberwolves",
-          "prediction": {
-            "predicted_winner": "Denver Nuggets",
-            "home_win_probability": 0.556,
-            "away_win_probability": 0.444,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 118,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Denver Nuggets's superior offensive rating (121.0 vs 116.6)",
-              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 116.8)"
-            ],
-            "home_net_rating": 4.2,
-            "away_net_rating": 3.8,
-            "rating_differential": 0.4
-          }
-        },
-        {
-          "match_id": "NOR_06",
-          "home_team": "Denver Nuggets",
-          "away_team": "Portland Trail Blazers",
-          "prediction": {
-            "predicted_winner": "Denver Nuggets",
-            "home_win_probability": 0.731,
-            "away_win_probability": 0.269,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 117,
-              "away": 112
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Denver Nuggets's superior offensive rating (121.0 vs 113.2)",
-              "Portland Trail Blazers's stronger defensive rating (115.4 vs 116.8)",
-              "Denver Nuggets holds a stronger season record (64.2% vs 47.2%)",
-              "Denver Nuggets's superior net rating (+4.2 vs -2.2)"
-            ],
-            "home_net_rating": 4.2,
-            "away_net_rating": -2.2,
-            "rating_differential": 6.4
-          }
-        },
-        {
-          "match_id": "NOR_07",
-          "home_team": "Denver Nuggets",
-          "away_team": "Utah Jazz",
-          "prediction": {
-            "predicted_winner": "Denver Nuggets",
-            "home_win_probability": 0.929,
-            "away_win_probability": 0.071,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 114,
-              "away": 112
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Denver Nuggets's superior offensive rating (121.0 vs 113.6)",
-              "Denver Nuggets's stronger defensive rating (116.8 vs 121.7)",
-              "Denver Nuggets holds a stronger season record (64.2% vs 30.2%)",
-              "Denver Nuggets's superior net rating (+4.2 vs -8.1)"
-            ],
-            "home_net_rating": 4.2,
-            "away_net_rating": -8.1,
-            "rating_differential": 12.3
-          }
-        },
-        {
-          "match_id": "NOR_08",
-          "home_team": "Minnesota Timberwolves",
-          "away_team": "Portland Trail Blazers",
-          "prediction": {
-            "predicted_winner": "Minnesota Timberwolves",
-            "home_win_probability": 0.68,
-            "away_win_probability": 0.32,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 115,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Minnesota Timberwolves's superior offensive rating (116.6 vs 113.2)",
-              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 115.4)",
-              "Minnesota Timberwolves holds a stronger season record (59.3% vs 47.2%)",
-              "Minnesota Timberwolves's superior net rating (+3.8 vs -2.2)"
-            ],
-            "home_net_rating": 3.8,
-            "away_net_rating": -2.2,
-            "rating_differential": 6.0
-          }
-        },
-        {
-          "match_id": "NOR_09",
-          "home_team": "Minnesota Timberwolves",
-          "away_team": "Utah Jazz",
-          "prediction": {
-            "predicted_winner": "Minnesota Timberwolves",
-            "home_win_probability": 0.89,
-            "away_win_probability": 0.11,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 122,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Minnesota Timberwolves's superior offensive rating (116.6 vs 113.6)",
-              "Minnesota Timberwolves's stronger defensive rating (112.8 vs 121.7)",
-              "Minnesota Timberwolves holds a stronger season record (59.3% vs 30.2%)",
-              "Minnesota Timberwolves's superior net rating (+3.8 vs -8.1)"
-            ],
-            "home_net_rating": 3.8,
-            "away_net_rating": -8.1,
-            "rating_differential": 11.9
-          }
-        },
-        {
-          "match_id": "NOR_10",
-          "home_team": "Portland Trail Blazers",
-          "away_team": "Utah Jazz",
-          "prediction": {
-            "predicted_winner": "Portland Trail Blazers",
-            "home_win_probability": 0.733,
-            "away_win_probability": 0.267,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 118,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Portland Trail Blazers's stronger defensive rating (115.4 vs 121.7)",
-              "Portland Trail Blazers holds a stronger season record (47.2% vs 30.2%)",
-              "Portland Trail Blazers's superior net rating (-2.2 vs -8.1)"
-            ],
-            "home_net_rating": -2.2,
-            "away_net_rating": -8.1,
-            "rating_differential": 5.9
+            "rating_differential": -4.4
           }
         }
       ],
@@ -2203,254 +1477,95 @@
       "matches": [
         {
           "match_id": "PAC_01",
-          "home_team": "Los Angeles Lakers",
+          "home_team": "San Antonio Spurs",
           "away_team": "Phoenix Suns",
           "prediction": {
-            "predicted_winner": "Los Angeles Lakers",
-            "home_win_probability": 0.522,
-            "away_win_probability": 0.478,
-            "confidence": "low",
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.542,
+            "away_win_probability": 0.458,
+            "confidence": "medium",
             "predicted_score": {
-              "home": 116,
-              "away": 113
+              "home": 112,
+              "away": 110
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Los Angeles Lakers's superior offensive rating (116.5 vs 114.5)",
-              "Phoenix Suns's stronger defensive rating (112.3 vs 116.5)",
-              "Phoenix Suns's superior net rating (+2.2 vs +0.0)"
+              "San Antonio Spurs's superior offensive rating (116.5 vs 114.5)",
+              "San Antonio Spurs's superior net rating (5.4 vs 2.2)"
             ],
-            "home_net_rating": 0.0,
+            "home_net_rating": 5.4,
             "away_net_rating": 2.2,
-            "rating_differential": -2.2
+            "rating_differential": 3.2
           }
         },
         {
           "match_id": "PAC_02",
-          "home_team": "Los Angeles Lakers",
-          "away_team": "Golden State Warriors",
+          "home_team": "Golden State Warriors",
+          "away_team": "Boston Celtics",
           "prediction": {
-            "predicted_winner": "Los Angeles Lakers",
-            "home_win_probability": 0.579,
-            "away_win_probability": 0.421,
-            "confidence": "low",
+            "predicted_winner": "Boston Celtics",
+            "home_win_probability": 0.451,
+            "away_win_probability": 0.549,
+            "confidence": "medium",
             "predicted_score": {
-              "home": 116,
+              "home": 111,
               "away": 113
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Los Angeles Lakers's superior offensive rating (116.5 vs 114.3)",
-              "Golden State Warriors's stronger defensive rating (112.2 vs 116.5)",
-              "Los Angeles Lakers holds a stronger season record (62.7% vs 52.8%)",
-              "Golden State Warriors's superior net rating (+2.1 vs +0.0)"
+              "Boston Celtics's superior offensive rating (120.0 vs 114.3)"
             ],
-            "home_net_rating": 0.0,
-            "away_net_rating": 2.1,
-            "rating_differential": -2.1
+            "home_net_rating": 2.1,
+            "away_net_rating": 7.3,
+            "rating_differential": -5.2
           }
         },
         {
           "match_id": "PAC_03",
-          "home_team": "Los Angeles Lakers",
-          "away_team": "LA Clippers",
+          "home_team": "Sacramento Kings",
+          "away_team": "Orlando Magic",
           "prediction": {
-            "predicted_winner": "Los Angeles Lakers",
-            "home_win_probability": 0.647,
-            "away_win_probability": 0.353,
-            "confidence": "medium",
+            "predicted_winner": "Orlando Magic",
+            "home_win_probability": 0.296,
+            "away_win_probability": 0.704,
+            "confidence": "very_high",
             "predicted_score": {
-              "home": 117,
+              "home": 109,
               "away": 114
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Los Angeles Lakers holds a stronger season record (62.7% vs 48.1%)"
+              "Orlando Magic's superior offensive rating (113.4 vs 110.2)"
             ],
-            "home_net_rating": 0.0,
-            "away_net_rating": -0.2,
-            "rating_differential": 0.2
+            "home_net_rating": -9.6,
+            "away_net_rating": -0.7,
+            "rating_differential": -8.9
           }
         },
         {
           "match_id": "PAC_04",
-          "home_team": "Los Angeles Lakers",
-          "away_team": "Sacramento Kings",
+          "home_team": "LA Clippers",
+          "away_team": "Denver Nuggets",
           "prediction": {
-            "predicted_winner": "Los Angeles Lakers",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
+            "predicted_winner": "Denver Nuggets",
+            "home_win_probability": 0.428,
+            "away_win_probability": 0.572,
+            "confidence": "high",
             "predicted_score": {
-              "home": 112,
-              "away": 111
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Los Angeles Lakers's superior offensive rating (116.5 vs 110.2)",
-              "Los Angeles Lakers's stronger defensive rating (116.5 vs 119.8)",
-              "Los Angeles Lakers holds a stronger season record (62.7% vs 22.2%)",
-              "Los Angeles Lakers's superior net rating (+0.0 vs -9.6)"
-            ],
-            "home_net_rating": 0.0,
-            "away_net_rating": -9.6,
-            "rating_differential": 9.6
-          }
-        },
-        {
-          "match_id": "PAC_05",
-          "home_team": "Phoenix Suns",
-          "away_team": "Golden State Warriors",
-          "prediction": {
-            "predicted_winner": "Phoenix Suns",
-            "home_win_probability": 0.559,
-            "away_win_probability": 0.441,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 116,
+              "home": 113,
               "away": 115
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Phoenix Suns holds a stronger season record (58.5% vs 52.8%)"
-            ],
-            "home_net_rating": 2.2,
-            "away_net_rating": 2.1,
-            "rating_differential": 0.1
-          }
-        },
-        {
-          "match_id": "PAC_06",
-          "home_team": "Phoenix Suns",
-          "away_team": "LA Clippers",
-          "prediction": {
-            "predicted_winner": "Phoenix Suns",
-            "home_win_probability": 0.627,
-            "away_win_probability": 0.373,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 119,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "LA Clippers's superior offensive rating (115.6 vs 114.5)",
-              "Phoenix Suns's stronger defensive rating (112.3 vs 115.8)",
-              "Phoenix Suns holds a stronger season record (58.5% vs 48.1%)",
-              "Phoenix Suns's superior net rating (+2.2 vs -0.2)"
-            ],
-            "home_net_rating": 2.2,
-            "away_net_rating": -0.2,
-            "rating_differential": 2.4
-          }
-        },
-        {
-          "match_id": "PAC_07",
-          "home_team": "Phoenix Suns",
-          "away_team": "Sacramento Kings",
-          "prediction": {
-            "predicted_winner": "Phoenix Suns",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 122,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Phoenix Suns's superior offensive rating (114.5 vs 110.2)",
-              "Phoenix Suns's stronger defensive rating (112.3 vs 119.8)",
-              "Phoenix Suns holds a stronger season record (58.5% vs 22.2%)",
-              "Phoenix Suns's superior net rating (+2.2 vs -9.6)"
-            ],
-            "home_net_rating": 2.2,
-            "away_net_rating": -9.6,
-            "rating_differential": 11.8
-          }
-        },
-        {
-          "match_id": "PAC_08",
-          "home_team": "Golden State Warriors",
-          "away_team": "LA Clippers",
-          "prediction": {
-            "predicted_winner": "Golden State Warriors",
-            "home_win_probability": 0.57,
-            "away_win_probability": 0.43,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 117,
-              "away": 116
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "LA Clippers's superior offensive rating (115.6 vs 114.3)",
-              "Golden State Warriors's stronger defensive rating (112.2 vs 115.8)",
-              "Golden State Warriors's superior net rating (+2.1 vs -0.2)"
-            ],
-            "home_net_rating": 2.1,
-            "away_net_rating": -0.2,
-            "rating_differential": 2.3
-          }
-        },
-        {
-          "match_id": "PAC_09",
-          "home_team": "Golden State Warriors",
-          "away_team": "Sacramento Kings",
-          "prediction": {
-            "predicted_winner": "Golden State Warriors",
-            "home_win_probability": 0.914,
-            "away_win_probability": 0.086,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 121,
-              "away": 113
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Golden State Warriors's superior offensive rating (114.3 vs 110.2)",
-              "Golden State Warriors's stronger defensive rating (112.2 vs 119.8)",
-              "Golden State Warriors holds a stronger season record (52.8% vs 22.2%)",
-              "Golden State Warriors's superior net rating (+2.1 vs -9.6)"
-            ],
-            "home_net_rating": 2.1,
-            "away_net_rating": -9.6,
-            "rating_differential": 11.7
-          }
-        },
-        {
-          "match_id": "PAC_10",
-          "home_team": "LA Clippers",
-          "away_team": "Sacramento Kings",
-          "prediction": {
-            "predicted_winner": "LA Clippers",
-            "home_win_probability": 0.859,
-            "away_win_probability": 0.141,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 112,
-              "away": 111
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "LA Clippers's superior offensive rating (115.6 vs 110.2)",
-              "LA Clippers's stronger defensive rating (115.8 vs 119.8)",
-              "LA Clippers holds a stronger season record (48.1% vs 22.2%)",
-              "LA Clippers's superior net rating (-0.2 vs -9.6)"
+              "Denver Nuggets's superior offensive rating (121.0 vs 115.6)"
             ],
             "home_net_rating": -0.2,
-            "away_net_rating": -9.6,
-            "rating_differential": 9.4
+            "away_net_rating": 4.2,
+            "rating_differential": -4.4
           }
         }
       ],
@@ -2694,255 +1809,48 @@
       "matches": [
         {
           "match_id": "SOU_01",
-          "home_team": "San Antonio Spurs",
+          "home_team": "Charlotte Hornets",
           "away_team": "Houston Rockets",
           "prediction": {
-            "predicted_winner": "San Antonio Spurs",
-            "home_win_probability": 0.575,
-            "away_win_probability": 0.425,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 118,
-              "away": 117
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "San Antonio Spurs's stronger defensive rating (111.1 vs 112.2)",
-              "San Antonio Spurs holds a stronger season record (69.2% vs 62.7%)"
-            ],
-            "home_net_rating": 5.4,
-            "away_net_rating": 5.1,
-            "rating_differential": 0.3
-          }
-        },
-        {
-          "match_id": "SOU_02",
-          "home_team": "San Antonio Spurs",
-          "away_team": "Memphis Grizzlies",
-          "prediction": {
-            "predicted_winner": "San Antonio Spurs",
-            "home_win_probability": 0.853,
-            "away_win_probability": 0.147,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 122,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "San Antonio Spurs's superior offensive rating (116.5 vs 113.2)",
-              "San Antonio Spurs's stronger defensive rating (111.1 vs 115.4)",
-              "San Antonio Spurs holds a stronger season record (69.2% vs 39.2%)",
-              "San Antonio Spurs's superior net rating (+5.4 vs -2.2)"
-            ],
-            "home_net_rating": 5.4,
-            "away_net_rating": -2.2,
-            "rating_differential": 7.6
-          }
-        },
-        {
-          "match_id": "SOU_03",
-          "home_team": "San Antonio Spurs",
-          "away_team": "Dallas Mavericks",
-          "prediction": {
-            "predicted_winner": "San Antonio Spurs",
-            "home_win_probability": 0.879,
-            "away_win_probability": 0.121,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 116,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "San Antonio Spurs's superior offensive rating (116.5 vs 110.3)",
-              "San Antonio Spurs's stronger defensive rating (111.1 vs 113.2)",
-              "San Antonio Spurs holds a stronger season record (69.2% vs 36.5%)",
-              "San Antonio Spurs's superior net rating (+5.4 vs -2.9)"
-            ],
-            "home_net_rating": 5.4,
-            "away_net_rating": -2.9,
-            "rating_differential": 8.3
-          }
-        },
-        {
-          "match_id": "SOU_04",
-          "home_team": "San Antonio Spurs",
-          "away_team": "New Orleans Pelicans",
-          "prediction": {
-            "predicted_winner": "San Antonio Spurs",
-            "home_win_probability": 0.95,
-            "away_win_probability": 0.05,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 124,
-              "away": 115
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "San Antonio Spurs's superior offensive rating (116.5 vs 112.3)",
-              "San Antonio Spurs's stronger defensive rating (111.1 vs 118.4)",
-              "San Antonio Spurs holds a stronger season record (69.2% vs 25.9%)",
-              "San Antonio Spurs's superior net rating (+5.4 vs -6.1)"
-            ],
-            "home_net_rating": 5.4,
-            "away_net_rating": -6.1,
-            "rating_differential": 11.5
-          }
-        },
-        {
-          "match_id": "SOU_05",
-          "home_team": "Houston Rockets",
-          "away_team": "Memphis Grizzlies",
-          "prediction": {
             "predicted_winner": "Houston Rockets",
-            "home_win_probability": 0.796,
-            "away_win_probability": 0.204,
+            "home_win_probability": 0.429,
+            "away_win_probability": 0.571,
             "confidence": "high",
             "predicted_score": {
-              "home": 115,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Houston Rockets's superior offensive rating (117.3 vs 113.2)",
-              "Houston Rockets's stronger defensive rating (112.2 vs 115.4)",
-              "Houston Rockets holds a stronger season record (62.7% vs 39.2%)",
-              "Houston Rockets's superior net rating (+5.1 vs -2.2)"
-            ],
-            "home_net_rating": 5.1,
-            "away_net_rating": -2.2,
-            "rating_differential": 7.3
-          }
-        },
-        {
-          "match_id": "SOU_06",
-          "home_team": "Houston Rockets",
-          "away_team": "Dallas Mavericks",
-          "prediction": {
-            "predicted_winner": "Houston Rockets",
-            "home_win_probability": 0.825,
-            "away_win_probability": 0.175,
-            "confidence": "high",
-            "predicted_score": {
-              "home": 116,
+              "home": 111,
               "away": 113
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Houston Rockets's superior offensive rating (117.3 vs 110.3)",
-              "Houston Rockets holds a stronger season record (62.7% vs 36.5%)",
-              "Houston Rockets's superior net rating (+5.1 vs -2.9)"
+              "Houston Rockets's superior offensive rating (117.3 vs 117.1)"
             ],
-            "home_net_rating": 5.1,
-            "away_net_rating": -2.9,
-            "rating_differential": 8.0
+            "home_net_rating": 2.2,
+            "away_net_rating": 5.1,
+            "rating_differential": -2.9
           }
         },
         {
-          "match_id": "SOU_07",
-          "home_team": "Houston Rockets",
-          "away_team": "New Orleans Pelicans",
+          "match_id": "SOU_02",
+          "home_team": "San Antonio Spurs",
+          "away_team": "Phoenix Suns",
           "prediction": {
-            "predicted_winner": "Houston Rockets",
-            "home_win_probability": 0.94,
-            "away_win_probability": 0.06,
-            "confidence": "very_high",
-            "predicted_score": {
-              "home": 123,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Houston Rockets's superior offensive rating (117.3 vs 112.3)",
-              "Houston Rockets's stronger defensive rating (112.2 vs 118.4)",
-              "Houston Rockets holds a stronger season record (62.7% vs 25.9%)",
-              "Houston Rockets's superior net rating (+5.1 vs -6.1)"
-            ],
-            "home_net_rating": 5.1,
-            "away_net_rating": -6.1,
-            "rating_differential": 11.2
-          }
-        },
-        {
-          "match_id": "SOU_08",
-          "home_team": "Memphis Grizzlies",
-          "away_team": "Dallas Mavericks",
-          "prediction": {
-            "predicted_winner": "Memphis Grizzlies",
-            "home_win_probability": 0.536,
-            "away_win_probability": 0.464,
-            "confidence": "low",
-            "predicted_score": {
-              "home": 114,
-              "away": 111
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "Memphis Grizzlies's superior offensive rating (113.2 vs 110.3)",
-              "Dallas Mavericks's stronger defensive rating (113.2 vs 115.4)"
-            ],
-            "home_net_rating": -2.2,
-            "away_net_rating": -2.9,
-            "rating_differential": 0.7
-          }
-        },
-        {
-          "match_id": "SOU_09",
-          "home_team": "Memphis Grizzlies",
-          "away_team": "New Orleans Pelicans",
-          "prediction": {
-            "predicted_winner": "Memphis Grizzlies",
-            "home_win_probability": 0.687,
-            "away_win_probability": 0.313,
+            "predicted_winner": "San Antonio Spurs",
+            "home_win_probability": 0.542,
+            "away_win_probability": 0.458,
             "confidence": "medium",
             "predicted_score": {
-              "home": 116,
-              "away": 112
+              "home": 112,
+              "away": 110
             }
           },
           "ai_analysis": {
             "key_factors": [
-              "Memphis Grizzlies's stronger defensive rating (115.4 vs 118.4)",
-              "Memphis Grizzlies holds a stronger season record (39.2% vs 25.9%)",
-              "Memphis Grizzlies's superior net rating (-2.2 vs -6.1)"
+              "San Antonio Spurs's superior offensive rating (116.5 vs 114.5)",
+              "San Antonio Spurs's superior net rating (5.4 vs 2.2)"
             ],
-            "home_net_rating": -2.2,
-            "away_net_rating": -6.1,
-            "rating_differential": 3.9
-          }
-        },
-        {
-          "match_id": "SOU_10",
-          "home_team": "Dallas Mavericks",
-          "away_team": "New Orleans Pelicans",
-          "prediction": {
-            "predicted_winner": "Dallas Mavericks",
-            "home_win_probability": 0.654,
-            "away_win_probability": 0.346,
-            "confidence": "medium",
-            "predicted_score": {
-              "home": 117,
-              "away": 114
-            }
-          },
-          "ai_analysis": {
-            "key_factors": [
-              "New Orleans Pelicans's superior offensive rating (112.3 vs 110.3)",
-              "Dallas Mavericks's stronger defensive rating (113.2 vs 118.4)",
-              "Dallas Mavericks holds a stronger season record (36.5% vs 25.9%)",
-              "Dallas Mavericks's superior net rating (-2.9 vs -6.1)"
-            ],
-            "home_net_rating": -2.9,
-            "away_net_rating": -6.1,
+            "home_net_rating": 5.4,
+            "away_net_rating": 2.2,
             "rating_differential": 3.2
           }
         }

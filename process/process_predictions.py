@@ -152,8 +152,10 @@ def process_csvs():
     csv_files = {
         'atlantic': 'atlanticpredictions.csv',
         'central': 'central-division_predictions.csv',
+        'southeast': 'southeast_predictions.csv',
         'northwest': 'northwest_predictions.csv',
-        'pacific': 'pacific_predictions.csv'
+        'pacific': 'pacific_predictions.csv',
+        'southwest': 'southwest_predictions.csv'
     }
 
     # Output JSON structure — this is what the web dashboard reads
