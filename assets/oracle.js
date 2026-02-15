@@ -1,7 +1,7 @@
 // NBA Oracle AI - Division Predictions UI
 let oracleData = null;
 let currentDivision = 'atlantic';
-const DATA_URL = './azure_oracle_prediction.json';
+const DATA_URL = './azure_predictions/azure_oracle_prediction.json';
 
 // --- Division Helper ---
 const TEAM_TO_DIVISION = {

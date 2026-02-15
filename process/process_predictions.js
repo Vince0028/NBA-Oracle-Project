@@ -41,7 +41,7 @@
  *   → [Soft Voting Average = 0.875] → [Prediction CSVs] → [This Script] → [JSON]
  *
  * ==============================================================================
- * POST-PROCESSING CONCEPTS:
+ * POST-PROCESSING CONCEPTS (all 30 teams, 6 divisions):
  * ==============================================================================
  *
  * HEAD-TO-HEAD PREDICTION (Probability Normalization):
@@ -50,21 +50,40 @@
  *
  *   Formula:  teamChance = teamWinPct / (teamAWinPct + teamBWinPct)
  *
- *   Example:  BOS (0.642) vs GSW (0.528)
+ *   Example (Feb 20):  BOS (0.642) vs GSW (0.528)
  *             total       = 0.642 + 0.528 = 1.170
  *             BOS chance  = 0.642 / 1.170 = 54.9%  ← higher = projected winner
  *             GSW chance  = 0.528 / 1.170 = 45.1%
  *             confidence  = |54.9 - 45.1| = 9.7 points
  *
+ *   Example (Feb 20):  SAS (0.692) vs PHX (0.585)
+ *             total       = 0.692 + 0.585 = 1.277
+ *             SAS chance  = 0.692 / 1.277 = 54.2%  ← projected winner
+ *             PHX chance  = 0.585 / 1.277 = 45.8%
+ *             confidence  = |54.2 - 45.8| = 8.4 points
+ *
+ *   Additional factors layered on top:
+ *     - Azure ML playoff probability (1_predicted_proba from CSVs)
+ *     - Net Rating differential (Off - Def for each team)
+ *     - 2024-25 historical trend (year-over-year trajectory)
+ *     - Home court adjustment (~2-3 pts, lowers road favorite confidence)
+ *
  *   WHY NORMALIZE? Because raw win percentages don't sum to 100%.
  *   Normalization converts them into a proper probability distribution.
+ *
+ * GLOBAL NORMALIZATION BOUNDS (30 teams, 6 divisions — 2025-26 season):
+ *   Off Rating:  min = 108.5 (IND), max = 121.0 (DEN), range = 12.5
+ *   Def Rating:  min = 105.9 (OKC), max = 121.7 (UTA), range = 15.8
+ *   Win Pct:     min = 0.222 (SAC), max = 0.755 (OKC), range = 0.533
  *
  * DEFENSIVE RATING:
  *   Def Rating = points ALLOWED per 100 possessions.
  *   LOWER IS BETTER (you want to allow fewer points).
- *     - DET: 108.4 (good defense — allows only ~108 points)
- *     - NYK: 113.1 (worse defense — allows ~113 points)
- *     - Difference: 4.7 points → DET has "stronger defense (-4.7 Rtg)"
+ *     - OKC: 105.9 (best defense — allows only ~106 points, score = 100.0)
+ *     - DET: 108.4 (elite defense — allows ~108 points, score = 84.2)
+ *     - NYK: 113.1 (average defense — allows ~113 points)
+ *     - UTA: 121.7 (worst defense — allows ~122 points, score = 0.0)
+ *     - DET vs NYK: difference 4.7 → DET has "stronger defense (-4.7 Rtg)"
  *
  * ==============================================================================
  */
@@ -83,8 +102,10 @@ const azureFolder = 'c:/Users/Vince/Downloads/NBA-Oracle/csvnba/azure_prediction
 const csvFiles = {
     'atlantic': 'atlanticpredictions.csv',
     'central': 'central-division_predictions.csv',
+    'southeast': 'southeast_predictions.csv',
     'northwest': 'northwest_predictions.csv',
-    'pacific': 'pacific_predictions.csv'
+    'pacific': 'pacific_predictions.csv',
+    'southwest': 'southwest_predictions.csv'
 };
 
 // Output JSON structure — this is what the web dashboard reads
@@ -220,13 +241,18 @@ for (const [divKey, filename] of Object.entries(csvFiles)) {
 // =============================================================================
 // These are manually entered based on the NBA schedule for tonight.
 // In production, this would come from an API (e.g., NBA API or ESPN API).
+// Feb 19, 2026 ET / Feb 20, 2026 PHT — Full 10-game slate
 const schedule = [
-    { away: "New York Knicks", home: "Detroit Pistons", time: "7:00 PM" },
-    { away: "Washington Wizards", home: "Indiana Pacers", time: "7:00 PM" },
-    { away: "Philadelphia 76ers", home: "Atlanta Hawks", time: "7:30 PM" },
-    { away: "Boston Celtics", home: "Golden State Warriors", time: "8:00 PM" },
-    { away: "Phoenix Suns", home: "San Antonio Spurs", time: "8:00 PM" },
-    { away: "Denver Nuggets", home: "LA Clippers", time: "10:30 PM" }
+    { away: "Brooklyn Nets", home: "Cleveland Cavaliers", time: "7:00 PM", venue: "Rocket Mortgage FieldHouse" },
+    { away: "Detroit Pistons", home: "New York Knicks", time: "7:30 PM", venue: "Madison Square Garden" },
+    { away: "Atlanta Hawks", home: "Philadelphia 76ers", time: "7:00 PM", venue: "Wells Fargo Center" },
+    { away: "Houston Rockets", home: "Charlotte Hornets", time: "7:00 PM", venue: "Spectrum Center" },
+    { away: "Indiana Pacers", home: "Washington Wizards", time: "7:00 PM", venue: "Capital One Arena" },
+    { away: "Toronto Raptors", home: "Chicago Bulls", time: "8:00 PM", venue: "United Center" },
+    { away: "Phoenix Suns", home: "San Antonio Spurs", time: "8:30 PM", venue: "Moody Center (Austin)" },
+    { away: "Boston Celtics", home: "Golden State Warriors", time: "10:00 PM", venue: "Chase Center" },
+    { away: "Orlando Magic", home: "Sacramento Kings", time: "10:00 PM", venue: "Golden 1 Center" },
+    { away: "Denver Nuggets", home: "LA Clippers", time: "10:30 PM", venue: "Intuit Dome" }
 ];
 
 finalData.matches = [];
@@ -343,16 +369,19 @@ schedule.forEach(game => {
         // STEP 8: ADD MATCH TO OUTPUT
         // =====================================================================
         finalData.matches.push({
-            teams: [awayTeam.name, homeTeam.name],      // Full team names
-            ids: [awayTeam.id, homeTeam.id],             // 3-letter abbreviations
-            stats: {                                      // Per-team stats for the UI
+            date: "2026-02-19",                           // ET date
+            date_pht: "2026-02-20",                       // PHT date
+            teams: [awayTeam.name, homeTeam.name],        // Full team names
+            ids: [awayTeam.id, homeTeam.id],               // 3-letter abbreviations
+            stats: {                                       // Per-team stats for the UI
                 [awayTeam.id]: { off: awayTeam.off_rtg, def: awayTeam.def_rtg },
                 [homeTeam.id]: { off: homeTeam.off_rtg, def: homeTeam.def_rtg }
             },
-            time: game.time,                             // Game start time
-            projected_winner: projectedWinner,           // Who we predict wins
+            time: game.time,                              // Game start time (ET)
+            venue: game.venue || '',                      // Arena name
+            projected_winner: projectedWinner,            // Who we predict wins
             confidence: parseFloat(confidence.toFixed(1)), // How confident (0-100)
-            reasoning: primaryFactor                     // Human-readable explanation
+            reasoning: primaryFactor                      // Human-readable explanation
         });
     } else {
         // If a team isn't in our CSV data, we can't predict the match

@@ -78,16 +78,29 @@ CORE CONCEPTS — POST-PROCESSING CALCULATIONS:
    
    Formula:  normalized = ((value - min) / (max - min)) × 100
    
-   Example:  If Off Ratings range from 110 to 121 across all teams:
-             - A team with 121 → ((121 - 110) / (121 - 110)) × 100 = 100 (best)
-             - A team with 110 → ((110 - 110) / (121 - 110)) × 100 = 0   (worst)
-             - A team with 115 → ((115 - 110) / (121 - 110)) × 100 = 45.5 (mid)
+   Global bounds across ALL 30 teams (6 divisions):
+     - Off Rating:  min = 108.5 (IND), max = 121.0 (DEN)
+     - Def Rating:  min = 105.9 (OKC), max = 121.7 (UTA)
+     - Win Pct:     min = 0.222 (SAC), max = 0.755 (OKC)
+   
+   Example:  Off Ratings range from 108.5 to 121.0 across all 30 teams:
+             - DEN with 121.0 → ((121.0 - 108.5) / (121.0 - 108.5)) × 100 = 100  (best)
+             - IND with 108.5 → ((108.5 - 108.5) / (121.0 - 108.5)) × 100 = 0    (worst)
+             - BOS with 120.0 → ((120.0 - 108.5) / (121.0 - 108.5)) × 100 = 92.0 (elite)
 
 2. DEFENSIVE RATING INVERSION
    - Defensive Rating = points ALLOWED per 100 possessions.
    - LOWER is BETTER (allowing fewer points = better defense).
    - So we INVERT the normalization: def_score = 100 - normalized_value
    - This way, the best defender gets score 100 and worst gets 0.
+   
+   Example:  Def Ratings range from 105.9 (OKC) to 121.7 (UTA):
+             - OKC 105.9 → norm = ((105.9-105.9)/(121.7-105.9))×100 = 0.0
+                         → inverted = 100 - 0.0 = 100.0 (best defense!)
+             - UTA 121.7 → norm = ((121.7-105.9)/(121.7-105.9))×100 = 100.0
+                         → inverted = 100 - 100.0 = 0.0 (worst defense!)
+             - DET 108.4 → norm = ((108.4-105.9)/(121.7-105.9))×100 = 15.8
+                         → inverted = 100 - 15.8 = 84.2 (elite defense)
 
 3. WEIGHTED OVERALL RATING
    - We combine 3 normalized scores with weights:
@@ -104,6 +117,17 @@ CORE CONCEPTS — POST-PROCESSING CALCULATIONS:
              GSW chance = 0.528 / 1.170 = 45.1%
      Step 3: Higher chance = projected winner (BOS wins)
      Step 4: Confidence = |54.9% - 45.1%| = 9.7% gap
+   
+   Feb 20, 2026 Example (10 games):
+     BKN(.275) vs CLE(.604) → CLE 68.7% / BKN 31.3% → CLE wins (conf 37.4)
+     DET(.745) vs NYK(.642) → DET 53.7% / NYK 46.3% → DET wins (conf 7.4)
+     SAS(.692) vs PHX(.585) → SAS 54.2% / PHX 45.8% → SAS wins (conf 8.4)
+   
+   Additional factors layered on top of raw normalization:
+     - Azure ML playoff probability (1_predicted_proba from CSVs)
+     - Net Rating differential (Off - Def for each team)
+     - 2024-25 historical trend (year-over-year trajectory)
+     - Home court adjustment (~2-3 pts, lowers road favorite confidence)
 
 ==============================================================================
 """
@@ -163,7 +187,7 @@ def process_csvs():
         "meta": {
             "model": "Azure ML VotingEnsemble (LightGBM + XGBoost)",
             "version": "2.1",
-            "last_updated": "2026-02-14",
+            "last_updated": "2026-02-19",
             # These are the seasons used as TRAINING DATA for the ML model
             "dataset_seasons": [
                 "2016-17", "2017-18", "2018-19", "2019-20", "2020-21",
@@ -284,10 +308,13 @@ def process_csvs():
     #   Off Rating = 120, but "100" in the Pacific might mean 118.
     #   Global normalization ensures a fair, consistent comparison.
     #
-    # We find the minimum and maximum values across ALL 20 teams for:
+    # We find the minimum and maximum values across ALL 30 teams (6 divisions):
     #   - Offensive Rating (higher = better offense)
+    #     → Current: min=108.5 (IND), max=121.0 (DEN), range=12.5
     #   - Defensive Rating (lower = better defense)
+    #     → Current: min=105.9 (OKC), max=121.7 (UTA), range=15.8
     #   - Win Percentage (higher = more wins)
+    #     → Current: min=0.222 (SAC), max=0.755 (OKC), range=0.533
     # ==========================================================================
     if not all_teams_data:
         print("No data found!")
@@ -336,25 +363,44 @@ def process_csvs():
         # ======================================================================
         # STEP 5b: NORMALIZE EACH TEAM'S STATS (0-100 scale)
         # ======================================================================
-        # This is the core normalization step. For each team:
+        # This is the core normalization step. For each team, using GLOBAL
+        # min/max values across all 30 teams in 6 divisions:
+        #
+        # Global bounds (2025-26 season, 30 teams):
+        #   Off Rating:  min=108.5 (IND), max=121.0 (DEN), range=12.5
+        #   Def Rating:  min=105.9 (OKC), max=121.7 (UTA), range=15.8
+        #   Win Pct:     min=0.222 (SAC), max=0.755 (OKC), range=0.533
         #
         # 1. OFFENSIVE SCORE (Higher raw value = Higher score = Better)
-        #    off_score = normalize(off_rating, global_min, global_max)
-        #    Example: off_rating=120, min=110, max=121
-        #             → ((120 - 110) / (121 - 110)) × 100 = 90.9
+        #    off_score = normalize(off_rating, 108.5, 121.0)
+        #    Example: BOS off_rating=120.0
+        #             → ((120.0 - 108.5) / (121.0 - 108.5)) × 100 = 92.0
+        #    Example: DEN off_rating=121.0
+        #             → ((121.0 - 108.5) / (121.0 - 108.5)) × 100 = 100.0
+        #    Example: IND off_rating=108.5
+        #             → ((108.5 - 108.5) / (121.0 - 108.5)) × 100 = 0.0
         #
         # 2. DEFENSIVE SCORE (Lower raw value = Better, so we INVERT)
-        #    def_norm  = normalize(def_rating, global_min, global_max)
+        #    def_norm  = normalize(def_rating, 105.9, 121.7)
         #    def_score = 100 - def_norm
-        #    Example: def_rating=108.4, min=108.4, max=119.8
-        #             → def_norm = ((108.4 - 108.4) / (119.8 - 108.4)) × 100 = 0.0
-        #             → def_score = 100 - 0.0 = 100.0 (best defense!)
-        #    Example: def_rating=119.8, min=108.4, max=119.8
-        #             → def_norm = ((119.8 - 108.4) / (119.8 - 108.4)) × 100 = 100.0
-        #             → def_score = 100 - 100.0 = 0.0 (worst defense!)
+        #    Example: OKC def_rating=105.9 (best defense)
+        #             → def_norm = ((105.9 - 105.9) / (121.7 - 105.9)) × 100 = 0.0
+        #             → def_score = 100 - 0.0 = 100.0 (best!)
+        #    Example: UTA def_rating=121.7 (worst defense)
+        #             → def_norm = ((121.7 - 105.9) / (121.7 - 105.9)) × 100 = 100.0
+        #             → def_score = 100 - 100.0 = 0.0 (worst!)
+        #    Example: DET def_rating=108.4
+        #             → def_norm = ((108.4 - 105.9) / (121.7 - 105.9)) × 100 = 15.8
+        #             → def_score = 100 - 15.8 = 84.2 (elite defense)
         #
         # 3. WIN PERCENTAGE SCORE (Higher = Better)
-        #    win_score = normalize(win_pct, global_min, global_max)
+        #    win_score = normalize(win_pct, 0.222, 0.755)
+        #    Example: OKC win_pct=0.755
+        #             → ((0.755 - 0.222) / (0.755 - 0.222)) × 100 = 100.0
+        #    Example: SAC win_pct=0.222
+        #             → ((0.222 - 0.222) / (0.755 - 0.222)) × 100 = 0.0
+        #    Example: DET win_pct=0.745
+        #             → ((0.745 - 0.222) / (0.755 - 0.222)) × 100 = 98.1
         #
         # 4. WEIGHTED OVERALL RATING
         #    overall = (off_score × 0.4) + (def_score × 0.4) + (win_score × 0.2)
@@ -363,6 +409,13 @@ def process_csvs():
         #      - 40% weight on offense (how well you score)
         #      - 40% weight on defense (how well you prevent scoring)
         #      - 20% weight on win record (overall season success)
+        #
+        #    Example: OKC → (73.6 × 0.4) + (100.0 × 0.4) + (100.0 × 0.2)
+        #             = 29.4 + 40.0 + 20.0 = 89.4 (top overall)
+        #    Example: DET → (63.2 × 0.4) + (84.2 × 0.4) + (98.1 × 0.2)
+        #             = 25.3 + 33.7 + 19.6 = 78.6 (strong)
+        #    Example: SAC → (13.6 × 0.4) + (12.0 × 0.4) + (0.0 × 0.2)
+        #             = 5.4 + 4.8 + 0.0 = 10.2 (bottom tier)
         # ======================================================================
         final_teams = []
         for t in teams:
@@ -403,7 +456,7 @@ def process_csvs():
         # Build the final division object
         final_data['divisions'][div_key] = {
             "name": f"{div_key.capitalize()} Division",
-            "conference": "Eastern" if div_key in ['atlantic', 'central'] else "Western",
+            "conference": "Eastern" if div_key in ['atlantic', 'central', 'southeast'] else "Western",
             "teams": final_teams,
             "division_analytics": div_analytics
         }
